@@ -48,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </nav>
 
       <motion.div
-        className="absolute left-5 top-[25%] z-20 sm:left-8 lg:left-10"
+        className="absolute left-5 top-[33%] z-20 sm:left-8 lg:left-10"
         initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 0.85, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -58,7 +58,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </motion.div>
 
       <motion.div
-        className="absolute bottom-[9%]  z-20 w-[73%] pointer-events-none sm:left-8 lg:left-8 left-5"
+        className="absolute bottom-[11%] left-5 z-20 w-[73%] pointer-events-none sm:left-8 lg:left-10"
         initial="hidden"
         animate="visible"
         variants={{
@@ -72,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
             ['for digital', 'text-white'],
             ['impact', 'text-[#ff4d11]'],
           ].map(([line, color]) => (
-            <span key={line} className="block overflow-hidden mb-3">
+            <span key={line} className="block overflow-hidden">
               <motion.span
                 className={`block ${color}`}
                 variants={{
