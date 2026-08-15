@@ -1,0 +1,6 @@
+{
+  "name": "Mainframe - Creative Agency & Portfolio",
+  "description": "Full-screen interactive hero landing page and online portfolio for Mainframe and Multimedia Designer Marcus Wong.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
