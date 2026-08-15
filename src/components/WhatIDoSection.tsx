@@ -104,7 +104,7 @@ export const WhatIDoSection: React.FC = () => {
       <div className="mx-auto max-w-[1500px]">
         <div ref={introRef} className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="mb-5 text-[10px] uppercase tracking-[0.22em] text-[#ff4d11]">■ What I do</p>
+            <p className="mb-5 text-[10px] uppercase tracking-[0.22em] text-[#3271e3]">■ What I do</p>
             <h2 className="font-heading text-[clamp(3.3rem,8vw,8.5rem)] font-medium leading-[0.86] tracking-[-0.065em] text-white">
               <span className="block">
                 {['Built', 'to', 'move'].map((word, index) => (
@@ -149,7 +149,7 @@ export const WhatIDoSection: React.FC = () => {
                   aria-expanded={isOpen}
                   className="group relative z-10 grid w-full grid-cols-[2.5rem_1fr_auto] items-center gap-3 py-6 text-left sm:grid-cols-[4rem_1fr_auto_auto] sm:gap-6 sm:py-8 lg:py-10"
                 >
-                  <span className="font-mono text-[10px] text-[#ff4d11] sm:text-xs">{service.id}</span>
+                  <span className="font-mono text-[10px] text-[#3271e3] sm:text-xs">{service.id}</span>
                   <ScrollTriggeredServiceTitle>{service.title}</ScrollTriggeredServiceTitle>
                   <span className="hidden font-mono text-[10px] tracking-[0.16em] text-white/25 sm:block">{service.code}</span>
                   <motion.span

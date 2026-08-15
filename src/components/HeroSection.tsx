@@ -29,7 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       <div className="site-nav-text fixed left-5 top-7 z-[60] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block">Good morning!</div>
       <nav aria-label="Primary navigation" className="site-nav-text fixed inset-x-5 top-7 z-[60] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
         <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
-          <a href="#home" className="text-white transition hover:text-[#ff4d11]">Home</a>
+          <a href="#home" className="text-white transition hover:text-[#3271e3]">Home</a>
           <a href="#what-i-do" className="text-white/55 transition hover:text-white">What I do</a>
           <a
             href="/projects"
@@ -41,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
         <a
           href="/Marcus-Wong-CV.pdf"
           download
-          className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#ff4d11] hover:text-[#ff4d11]"
+          className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#3271e3] hover:text-[#3271e3]"
         >
           Download CV
         </a>
@@ -70,7 +70,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           {[
             ['Design', 'text-white'],
             ['for digital', 'text-white'],
-            ['impact', 'text-[#ff4d11]'],
+            ['impact', 'text-[#3271e3]'],
           ].map(([line, color]) => (
             <span key={line} className="block overflow-hidden">
               <motion.span
@@ -97,13 +97,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
         <div className="mb-7 flex flex-col items-start gap-3 text-sm">
           <a
             href="/projects"
-            className="border-b border-white/70 pb-1 text-white transition-colors hover:border-[#ff4d11] hover:text-[#ff4d11]"
+            className="border-b border-white/70 pb-1 text-white transition-colors hover:border-[#3271e3] hover:text-[#3271e3]"
           >
             Visit my online portfolio
           </a>
           <button
             onClick={() => onOpenModal('contact')}
-            className="border-b border-white/70 pb-1 text-white transition-colors hover:border-[#ff4d11] hover:text-[#ff4d11]"
+            className="border-b border-white/70 pb-1 text-white transition-colors hover:border-[#3271e3] hover:text-[#3271e3]"
           >
             Contact me
           </button>
@@ -155,7 +155,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
                 {BRAND_MARKS[brand.id]}
               </span>
               <span className="text-xs font-semibold uppercase tracking-[0.12em] text-white/65 sm:text-sm">{brand.name}</span>
-              <span className="h-1 w-1 rounded-full bg-[#ff4d11]" aria-hidden="true" />
+              <span className="h-1 w-1 rounded-full bg-[#3271e3]" aria-hidden="true" />
             </div>
           ))}
         </div>
