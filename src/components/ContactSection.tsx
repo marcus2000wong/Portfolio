@@ -7,10 +7,10 @@ export const ContactSection: React.FC = () => (
     className="relative z-20 -mt-px bg-black/70 px-4 py-10 text-white backdrop-blur-[12px] sm:px-7 sm:py-14 lg:px-10 lg:py-16"
   >
     <div className="relative isolate mx-auto flex min-h-[650px] max-w-[1500px] overflow-hidden rounded-[38px] border border-white/10 bg-[linear-gradient(180deg,rgba(20,20,20,0.8)_0%,rgba(4,4,7,0.88)_58%,rgba(16,18,35,0.82)_100%)] px-5 py-20 shadow-[inset_0_2px_16px_rgba(255,255,255,0.12),inset_0_-38px_70px_rgba(101,111,255,0.18),0_24px_70px_rgba(0,0,0,0.36)] backdrop-blur-[12px] sm:min-h-[720px] sm:rounded-[54px] sm:px-8 sm:py-24 lg:px-10">
-      <div className="pointer-events-none absolute inset-x-[4%] bottom-[-8%] z-[1] h-52 rounded-[50%] bg-[#6370ff]/22 blur-[76px]" />
-      <div className="pointer-events-none absolute right-[10%] top-[12%] z-[1] h-40 w-40 rounded-full bg-[#4f59ff]/10 blur-[72px]" />
+      <div className="pointer-events-none absolute inset-x-[4%] bottom-[-8%] z-[1] h-52 rounded-[50%] bg-[#4D7CFF]/22 blur-[76px]" />
+      <div className="pointer-events-none absolute right-[10%] top-[12%] z-[1] h-40 w-40 rounded-full bg-[#4D7CFF]/10 blur-[72px]" />
       <div className="relative z-10 mx-auto flex max-w-5xl flex-1 flex-col items-center justify-center text-center">
-        <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[#3271e3]">■ &nbsp; Let’s work together</p>
+        <p className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ &nbsp; Let’s work together</p>
         <h2 className="mt-7 font-heading text-[clamp(4.5rem,12vw,11rem)] font-medium leading-[0.82] tracking-[-0.075em]">
           Say Hello.
         </h2>

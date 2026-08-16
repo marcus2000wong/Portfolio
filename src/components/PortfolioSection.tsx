@@ -44,7 +44,7 @@ export const PortfolioSection: React.FC = () => {
         className="pointer-events-none absolute inset-x-0 top-[10%] z-[1] overflow-hidden px-5 sm:px-8 lg:px-10"
         aria-hidden="true"
       >
-        <p className="font-mono text-[9px] uppercase tracking-[0.24em] text-[#3271e3]">■ Selected work</p>
+        <p className="font-mono text-[9px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ Selected work</p>
         <p className="mt-4 whitespace-nowrap font-heading text-[clamp(5rem,15vw,15rem)] font-medium leading-[0.72] tracking-[-0.08em] text-white/[0.055]">
           {currentProject?.title}
         </p>
@@ -70,7 +70,7 @@ export const PortfolioSection: React.FC = () => {
         className="pointer-events-none absolute bottom-7 left-5 z-30 hidden max-w-sm sm:left-8 md:block lg:bottom-8 lg:left-10"
       >
         <div className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.22em] text-white/35">
-          <span className="text-[#3271e3]">{String(activeIndex + 1).padStart(2, '0')}</span>
+          <span className="text-[#4D7CFF]">{String(activeIndex + 1).padStart(2, '0')}</span>
           <span className="h-px w-10 bg-white/15" />
           <span>{currentProject?.category}</span>
         </div>
@@ -135,7 +135,7 @@ export const PortfolioSection: React.FC = () => {
               <div className="space-y-5 overflow-y-auto p-6 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-[#3271e3]">{selectedProject.client || 'Client Project'}</span>
+                    <span className="font-mono text-xs uppercase tracking-wider text-[#4D7CFF]">{selectedProject.client || 'Client Project'}</span>
                     <h2 className="mt-1 font-heading text-3xl tracking-[-0.04em] text-white sm:text-4xl">{selectedProject.title}</h2>
                     <p className="mt-1 text-sm text-white/45">{selectedProject.subCategory}</p>
                   </div>
@@ -146,7 +146,7 @@ export const PortfolioSection: React.FC = () => {
                   {selectedProject.tags.map((tag) => <span key={tag} className="rounded-full bg-white/[0.07] px-3 py-1.5 font-mono text-xs text-white/65">{tag}</span>)}
                 </div>
                 {selectedProject.liveUrl && (
-                  <a href={selectedProject.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-black transition hover:bg-[#3271e3] hover:text-white">View live project <span aria-hidden="true">↗</span></a>
+                  <a href={selectedProject.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-black transition hover:bg-[#4D7CFF] hover:text-white">View live project <span aria-hidden="true">↗</span></a>
                 )}
               </div>
             </motion.div>

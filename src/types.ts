@@ -47,5 +47,5 @@ export interface Brand {
   id: string;
   name: string;
   category: string;
-  logoText: string;
+  logo: string;
 }

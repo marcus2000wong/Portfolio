@@ -47,7 +47,7 @@ export default function App() {
             <a href="/#what-i-do" className="text-white/55 transition hover:text-white">What I do</a>
             <a href="/projects" className="text-white">Projects</a>
           </div>
-          <a href="/Marcus-Wong-CV.pdf" download className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#3271e3] hover:text-[#3271e3]">Download CV</a>
+          <a href="/Marcus-Wong-CV.pdf" download className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#4D7CFF] hover:text-[#4D7CFF]">Download CV</a>
         </nav>
         <PortfolioSection />
         <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
@@ -67,14 +67,18 @@ export default function App() {
         overlayOpacity={0.25}
       />
 
-      {/* Hero section with blurred intro label, typewriter text, and pill buttons */}
-      <HeroSection
-        onOpenModal={(type) => setActiveModal(type)}
-        onCopyEmail={() => handleCopyEmail('hello@mainframe.co')}
-      />
+      {/* HERO */}
+      <div className="relative z-30">
+        <HeroSection
+          onOpenModal={(type) => setActiveModal(type)}
+          onCopyEmail={() => handleCopyEmail('hello@mainframe.co')}
+        />
+      </div>
 
-      {/* Interactive creative services section */}
-      <WhatIDoSection />
+      {/* WHAT I DO */}
+      <div className="relative z-20 ">
+        <WhatIDoSection />
+      </div>
 
       {/* Full-Screen Interactive Scroll Arc Career Timeline */}
       <CircularTimeline />

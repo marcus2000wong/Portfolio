@@ -1,5 +1,5 @@
 import { Brand, Experience, Project, SkillGroup, TimelineItem } from '../types';
-
+import { ModalType } from '../types';
 export const MARCUS_PROFILE = {
   name: 'Marcus Wong',
   title: 'Multimedia Designer & Creative Developer',
@@ -322,53 +322,54 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
 ];
 
+
 export const BRANDS: Brand[] = [
   {
     id: 'b1',
     name: 'AsiaPac Net Media',
     category: 'Digital Agency / Corporate',
-    logoText: 'ASIAPAC NET MEDIA',
+    logo: './logo/logo-01.png',
   },
   {
     id: 'b2',
     name: 'GL.iNet Technology',
     category: 'Smart Home & IoT Networking',
-    logoText: 'GL.iNet SMART HOME',
+    logo: './logo/logo-02.png',
   },
   {
     id: 'b3',
     name: 'As One Interactive',
     category: 'F&B & Beauty Marketing',
-    logoText: 'AS ONE INTERACTIVE',
+    logo: './logo/logo-03.png',
   },
   {
     id: 'b4',
     name: 'Coventry University',
     category: 'Higher Education (UK)',
-    logoText: 'COVENTRY UNIVERSITY',
+    logo: '/logo/logo-04.png',
   },
   {
     id: 'b5',
     name: 'Mainframe® Labs',
     category: 'Creative Tech & AI Architecture',
-    logoText: 'MAINFRAME® LABS',
+    logo: '/logo/logo-05.png',
   },
   {
     id: 'b6',
     name: 'F&B Enterprise Clients',
     category: 'Dining & Hospitality Brands',
-    logoText: 'F&B BRAND PORTFOLIO',
+    logo: './logo/logo-06.png',
   },
   {
     id: 'b7',
     name: 'Beauty & Skincare Brands',
     category: 'Lifestyle & Cosmetics',
-    logoText: 'BEAUTY & SKINCARE',
+    logo: './logo/logo-07.png',
   },
   {
     id: 'b8',
     name: 'Shebbear College',
     category: 'UK Academy',
-    logoText: 'SHEBBEAR COLLEGE',
+    logo: './logo/logo-08.png',
   },
 ];

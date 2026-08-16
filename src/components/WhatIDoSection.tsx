@@ -13,33 +13,33 @@ const SERVICES: ServiceItem[] = [
   {
     id: '01',
     code: 'WD-01',
-    title: 'Web & Product Design',
+    title: 'UI/UX, Web Design',
     description:
-      'I turn complex ideas into clear, responsive digital experiences—from early user flows and wireframes through polished interfaces and production-ready websites.',
+      'Creating responsive and visually refined websites with a focus on usability and interaction. Combining thoughtful design with seamless digital experiences across devices.',
     capabilities: ['UX strategy', 'Wireframing', 'UI design', 'Responsive websites', 'Design systems'],
   },
   {
     id: '02',
     code: 'BR-02',
-    title: 'Brand & Visual Systems',
+    title: 'Motion & Video',
     description:
-      'I build flexible visual languages that stay recognisable across campaigns, social content, packaging, presentations and every customer touchpoint.',
-    capabilities: ['Art direction', 'Visual identity', 'Campaign design', 'Print production', 'Typography'],
+      'Creating motion graphics and video content that bring ideas and stories to life. Using movement, rhythm, and visual storytelling to create engaging experiences.',
+    capabilities: ['Art direction', 'Visual identity', 'Motion Graphic', 'Typography'],
   },
   {
     id: '03',
     code: 'MO-03',
-    title: 'Motion, Video & 3D',
+    title: 'Printing and Packaging',
     description:
-      'I create motion with purpose—product films, animated systems and 3D visuals that explain ideas quickly and make digital work feel alive.',
-    capabilities: ['Motion graphics', 'Video editing', '3D rendering', 'Storyboarding', 'Micro-interactions'],
+      'Designing print materials with a strong focus on typography, layout, and visual identity.Creating consistent and impactful designs across both editorial and promotional work.',
+    capabilities: ['Printing ', 'Typography', 'Layout', 'Alignment'],
   },
   {
     id: '04',
     code: 'AI-04',
     title: 'Social & AI Workflows',
     description:
-      'I combine content strategy with modern AI tools to produce consistent, high-quality creative faster while keeping the work intentional and on-brand.',
+      'Creating engaging social content supported by efficient AI-powered creative workflows. Combining design, technology, and automation to improve quality and production efficiency.',
     capabilities: ['Social strategy', 'Creative automation', 'AI production', 'Content systems', 'Campaign assets'],
   },
 ];
@@ -78,7 +78,7 @@ const ScrollTriggeredServiceTitle: React.FC<{ children: string }> = ({ children 
   return (
     <span
       ref={titleRef}
-      className="overflow-hidden font-heading text-[clamp(1.65rem,4.2vw,4.8rem)] leading-none tracking-[-0.055em] text-white"
+      className="block overflow-hidden py-[0.18em] -my-[0.18em] font-heading text-[clamp(1.65rem,4.2vw,4.8rem)] leading-[1.05] tracking-[-0.055em] text-white"
     >
       <motion.span style={{ y, opacity, filter }} className="block will-change-transform">
         {children}
@@ -101,20 +101,20 @@ export const WhatIDoSection: React.FC = () => {
       id="what-i-do"
       className="relative z-10 -mt-px w-full overflow-hidden bg-black/70 px-5 pb-8 pt-20 text-white backdrop-blur-[12px] sm:px-8 sm:pb-10 sm:pt-28 lg:px-10 lg:pb-12"
     >
-      <div className="mx-auto max-w-[1500px]">
+      <div className="mx-auto ">
         <div ref={introRef} className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="mb-5 text-[10px] uppercase tracking-[0.22em] text-[#3271e3]">■ What I do</p>
+            <p className="mb-5 text-[15px] uppercase tracking-[0.22em] text-[#4D7CFF]">■ What I do</p>
             <h2 className="font-heading text-[clamp(3.3rem,8vw,8.5rem)] font-medium leading-[0.86] tracking-[-0.065em] text-white">
               <span className="block">
-                {['Built', 'to', 'move'].map((word, index) => (
+                {['Design', 'Idea','Move' ].map((word, index) => (
                   <HighlightWord key={word} index={index} total={5} progress={introProgress}>
                     {word}
                   </HighlightWord>
                 ))}
               </span>
-              <span className="block">
-                {['ideas', 'forward.'].map((word, index) => (
+              <span className="block text-[#4D7CFF]">
+                {['Forward.'].map((word, index) => (
                   <HighlightWord key={word} index={index + 3} total={5} progress={introProgress}>
                     {word}
                   </HighlightWord>
@@ -149,9 +149,9 @@ export const WhatIDoSection: React.FC = () => {
                   aria-expanded={isOpen}
                   className="group relative z-10 grid w-full grid-cols-[2.5rem_1fr_auto] items-center gap-3 py-6 text-left sm:grid-cols-[4rem_1fr_auto_auto] sm:gap-6 sm:py-8 lg:py-10"
                 >
-                  <span className="font-mono text-[10px] text-[#3271e3] sm:text-xs">{service.id}</span>
+                  <span className="font-mono text-[15px] text-[#4D7CFF] ">{service.id}</span>
                   <ScrollTriggeredServiceTitle>{service.title}</ScrollTriggeredServiceTitle>
-                  <span className="hidden font-mono text-[10px] tracking-[0.16em] text-white/25 sm:block">{service.code}</span>
+                  <span className="hidden font-mono text-[15px] tracking-[0.16em] text-white/25 sm:block">{service.code}</span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -172,7 +172,7 @@ export const WhatIDoSection: React.FC = () => {
                       className="relative z-10 overflow-hidden"
                     >
                       <div className="grid gap-7 pb-9 pl-10 sm:pb-12 sm:pl-[5.5rem] lg:grid-cols-12 lg:gap-10">
-                        <p className="max-w-2xl text-base leading-7 text-white/60 lg:col-span-6 lg:text-lg lg:leading-8">
+                        <p className="max-w-2xl text-base  leading-7 text-white/60 lg:col-span-6 lg:text-lg lg:leading-8">
                           {service.description}
                         </p>
                         <div className="flex flex-wrap content-start gap-2 lg:col-span-6 lg:justify-end">
