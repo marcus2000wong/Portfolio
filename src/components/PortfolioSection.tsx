@@ -4,7 +4,7 @@ import { PROJECTS } from '../data/portfolioData';
 import { CategoryFilter, Project } from '../types';
 import { ProjectHelixGallery } from './ProjectHelixGallery';
 
-const CATEGORIES: CategoryFilter[] = ['All', 'UI/UX', 'Printing', 'Social Media', 'Video'];
+const CATEGORIES: CategoryFilter[] = ['All', 'UI/UX', 'Printing & E-comerical', 'Social Media', 'Video'];
 const FALLBACK_IMAGES = [
   new URL('../assets/images/blue_nile_center_model_1786542360474.jpg', import.meta.url).href,
   new URL('../assets/images/editorial-hero-portrait-v1.png', import.meta.url).href,

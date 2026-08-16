@@ -440,11 +440,11 @@ export const PROJECTS: Project[] = [
   
 
 
-  // Printing Projects
+  // Printing & E-comerical Projects
   {
     id: '10',
     title: 'Lumina Editorial',
-    category: 'Printing',
+    category: 'Printing & E-comerical',
     subCategory: 'Print Production & Editorial Design',
     description:
       'Crafted high-end print collateral, restaurant menus, product box packaging, and promotional brochures. Managed color calibration, press-ready prepress files, and specialty foil finishing.',
@@ -460,7 +460,7 @@ export const PROJECTS: Project[] = [
   {
     id: '11',
     title: 'AeroTech Expo',
-    category: 'Printing',
+    category: 'Printing & E-comerical',
     subCategory: 'Large Format & Trade Show Collateral',
     description:
       'Designed booth backdrops, large-format event banners, tech spec sheets, and physical product packaging for international hardware expos.',
@@ -472,6 +472,13 @@ export const PROJECTS: Project[] = [
     year: '2024',
     client: 'GL.iNet Technology LTD',
   },
+
+
+
+
+
+
+
 
   // Social Media Projects
   {
