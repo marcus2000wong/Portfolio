@@ -481,37 +481,144 @@ export const PROJECTS: Project[] = [
 
 
   // Social Media Projects
-  {
-    id: '12',
-    title: 'Verve Studio',
-    category: 'Social Media',
-    subCategory: 'Social Strategy & Visual Identity',
-    description:
-      'Managing visual identities and multi-platform content creation for F&B and education clients. Developed cohesive grid layouts, reel templates, and campaign key visuals driving high engagement.',
-    tags: ['Photoshop', 'Midjourney', 'Content Strategy', 'Social Banners', 'Canva'],
-    image:
-      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
-    year: '2025',
-    client: 'AsiaPac Net Media Ltd',
-    featured: true,
-  },
-  {
-    id: '13',
-    title: 'Aura Glow',
-    category: 'Social Media',
-    subCategory: 'Visual Content & Creative Strategy',
-    description:
-      'Strategic social media campaign for F&B and skincare brands. Delivered aesthetic product photography compositions, ad creatives, and viral social stories.',
-    tags: ['Midjourney', 'Photoshop', 'Social Ads', 'Copywriting', 'Brand Identity'],
-    image:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80',
-    year: '2023',
-    client: 'As One Interactive LTD',
-  },
+    {
+      id: '21',
+      title: 'ZA Bank Social Media Post',
+      category: 'Social Media',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['AI','Social Media Design', 'Graphic Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/za.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/za.jpg',
+      },
+
+      year: '2026',
+      client: 'AsiaPac Net Media Ltd',
+      featured: true,
+    },
+
+    {
+      id: '22',
+      title: 'Delmon Social Media Post',
+      category: 'Social Media',
+      subCategory: 'Design & Development',
+      description:
+        'A vibrant social media campaign combining AI-assisted visuals with graphic design and art direction. Bold typography, surreal scenes, and playful storytelling create engaging, product-focused content while maintaining a consistent brand identity.',
+      tags: ['AI','Social Media Design', 'Graphic Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/delmon.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/delmon.jpg',
+      },
+
+      year: '2026',
+      client: 'AsiaPac Net Media Ltd',
+      featured: true,
+    },
+
+    {
+      id: '23',
+      title: 'Galderma Social Media Post',
+      category: 'Social Media',
+      subCategory: 'Design & Development',
+      description:
+        'A refined healthcare campaign combining clean layouts, premium product presentation, and elegant typography. The visual direction balances clinical professionalism with a sophisticated beauty aesthetic to communicate trust, quality, and innovation.',
+      tags: ['Social Media Design', 'Graphic Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/galderma.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/galderma.jpg',
+      },
+
+      year: '2026',
+      client: 'AsiaPac Net Media Ltd',
+      featured: true,
+    },
+
+    {
+      id: '24',
+      title: 'GL.iNet Social Media Post',
+      category: 'Social Media',
+      subCategory: 'Design & Development',
+      description:
+        'A technology-focused campaign combining AI-assisted workflows, 3D product rendering, and graphic design. AI and 3D tools streamline visual production, creating polished product scenes and high-impact marketing content across digital platforms.',
+      tags: ['AI','Social Media Design', '3D Rendering'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/glinet.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/glinet.jpg',
+      },
+
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
+      featured: true,
+    },
+    {
+      id: '25',
+      title: 'Nippon Social Media Post',
+      category: 'Social Media',
+      subCategory: 'Design & Development',
+      description:
+        'A vibrant advertising campaign combining AI-assisted workflows, 3D rendering, and graphic design to create engaging product visuals, dynamic environments, and consistent branded content across digital platforms.',
+      tags: ['AI','Social Media Design', '3D Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/nippon.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/nippon.jpg',
+      },
+
+      year: '2026',
+      client: 'AsiaPac Net Media Ltd',
+      featured: true,
+    },
+
+    {
+      id: '26',
+      title: 'Wingstop Social Media Post',
+      category: 'Social Media',
+      subCategory: 'Design & Development',
+      description:
+        'A bold F&B social campaign combining AI-assisted visuals, food photography, and graphic design. Dynamic typography, vibrant colours, and high-impact compositions highlight each product while keeping Wingstop’s energetic brand identity.',
+      tags: ['AI','Social Media Design', 'Graphic Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/wingstop.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/wingstop.jpg',
+      },
+
+      year: '2026',
+      client: 'AsiaPac Net Media Ltd',
+      featured: true,
+    },
+
+
 
 
 
