@@ -44,7 +44,7 @@ export const PortfolioSection: React.FC = () => {
         className="pointer-events-none absolute inset-x-0 top-[10%] z-[1] overflow-hidden px-5 sm:px-8 lg:px-10"
         aria-hidden="true"
       >
-        <p className="font-mono text-[9px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ Selected work</p>
+        <p className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ Selected work</p>
         <p className="mt-4 whitespace-nowrap font-heading text-[clamp(5rem,15vw,15rem)] font-medium leading-[0.72] tracking-[-0.08em] text-white/[0.055]">
           {currentProject?.title}
         </p>
