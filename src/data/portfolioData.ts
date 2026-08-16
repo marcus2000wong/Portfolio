@@ -1,5 +1,5 @@
 import { Brand, Experience, Project, SkillGroup, TimelineItem } from '../types';
-import { ModalType } from '../types';
+
 
 export const MARCUS_PROFILE = {
   name: 'Marcus Wong',
