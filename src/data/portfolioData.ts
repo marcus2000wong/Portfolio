@@ -127,10 +127,314 @@ export const PROJECTS: Project[] = [
     liveUrl: 'https://www.friso.com.hk/friso-signature',
   },
 
+  {
+    id: '5',
+    title: 'New User Benefits Web Design',
+    category: 'UI/UX',
+    subCategory: 'Design & Development',
+    description:
+      'A playful and conversion-focused e-commerce landing page designed to introduce new users to GL.iNet’s membership benefits. The visual direction combines bold typography, vibrant colours, playful graphics and product-focused layouts to create an energetic and approachable technology experience. The page uses step-by-step storytelling, promotional benefits and curated product recommendations to guide users from account creation to product discovery and purchase.',
+
+    tags: ['Figma', 'Illustration', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-05.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/glinet-new-user-benefit.jpg',
+    },
+
+    year: '2024',
+    client: 'GL.iNet Technology LTD',
+    featured: true,
+    liveUrl: 'https://www.gl-inet.com/en-de/pages/new-user-benefits?utm_source=google&utm_medium=cpc&utm_campaign=24114848821&utm_term=&gad_source=1&gad_campaignid=24114874927&gbraid=0AAAAA9rKFBZgD00GUP2TOPfj0iOOT7g31&gclid=Cj0KCQjwv4XUBhDBARIsAE6bQUSh7AUNgeUKWj8FXM4wz-Sj3LGoFy9l0vSafbpLLauYszflYRfaEJQaAps3EALw_wcB',
+  },
+
+
+
+  {
+    id: '6',
+    title: 'Flint 4 Web Design',
+    category: 'UI/UX',
+    subCategory: 'Design & Development',
+    description:
+      'A premium, technology-driven product website designed to showcase a high-performance Wi-Fi 7 router. The visual direction combines cinematic product imagery, dark futuristic interfaces and dynamic technical graphics to create a powerful flagship product experience. The website uses immersive product storytelling, feature-focused sections and technical visualisations to communicate complex networking technology in an engaging and accessible way, guiding users from product discovery through performance, security and detailed specifications.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-06.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/be1400.jpg',
+    },
+
+    year: '2024',
+    client: 'GL.iNet Technology LTD',
+    featured: true,
+    liveUrl: 'https://www.gl-inet.com/products/gl-be14000',
+  },
+   {
+    id: '7',
+    title: 'RM10 Web Design',
+    category: 'UI/UX',
+    subCategory: 'Design & Development',
+    description:
+      'A modern minimalist technology aesthetic combining clean white space, bold typography and premium product imagery. Modular layouts, subtle colour accents and interface-focused visuals create a polished, professional and highly functional digital experience.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-07.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/rm10.jpg',
+    },
+
+    year: '2024',
+    client: 'GL.iNet Technology LTD',
+    featured: true,
+    liveUrl: 'https://www.gl-inet.com/products/gl-rm10',
+  },
+  {
+    id: '8',
+    title: 'GL.iNet About Us Page',
+    category: 'UI/UX',
+    subCategory: 'Design & Development',
+    description:
+      'A modern corporate technology website combining minimalist layouts, clean typography and structured visual storytelling. The design uses generous white space, modular cards, brand-focused imagery and subtle colour accents to create a professional, trustworthy and contemporary brand experience. Company milestones, global presence, leadership and achievements are presented through engaging visual sections, transforming traditional corporate information into a clear and approachable digital story.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-08.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/about-us.jpg',
+    },
+
+    year: '2024',
+    client: 'GL.iNet Technology LTD',
+    featured: true,
+    liveUrl: 'https://www.gl-inet.com/about-us',
+  },
+  {
+    id: '9',
+    title: 'Magiclean Web Design',
+    category: 'UI/UX',
+    subCategory: 'Design & Development',
+    description:
+      'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-09.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/magic-clean.jpg',
+    },
+
+    year: '2023',
+    client: 'As One Interactive LTD',
+    featured: true,
+    liveUrl: 'https://web.kao.com/hk/magiclean/',
+  },
 
 
 
 
+
+
+
+
+
+  // Video Projects
+  {
+      id: '9',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/1.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+   {
+      id: '10',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/2.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+    {
+      id: '11',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/3.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+    {
+      id: '12',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/4.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+    {
+      id: '13',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/5.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+    {
+      id: '14',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/6.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+    {
+      id: '15',
+      title: 'Magiclean Web Design',
+      category: 'UI/UX',
+      subCategory: 'Design & Development',
+      description:
+        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+
+      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/cover-09.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'video',
+        src: '/portfolio/7.mp4',
+      },
+
+      year: '2023',
+      client: 'As One Interactive LTD',
+      featured: true,
+      liveUrl: 'https://web.kao.com/hk/magiclean/',
+    },
+
+
+
+
+
+
+  
 
 
   // Printing Projects
@@ -199,38 +503,12 @@ export const PROJECTS: Project[] = [
     client: 'As One Interactive LTD',
   },
 
-  // Video Projects
-  {
-    id: '14',
-    title: 'Kinetix 3D',
-    category: 'Video',
-    subCategory: '3D Motion Graphics & Commercials',
-    description:
-      'High-impact 3D product rendering, video editing, and motion graphics explaining complex networking hardware in compelling 30-second commercial spots.',
-    tags: ['Blender', 'Keyshot', 'After Effects', 'Premiere Pro', 'Motion Design'],
-    image:
-      'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80',
-    year: '2024',
-    client: 'GL.iNet Technology LTD',
-    featured: true,
-  },
-  {
-    id: '15',
-    title: 'CineCraft',
-    category: 'Video',
-    subCategory: 'Video Editing & Visual FX',
-    description:
-      'Full video production pipeline including storyboarding, footage editing, color grading, and sound design for corporate portfolio showcases and promotional reels.',
-    tags: ['Premiere Pro', 'After Effects', 'Color Grading', 'Sound Design'],
-    image:
-      'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1000&q=80',
-    year: '2025',
-    client: 'AsiaPac Net Media Ltd',
-  },
+
+
+
+
+
+
 ];
 
 export const TIMELINE_ITEMS: TimelineItem[] = [
