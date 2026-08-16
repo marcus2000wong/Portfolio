@@ -98,7 +98,7 @@ export const CircularTimeline: React.FC = () => {
                 <p
                   className={`font-heading text-lg font-medium tracking-[-0.03em] transition-colors duration-300 ${
                     index === activeIndex
-                      ? 'text-[#4D7CFF]'
+                      ? 'text-white/65'
                       : 'text-white/65'
                   }`}
                 >
@@ -117,7 +117,7 @@ export const CircularTimeline: React.FC = () => {
                   <p
                     className={`mt-1 text-xl font-medium tracking-[-0.035em] transition-colors duration-500 ${
                       index === activeIndex
-                        ? 'text-[#4D7CFF]'
+                        ? 'text-white/65'
                         : 'text-white/65'
                     }`}
                   >
@@ -131,7 +131,7 @@ export const CircularTimeline: React.FC = () => {
                   <p
                     className={`mt-1 text-xl font-medium tracking-[-0.035em] transition-colors duration-500 ${
                       index === activeIndex
-                        ? 'text-[#4D7CFF]'
+                        ? 'text-white/65'
                         : 'text-white/65'
                     }`}
                   >
