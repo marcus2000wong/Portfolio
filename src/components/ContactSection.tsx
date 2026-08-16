@@ -10,7 +10,7 @@ export const ContactSection: React.FC = () => (
       <div className="pointer-events-none absolute inset-x-[4%] bottom-[-8%] z-[1] h-52 rounded-[50%] bg-[#4D7CFF]/22 blur-[76px]" />
       <div className="pointer-events-none absolute right-[10%] top-[12%] z-[1] h-40 w-40 rounded-full bg-[#4D7CFF]/10 blur-[72px]" />
       <div className="relative z-10 mx-auto flex max-w-5xl flex-1 flex-col items-center justify-center text-center">
-        <p className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ &nbsp; Let’s work together</p>
+        <p className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ Let’s work together</p>
         <h2 className="mt-7 font-heading text-[clamp(4.5rem,12vw,11rem)] font-medium leading-[0.82] tracking-[-0.075em]">
           Say Hello.
         </h2>
