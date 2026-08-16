@@ -5,16 +5,22 @@ export type CategoryFilter = 'All' | 'UI/UX' | 'Printing' | 'Social Media' | 'Vi
 export interface Project {
   id: string;
   title: string;
-  category: CategoryFilter;
-  subCategory?: string;
+  category: string;
+  subCategory: string;
   description: string;
   tags: string[];
+
   image: string;
   hoverImage?: string;
+
+  media?: {
+    type: 'image' | 'video' | 'iframe';
+    src: string;
+  };
+
   year: string;
-  client?: string;
+  client: string;
   featured?: boolean;
-  gallery?: string[];
   liveUrl?: string;
 }
 

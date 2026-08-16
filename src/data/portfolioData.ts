@@ -28,72 +28,114 @@ export const MARCUS_PROFILE = {
 
 export const PROJECTS: Project[] = [
   // UI/UX Projects
+  
+
   {
     id: '1',
-    title: 'HeartX®',
+    title: 'Elyze Web Design',
     category: 'UI/UX',
-    subCategory: 'Brand Strategy & Product Design',
+    subCategory: 'Design & Development',
     description:
-      'Designing and launching custom websites from the ground up for corporate, F&B, and education enterprise clients. Built with user-centric responsive layouts, polished interaction design, and high-performance frontend architecture.',
-    tags: ['Figma', 'UI/UX', 'HTML/CSS/JS', 'Tailwind CSS', 'Responsive Web'],
-    image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80',
-    year: '2026',
-    client: 'AsiaPac Net Media Ltd',
+      'A premium, technology-driven website designed for the medical aesthetics industry. The visual direction combines clean editorial layouts, modern typography, clinical information and high-impact imagery to create a sophisticated yet approachable digital experience.The website focuses on clear content hierarchy, responsive design and conversion-driven user journeys, presenting complex A.I. body-shaping technology in a simple and visually engaging way.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-01.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'iframe',
+      src: 'https://www.elyze.com.hk/',
+    },
+
+    year: '2023',
+    client: 'As One Interactive LTD',
     featured: true,
+    liveUrl: 'https://www.elyze.com.hk/',
   },
   {
     id: '2',
-    title: 'Swave®',
+    title: 'AsiaPac Website Revamp',
     category: 'UI/UX',
-    subCategory: 'Web Design & Identity',
+    subCategory: 'Design & Development',
     description:
-      'End-to-end UI/UX design and Bootstrap web architecture for smart home routers and IoT ecosystem. Created intuitive navigation systems, product configurators, and conversion-optimized checkout funnels.',
-    tags: ['Figma', 'Bootstrap', 'Adobe XD', 'User Research', 'E-commerce'],
-    image:
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80',
-    year: '2025',
-    client: 'GL.iNet Technology LTD',
+      'A modern corporate website designed for a technology-driven digital marketing company. The visual direction combines structured layouts, bold typography and technology-focused graphics to communicate innovation, expertise and global capabilities. The website uses clear content hierarchy, service-focused navigation and case-study presentation to organize complex information while maintaining a professional and engaging digital experience.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-02.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'iframe',
+      src: 'https://www.asiapacdigital.com/',
+    },
+
+    year: '2026',
+    client: 'AsiaPac Net Media Ltd',
     featured: true,
+    liveUrl: 'https://www.asiapacdigital.com/',
   },
   {
     id: '3',
-    title: 'Greenergy®',
+    title: 'ZA Bank Web Design',
     category: 'UI/UX',
-    subCategory: 'Brand Strategy & Web Design',
+    subCategory: 'Design & Development(Front End Only)',
     description:
-      'Experimental dark-mode adaptive agency portal featuring mouse-driven video scrubbing, fluid micro-interactions, and conversational prompt design.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'AI Prompting', 'Figma'],
-    image:
-      'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
-    year: '2024',
-    client: 'Mainframe® Labs',
+      'A modern FinTech website designed for a digital-first banking experience. The visual direction combines bold branding, clean layouts and technology-focused visuals to create an approachable and innovative alternative to traditional banking. The website uses clear information hierarchy, product-focused sections and intuitive navigation to simplify complex financial services while maintaining a trustworthy and user-friendly digital experience.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-03.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/za.png',
+    },
+
+    year: '2026',
+    client: 'AsiaPac Net Media Ltd',
+    featured: true,
+    liveUrl: 'https://bank.za.group/',
   },
   {
-    id: '10',
-    title: 'Helix Gallery',
+    id: '4',
+    title: 'Friso Signature Web Design',
     category: 'UI/UX',
-    subCategory: 'Interactive 3D Web Experience',
+    subCategory: 'Design & Development',
     description:
-      'A continuous Three.js image gallery built as a curved 3D helix. The experience combines cylindrical mesh deformation, pointer-responsive camera movement, drag interaction, and wheel-driven momentum in a seamless looping showcase.',
-    tags: ['Three.js', 'React', 'WebGL', '3D Interaction', 'Creative Development'],
-    image: '/project-assets/helix-gallery-cover.jpg',
-    hoverImage: '/project-assets/helix-gallery-hover.jpg',
-    year: '2026',
-    client: 'Marcus Wong — Experimental Web',
+      'A premium, science-led product website designed for the infant nutrition market. The visual direction combines sophisticated lifestyle imagery, clean layouts and educational content to create a trustworthy and reassuring brand experience.The website uses visual storytelling, structured product information and interactive content sections to communicate complex nutritional benefits in a clear, engaging and consumer-friendly way.',
+
+    tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+
+    // Image shown BEFORE clicking the project
+    image: '/cover/cover-04.jpg',
+
+    // The image area BECOMES this iframe after clicking
+    media: {
+      type: 'image',
+      src: '/portfolio/friso.png',
+    },
+
+    year: '2023',
+    client: 'AsiaPac Net Media Ltd',
     featured: true,
-    liveUrl: 'http://localhost:4186/',
+    liveUrl: 'https://www.friso.com.hk/friso-signature',
   },
+
+
+
+
+
+
 
   // Printing Projects
   {
-    id: '4',
+    id: '10',
     title: 'Lumina Editorial',
     category: 'Printing',
     subCategory: 'Print Production & Editorial Design',
@@ -109,7 +151,7 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: '5',
+    id: '11',
     title: 'AeroTech Expo',
     category: 'Printing',
     subCategory: 'Large Format & Trade Show Collateral',
@@ -126,7 +168,7 @@ export const PROJECTS: Project[] = [
 
   // Social Media Projects
   {
-    id: '6',
+    id: '12',
     title: 'Verve Studio',
     category: 'Social Media',
     subCategory: 'Social Strategy & Visual Identity',
@@ -142,7 +184,7 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: '7',
+    id: '13',
     title: 'Aura Glow',
     category: 'Social Media',
     subCategory: 'Visual Content & Creative Strategy',
@@ -159,7 +201,7 @@ export const PROJECTS: Project[] = [
 
   // Video Projects
   {
-    id: '8',
+    id: '14',
     title: 'Kinetix 3D',
     category: 'Video',
     subCategory: '3D Motion Graphics & Commercials',
@@ -175,7 +217,7 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: '9',
+    id: '15',
     title: 'CineCraft',
     category: 'Video',
     subCategory: 'Video Editing & Visual FX',

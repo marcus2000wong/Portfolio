@@ -45,7 +45,7 @@ export const PortfolioSection: React.FC = () => {
         aria-hidden="true"
       >
         <p className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ Selected work</p>
-        <p className="mt-4 whitespace-nowrap font-heading text-[clamp(5rem,15vw,15rem)] font-medium leading-[0.72] tracking-[-0.08em] text-white/[0.055]">
+        <p className="mt-4 whitespace-nowrap font-heading text-[clamp(5rem,15vw,15rem)] font-medium leading-[0.72] py-2 text-white/[0.055]">
           {currentProject?.title}
         </p>
       </motion.div>
@@ -74,10 +74,10 @@ export const PortfolioSection: React.FC = () => {
           <span className="h-px w-10 bg-white/15" />
           <span>{currentProject?.category}</span>
         </div>
-        <h1 className="mt-3 font-heading text-4xl font-medium leading-none tracking-[-0.055em] text-white lg:text-5xl">
+        <h2 className="mt-3 font-heading text-[clamp(3.3rem,8vw,8.5rem)] font-medium leading-[0.86] tracking-[-0.065em] text-white mb-7">
           {currentProject?.title}
-        </h1>
-        <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.18em] text-white/35">
+        </h2>
+        <p className="mt-3 font-mono text-[15px] uppercase tracking-[0.18em] text-white/35">
           {currentProject?.client} · {currentProject?.year}
         </p>
       </motion.aside>
@@ -108,51 +108,207 @@ export const PortfolioSection: React.FC = () => {
         </nav>
       </div>
 
-      <AnimatePresence>
-        {selectedProject && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-xl sm:p-6">
-            <button type="button" className="absolute inset-0 cursor-default" onClick={() => setSelectedProject(null)} aria-label="Close project" />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 24 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92, y: 24 }}
-              className="relative z-10 flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#101111] text-white shadow-2xl"
-            >
-              <div className="relative h-64 overflow-hidden bg-black sm:h-80">
-                <img
-                  src={selectedProject.hoverImage || selectedProject.image}
-                  alt={selectedProject.title}
+    <AnimatePresence>
+      {selectedProject && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-xl sm:p-6">
+
+          {/* Background click to close */}
+          <button
+            type="button"
+            className="absolute inset-0 cursor-default"
+            onClick={() => setSelectedProject(null)}
+            aria-label="Close project"
+          />
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.92, y: 24 }}
+            transition={{
+              duration: 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="relative z-10 flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#101111] text-white shadow-2xl"
+          >
+
+            {/* ============================= */}
+            {/* MEDIA AREA */}
+            {/* ============================= */}
+
+            <div className="relative h-[42vh] min-h-[320px] w-full overflow-hidden bg-black sm:h-[52vh]">
+
+              {/* ============================= */}
+              {/* VIDEO */}
+              {/* ============================= */}
+
+              {selectedProject.media?.type === 'video' ? (
+                <video
+                  src={selectedProject.media.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                   className="h-full w-full object-cover"
-                  referrerPolicy="no-referrer"
-                  onError={(event) => {
-                    event.currentTarget.onerror = null;
-                    event.currentTarget.src = fallbackFor(selectedProject);
-                  }}
                 />
-                <button type="button" onClick={() => setSelectedProject(null)} className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/75 text-white transition hover:bg-white hover:text-black" aria-label="Close case study">×</button>
-                <div className="absolute bottom-4 left-4 rounded-full bg-black/80 px-3.5 py-1 font-mono text-xs text-white backdrop-blur-md">{selectedProject.category}</div>
-              </div>
-              <div className="space-y-5 overflow-y-auto p-6 sm:p-8">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-[#4D7CFF]">{selectedProject.client || 'Client Project'}</span>
-                    <h2 className="mt-1 font-heading text-3xl tracking-[-0.04em] text-white sm:text-4xl">{selectedProject.title}</h2>
-                    <p className="mt-1 text-sm text-white/45">{selectedProject.subCategory}</p>
+
+              ) : selectedProject.media?.type === 'iframe' ? (
+
+                /* ============================= */
+                /* IFRAME */
+                /* ============================= */
+
+                <div className="relative h-full w-full overflow-hidden bg-white">
+                  <iframe
+                    key={selectedProject.id}
+                    src={selectedProject.media.src}
+                    title={selectedProject.title}
+                    className="h-full w-full border-0"
+                    scrolling="yes"
+                  />
+
+                  {/* Scroll Hint */}
+                  <div className="pointer-events-none absolute bottom-5 left-1/2 z-20 -translate-x-1/2">
+                    <div className="flex items-center gap-2 rounded-full bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md">
+                      <span>Scroll to preview</span>
+
+                      <span
+                        className="inline-block animate-bounce"
+                        aria-hidden="true"
+                      >
+                        ↓
+                      </span>
+                    </div>
                   </div>
-                  <span className="rounded-full bg-white/[0.08] px-3 py-1 font-mono text-sm text-white/70">{selectedProject.year}</span>
                 </div>
-                <p className="text-sm leading-7 text-white/65 sm:text-base">{selectedProject.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tags.map((tag) => <span key={tag} className="rounded-full bg-white/[0.07] px-3 py-1.5 font-mono text-xs text-white/65">{tag}</span>)}
+
+              ) : (
+
+                /* ============================= */
+                /* IMAGE - MANUAL SCROLL */
+                /* ============================= */
+
+                <div className="relative h-full w-full overflow-y-auto overflow-x-hidden bg-black">
+
+                  <img
+                    src={
+                      selectedProject.media?.type === 'image'
+                        ? selectedProject.media.src
+                        : selectedProject.hoverImage || selectedProject.image
+                    }
+                    alt={selectedProject.title}
+                    className="block h-auto min-h-full w-full object-cover object-top"
+                    referrerPolicy="no-referrer"
+                    onError={(event) => {
+                      event.currentTarget.onerror = null;
+                      event.currentTarget.src =
+                        fallbackFor(selectedProject);
+                    }}
+                  />
+
+                  {/* Scroll Hint */}
+                  <div className="pointer-events-none sticky bottom-5 z-20 flex justify-center">
+                    <div className="flex items-center gap-2 rounded-full bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md">
+                      <span>Scroll to preview</span>
+
+                      <span
+                        className="inline-block animate-bounce"
+                        aria-hidden="true"
+                      >
+                        ↓
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                {selectedProject.liveUrl && (
-                  <a href={selectedProject.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-black transition hover:bg-[#4D7CFF] hover:text-white">View live project <span aria-hidden="true">↗</span></a>
-                )}
+              )}
+
+              {/* ============================= */}
+              {/* CLOSE BUTTON */}
+              {/* ============================= */}
+
+              <button
+                type="button"
+                onClick={() => setSelectedProject(null)}
+                className="absolute right-5 top-5 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-black/75 text-xl text-white shadow-lg backdrop-blur-md transition hover:bg-white hover:text-black"
+                aria-label="Close case study"
+              >
+                ×
+              </button>
+
+              {/* ============================= */}
+              {/* CATEGORY */}
+              {/* ============================= */}
+
+              <div className="pointer-events-none absolute bottom-5 left-5 z-30 rounded-full bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md">
+                {selectedProject.category}
               </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+            </div>
+
+            {/* ============================= */}
+            {/* PROJECT INFORMATION */}
+            {/* ============================= */}
+
+            <div className="space-y-5 overflow-y-auto p-6 sm:p-8 lg:px-10 lg:py-8">
+
+              <div className="flex items-start justify-between gap-6">
+
+                <div>
+                  {/* Client */}
+                  <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#4D7CFF]">
+                    {selectedProject.client || 'Client Project'}
+                  </span>
+
+                  {/* Title */}
+                  <h2 className="mt-2 font-heading text-3xl text-white sm:text-4xl lg:text-5xl">
+                    {selectedProject.title}
+                  </h2>
+
+                  {/* Sub Category */}
+                  <p className="mt-2 text-sm text-white/45">
+                    {selectedProject.subCategory}
+                  </p>
+                </div>
+
+                {/* Year */}
+                <span className="shrink-0 rounded-full bg-white/[0.08] px-3.5 py-1.5 font-mono text-sm text-white/70">
+                  {selectedProject.year}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="max-w-4xl text-sm leading-7 text-white/65 sm:text-base">
+                {selectedProject.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-white/[0.07] px-3 py-1.5 font-mono text-xs text-white/65"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Live Project */}
+              {selectedProject.liveUrl && (
+                <a
+                  href={selectedProject.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 font-mono text-xs uppercase tracking-[0.08em] text-black transition hover:bg-[#4D7CFF] hover:text-white"
+                >
+                  View live project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
     </section>
   );
 };

@@ -77,7 +77,7 @@ export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projec
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     mount.appendChild(renderer.domElement);
 
-    const geometry = createCurvedGeometry(3.65, 2.4, 0.68);
+    const geometry = createCurvedGeometry(3.65, 2.4, 0.60);
     const roundedAlphaMap = createRoundedAlphaMap();
     const loader = new THREE.TextureLoader();
     loader.setCrossOrigin('anonymous');
@@ -200,9 +200,9 @@ export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projec
       }
 
       const total = meshes.length;
-      const angleStep = 0.92;
+      const angleStep = 0.78;
       const radius = 5;
-      const pitch = 1.16;
+      const pitch = 1.1;
       const totalAngle = total * angleStep;
       const halfTotalAngle = totalAngle * 0.5;
       let closestIndex = 0;
