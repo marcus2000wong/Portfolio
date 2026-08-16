@@ -262,16 +262,16 @@ export const PROJECTS: Project[] = [
   // Video Projects
   {
       id: '9',
-      title: 'Magiclean Web Design',
+      title: 'Prudential Hong Kong IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+        'A dynamic social media Reel combining fast-paced editing, motion graphics, and branded visual elements to create an engaging short-form promotional experience.',
 
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+      tags: ['After Effect', 'Photoshop',],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-01.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -279,23 +279,23 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/1.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2026',
+      client: 'AsiaPac Net Media LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/p/DbcCNIfj22H/',
     },
    {
       id: '10',
-      title: 'Magiclean Web Design',
+      title: 'Standard Charter IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+        'Animated chat UI with sequential message reveals, pop-up graphics, smooth slide transitions and playful bounce effects to create an engaging conversational narrative.',
 
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+      tags: ['UI','Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-02.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -303,23 +303,24 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/2.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2026',
+      client: 'AsiaPac Net Media LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/reel/DaKERaGAbFg/',
     },
+
+
     {
       id: '11',
-      title: 'Magiclean Web Design',
+      title: 'Galderma AI IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
-
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+        'AI-driven and visually bold, combining generative AI imagery, dynamic motion, strong typography and fast-paced editing to create distinctive social-first content.',
+      tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-03.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -327,23 +328,21 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/3.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2026',
+      client: 'AsiaPac Net Media LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/reel/DZcq6RxK7iK/',
     },
     {
       id: '12',
-      title: 'Magiclean Web Design',
+      title: 'Galderma IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
-
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
-
+        'Bold, playful and beauty-led, combining vibrant brand colours, rounded modular layouts, 3D product visuals and dynamic motion for an energetic social-first aesthetic.',
+      tags: ['Motion Graphics','Video Editing'],
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-04.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -351,23 +350,22 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/4.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2026',
+      client: 'AsiaPac Net Media LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/reel/DTPSYqulOwA/',
     },
     {
       id: '13',
-      title: 'Magiclean Web Design',
+      title: 'Prudential HK IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
-
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+        'Bold, futuristic and information-driven, using oversized typography, high-contrast red accents, 3D visuals and dynamic motion to turn financial information into an immediate visual message.',
+      tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-05.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -375,23 +373,28 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/5.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2026',
+      client: 'AsiaPac Net Media LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/reel/DZL1vp7iYvq/',
     },
+
+
+
+
+    
     {
       id: '14',
-      title: 'Magiclean Web Design',
+      title: 'X2000 Launch Teaser',
       category: 'Video',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+        'A sleek, premium social-media direction focused on refined composition, controlled motion, and polished transitions. The visual treatment feels modern and sophisticated, using strong product/brand presentation with a cinematic approach to pacing and storytelling.',
 
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+      tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-06.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -399,23 +402,23 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/6.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/reel/DEW7l87xdIG/',
     },
     {
       id: '15',
-      title: 'Magiclean Web Design',
+      title: 'B3000 Launch Teaser',
       category: 'Videos',
       subCategory: 'Design & Development',
       description:
-        'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
+        'A bold, contemporary social-first direction combining dynamic motion, clean compositions, and fast-paced transitions. Strong visual hierarchy and energetic pacing create an engaging, polished look optimized for short-form content.',
 
-      tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
+      tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/cover-09.jpg',
+      image: '/cover/video-7.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -423,10 +426,10 @@ export const PROJECTS: Project[] = [
         src: '/portfolio/7.mp4',
       },
 
-      year: '2023',
-      client: 'As One Interactive LTD',
+      year: '2024',
+      client: 'Gl.iNet Technology LTD',
       featured: true,
-      liveUrl: 'https://web.kao.com/hk/magiclean/',
+      liveUrl: 'https://www.instagram.com/reel/C8t9xrHyiwv/',
     },
 
 
