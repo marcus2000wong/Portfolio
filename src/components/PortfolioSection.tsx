@@ -141,17 +141,37 @@ export const PortfolioSection: React.FC = () => {
               {/* VIDEO */}
               {/* ============================= */}
 
+              {/* VIDEO */}
               {selectedProject.media?.type === 'video' ? (
-                <video
-                  src={selectedProject.media.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className="h-full w-full object-cover"
-                />
+                <div className="relative h-full w-full overflow-hidden bg-black">
 
+                  {/* Blurred background */}
+                  <video
+                    src={selectedProject.media.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-60"
+                  />
+
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/20" />
+
+                  {/* Main video - full video, no crop */}
+                  <video
+                    src={selectedProject.media.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    controls
+                    className="relative z-10 h-full w-full object-contain"
+                  />
+                </div>
               ) : selectedProject.media?.type === 'iframe' ? (
 
                 /* ============================= */
