@@ -263,7 +263,7 @@ export const PROJECTS: Project[] = [
   {
       id: '9',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
@@ -287,7 +287,7 @@ export const PROJECTS: Project[] = [
    {
       id: '10',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
@@ -311,7 +311,7 @@ export const PROJECTS: Project[] = [
     {
       id: '11',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
@@ -335,7 +335,7 @@ export const PROJECTS: Project[] = [
     {
       id: '12',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
@@ -359,7 +359,7 @@ export const PROJECTS: Project[] = [
     {
       id: '13',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
@@ -383,7 +383,7 @@ export const PROJECTS: Project[] = [
     {
       id: '14',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
@@ -407,7 +407,7 @@ export const PROJECTS: Project[] = [
     {
       id: '15',
       title: 'Magiclean Web Design',
-      category: 'UI/UX',
+      category: 'Videos',
       subCategory: 'Design & Development',
       description:
         'A clean and approachable consumer-brand website designed for the household cleaning market. The visual direction combines bright layouts, lifestyle imagery, strong brand colours and product-focused graphics to create a friendly and trustworthy digital experience. The structured catalogue-style layout allows users to explore cleaning solutions by household area and product category, making a large product range simple, accessible and easy to navigate.',
