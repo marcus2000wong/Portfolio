@@ -346,13 +346,13 @@ export const BRANDS: Brand[] = [
     id: 'b4',
     name: 'Coventry University',
     category: 'Higher Education (UK)',
-    logo: '/logo/logo-04.png',
+    logo: './logo/logo-04.png',
   },
   {
     id: 'b5',
     name: 'Mainframe® Labs',
     category: 'Creative Tech & AI Architecture',
-    logo: '/logo/logo-05.png',
+    logo: './logo/logo-05.png',
   },
   {
     id: 'b6',
