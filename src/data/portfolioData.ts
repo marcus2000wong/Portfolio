@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     // The image area BECOMES this iframe after clicking
     media: {
       type: 'image',
-      src: '/portfolio/za.png',
+      src: '/portfolio/za.jpg',
     },
 
     year: '2026',
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     // The image area BECOMES this iframe after clicking
     media: {
       type: 'image',
-      src: '/portfolio/friso.png',
+      src: '/portfolio/friso.jpg',
     },
 
     year: '2023',
