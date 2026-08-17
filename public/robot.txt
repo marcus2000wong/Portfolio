@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dev.marcus2000wong.workers.dev/sitemap.xml
+Sitemap: https://marcuswongstudio.org/sitemap.xml
