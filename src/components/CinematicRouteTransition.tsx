@@ -58,7 +58,7 @@ export function CinematicRouteTransition() {
         transition={{ duration: 0.78, ease: [0.76, 0, 0.24, 1] }}
       />
       <motion.div
-        className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(255,77,17,0.18),rgba(34,35,76,0.32),transparent)]"
+        className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(0, 115, 255, 0.18),rgba(34,35,76,0.32),transparent)]"
         initial={{ x: entering ? '0%' : '-100%', opacity: 0.9 }}
         animate={{ x: visible ? '0%' : '100%', opacity: visible ? 0.9 : 0 }}
         transition={{ duration: 0.86, ease: [0.76, 0, 0.24, 1] }}
