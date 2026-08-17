@@ -440,11 +440,11 @@ export const PROJECTS: Project[] = [
   
 
 
-  // Printing & E-comerical Projects
+  // Printing & E-commerical Projects
   {
     id: '10',
     title: 'Lumina Editorial',
-    category: 'Printing & E-comerical',
+    category: 'Printing & E-commerical',
     subCategory: 'Print Production & Editorial Design',
     description:
       'Crafted high-end print collateral, restaurant menus, product box packaging, and promotional brochures. Managed color calibration, press-ready prepress files, and specialty foil finishing.',
@@ -460,7 +460,7 @@ export const PROJECTS: Project[] = [
   {
     id: '11',
     title: 'AeroTech Expo',
-    category: 'Printing & E-comerical',
+    category: 'Printing & E-commerical',
     subCategory: 'Large Format & Trade Show Collateral',
     description:
       'Designed booth backdrops, large-format event banners, tech spec sheets, and physical product packaging for international hardware expos.',
@@ -810,5 +810,35 @@ export const BRANDS: Brand[] = [
     name: 'Shebbear College',
     category: 'UK Academy',
     logo: '/logo/logo-08.png',
+  },
+  {
+    id: 'b9',
+    name: 'Shebbear College',
+    category: 'UK Academy',
+    logo: '/logo/logo-09.png',
+  },
+  {
+    id: 'b10',
+    name: 'Shebbear College',
+    category: 'UK Academy',
+    logo: '/logo/logo-10.png',
+  },
+  {
+    id: 'b11',
+    name: 'Shebbear College',
+    category: 'UK Academy',
+    logo: '/logo/logo-11.png',
+  },
+  {
+    id: 'b12',
+    name: 'Shebbear College',
+    category: 'UK Academy',
+    logo: '/logo/logo-12.png',
+  },
+  {
+    id: 'b13',
+    name: 'Shebbear College',
+    category: 'UK Academy',
+    logo: '/logo/logo-13.png',
   },
 ];

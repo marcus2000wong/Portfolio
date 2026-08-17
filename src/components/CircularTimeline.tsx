@@ -38,7 +38,7 @@ export const CircularTimeline: React.FC = () => {
   // `scrollYProgress` runs across the complete timeline element (viewport +
   // pinned travel), so map the first 550px of the 600px pinned range here.
   // The remaining 50px holds Shebbear on the left before Projects begins.
-  const movementEnd = 550 / (viewport.height + 600);
+  const movementEnd = 1100 / (viewport.height + 1200);
   const cardWidth = viewport.width >= 1024 ? viewport.width * 0.29 : viewport.width >= 640 ? viewport.width * 0.48 : viewport.width * 0.74;
   // Move all the way through the final item. The old ref measurement could retain
   // its fallback value, ending the sequence on the third (As One) card instead.
@@ -61,9 +61,13 @@ export const CircularTimeline: React.FC = () => {
   }, [careerItems.length, movementEnd, progress]);
 
   return (
-    <section ref={sectionRef} id="timeline" className="relative z-10 -mt-px h-[calc(100svh_+_600px)] w-screen bg-black/30 text-white">
+    <section
+      ref={sectionRef}
+      id="timeline"
+      className="relative z-10 -mt-px h-[calc(100svh_+_1200px)] w-screen bg-black/30 text-white"
+    >
       <div className="sticky top-0 h-screen w-screen overflow-hidden bg-black/70 backdrop-blur-[12px]">
-      <div className="absolute inset-x-0 top-[4svh] h-[92svh] overflow-hidden border-y border-white/10">
+        <div className="absolute inset-x-0 top-[4svh] h-[92svh] overflow-hidden border-y border-white/10">
         <p className="absolute left-5 top-6 z-10 text-[15px] uppercase tracking-[0.22em] text-[#4D7CFF] sm:left-10 sm:top-9">■ Career &amp; education</p>
         <motion.div
           style={{ x }}

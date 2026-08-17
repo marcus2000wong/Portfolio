@@ -1,6 +1,6 @@
 export type ModalType = 'labs' | 'studio' | 'openings' | 'contact' | 'pitch' | null;
 
-export type CategoryFilter = 'All' | 'UI/UX' | 'Printing & E-comerical' | 'Social Media' | 'Video';
+export type CategoryFilter = 'All' | 'UI/UX' | 'Printing & E-commerical' | 'Social Media' | 'Video';
 
 export interface Project {
   id: string;

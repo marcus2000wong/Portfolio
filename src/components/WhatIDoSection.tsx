@@ -29,10 +29,10 @@ const SERVICES: ServiceItem[] = [
   {
     id: '03',
     code: 'MO-03',
-    title: 'Printing & E-comerical and Packaging',
+    title: 'Printing & E-commerical and Packaging',
     description:
       'Designing print materials with a strong focus on typography, layout, and visual identity.Creating consistent and impactful designs across both editorial and promotional work.',
-    capabilities: ['Printing & E-comerical ', 'Typography', 'Layout', 'Alignment'],
+    capabilities: ['Printing & E-commerical ', 'Typography', 'Layout', 'Alignment'],
   },
   {
     id: '04',
