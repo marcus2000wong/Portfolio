@@ -437,45 +437,6 @@ export const PROJECTS: Project[] = [
 
 
 
-  
-
-
-  // Printing & E-commerical Projects
-  {
-    id: '10',
-    title: 'Lumina Editorial',
-    category: 'Printing & E-commerical',
-    subCategory: 'Print Production & Editorial Design',
-    description:
-      'Crafted high-end print collateral, restaurant menus, product box packaging, and promotional brochures. Managed color calibration, press-ready prepress files, and specialty foil finishing.',
-    tags: ['Illustrator', 'InDesign', 'Photoshop', 'Print Production', 'Packaging'],
-    image:
-      'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=80',
-    year: '2023',
-    client: 'As One Interactive LTD',
-    featured: true,
-  },
-  {
-    id: '11',
-    title: 'AeroTech Expo',
-    category: 'Printing & E-commerical',
-    subCategory: 'Large Format & Trade Show Collateral',
-    description:
-      'Designed booth backdrops, large-format event banners, tech spec sheets, and physical product packaging for international hardware expos.',
-    tags: ['Illustrator', 'Photoshop', 'Prepress', 'Large Format', 'Brand Guidelines'],
-    image:
-      'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1000&q=80',
-    hoverImage:
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
-    year: '2024',
-    client: 'GL.iNet Technology LTD',
-  },
-
-
-
-
 
 
 
@@ -617,6 +578,150 @@ export const PROJECTS: Project[] = [
       client: 'AsiaPac Net Media Ltd',
       featured: true,
     },
+
+
+
+    // Printing & E-commerical Projects
+    {
+      id: '27',
+      title: 'TKG Printing Design',
+      category: 'Printing & E-commerical',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['Printing', 'Graphic Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/printing-01.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/printing-01.jpg',
+      },
+
+      year: '2026',
+      client: 'AsiaPac Net Media Ltd',
+      featured: true,
+    },
+    {
+      id: '28',
+      title: 'Sim card Manual',
+      category: 'Printing & E-commerical',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['Printing', 'Layout Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/printing-02.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/printing-02.jpg',
+      },
+
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
+      featured: true,
+    },
+
+    {
+      id: '29',
+      title: 'Be-3600 Manual',
+      category: 'Printing & E-commerical',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['Printing', 'Layout Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/printing-03.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/printing-03.jpg',
+      },
+
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
+      featured: true,
+    },
+
+
+    {
+      id: '30',
+      title: 'KVM Amazon Listing Design',
+      category: 'Printing & E-commerical',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['Printing', 'Layout Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/printing-04.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/printing-04.jpg',
+      },
+
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
+      featured: true,
+    },
+    {
+      id: '31',
+      title: 'Chinese E-commerce Listing Design',
+      category: 'Printing & E-commerical',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['Printing', 'Layout Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/printing-05.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/printing-05.jpg',
+      },
+
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
+      featured: true,
+    },
+    {
+      id: '32',
+      title: 'B3000 Amazon Listing Design',
+      category: 'Printing & E-commerical',
+      subCategory: 'Design & Development',
+      description:
+        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+      tags: ['Printing', 'Layout Design'],
+
+      // Image shown BEFORE clicking the project
+      image: '/cover/printing-07.jpg',
+
+      // The image area BECOMES this iframe after clicking
+      media: {
+        type: 'image',
+        src: '/portfolio/printing-07.jpg',
+      },
+
+      year: '2024',
+      client: 'GL.iNet Technology LTD',
+      featured: true,
+    },
+
+
+
+
+
 
 
 
