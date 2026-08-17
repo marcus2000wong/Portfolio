@@ -119,32 +119,24 @@ export const PortfolioSection: React.FC = () => {
             onClick={() => setSelectedProject(null)}
             aria-label="Close project"
           />
-
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 24 }}
+            initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 24 }}
+            exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{
               duration: 0.35,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative z-10 flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#101111] text-white shadow-2xl"
+            className="relative z-10 flex h-[76vh] max-h-[820px] w-full max-w-[1500px] overflow-hidden  border border-white/10 bg-[#101111] text-white shadow-2xl"
           >
+            {/* ================================= */}
+            {/* LEFT — SHOWCASE */}
+            {/* ================================= */}
 
-            {/* ============================= */}
-            {/* MEDIA AREA */}
-            {/* ============================= */}
-
-            <div className="relative h-[42vh] min-h-[320px] w-full overflow-hidden bg-black sm:h-[52vh]">
-
-              {/* ============================= */}
-              {/* VIDEO */}
-              {/* ============================= */}
-
+            <div className="relative h-full min-w-0 flex-[2.6] overflow-hidden bg-black">
               {/* VIDEO */}
               {selectedProject.media?.type === 'video' ? (
                 <div className="relative h-full w-full overflow-hidden bg-black">
-
                   {/* Blurred background */}
                   <video
                     src={selectedProject.media.src}
@@ -154,13 +146,12 @@ export const PortfolioSection: React.FC = () => {
                     playsInline
                     preload="metadata"
                     aria-hidden="true"
-                    className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-60"
+                    className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-2xl"
                   />
 
-                  {/* Dark overlay */}
                   <div className="absolute inset-0 bg-black/20" />
 
-                  {/* Main video - full video, no crop */}
+                  {/* Main Video */}
                   <video
                     src={selectedProject.media.src}
                     autoPlay
@@ -173,11 +164,7 @@ export const PortfolioSection: React.FC = () => {
                   />
                 </div>
               ) : selectedProject.media?.type === 'iframe' ? (
-
-                /* ============================= */
                 /* IFRAME */
-                /* ============================= */
-
                 <div className="relative h-full w-full overflow-hidden bg-white">
                   <iframe
                     key={selectedProject.id}
@@ -187,29 +174,16 @@ export const PortfolioSection: React.FC = () => {
                     scrolling="yes"
                   />
 
-                  {/* Scroll Hint */}
                   <div className="pointer-events-none absolute bottom-5 left-1/2 z-20 -translate-x-1/2">
-                    <div className="flex items-center gap-2 rounded-full bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md">
+                    <div className="flex items-center gap-2 bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md">
                       <span>Scroll to preview</span>
-
-                      <span
-                        className="inline-block animate-bounce"
-                        aria-hidden="true"
-                      >
-                        ↓
-                      </span>
+                      <span className="inline-block animate-bounce">↓</span>
                     </div>
                   </div>
                 </div>
-
               ) : (
-
-                /* ============================= */
-                /* IMAGE - MANUAL SCROLL */
-                /* ============================= */
-
+                /* IMAGE */
                 <div className="relative h-full w-full overflow-y-auto overflow-x-hidden bg-black">
-
                   <img
                     src={
                       selectedProject.media?.type === 'image'
@@ -221,109 +195,93 @@ export const PortfolioSection: React.FC = () => {
                     referrerPolicy="no-referrer"
                     onError={(event) => {
                       event.currentTarget.onerror = null;
-                      event.currentTarget.src =
-                        fallbackFor(selectedProject);
+                      event.currentTarget.src = fallbackFor(selectedProject);
                     }}
                   />
 
-                  {/* Scroll Hint */}
                   <div className="pointer-events-none sticky bottom-5 z-20 flex justify-center">
-                    <div className="flex items-center gap-2 rounded-full bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md">
+                    <div className="flex items-center gap-2  bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md">
                       <span>Scroll to preview</span>
-
-                      <span
-                        className="inline-block animate-bounce"
-                        aria-hidden="true"
-                      >
-                        ↓
-                      </span>
+                      <span className="inline-block animate-bounce">↓</span>
                     </div>
                   </div>
                 </div>
               )}
 
-              {/* ============================= */}
-              {/* CLOSE BUTTON */}
-              {/* ============================= */}
+              {/* Category */}
+              <div className="pointer-events-none absolute bottom-5 left-5 z-30 bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md">
+                {selectedProject.category}
+              </div>
+            </div>
 
+            {/* ================================= */}
+            {/* RIGHT — PROJECT INFO */}
+            {/* ================================= */}
+
+            <div className="relative flex h-full w-[330px] shrink-0 flex-col border-l border-white/[0.08] bg-[#101111] p-7 lg:w-[380px] lg:p-8">
+              {/* Close */}
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="absolute right-5 top-5 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-black/75 text-xl text-white shadow-lg backdrop-blur-md transition hover:bg-white hover:text-black"
+                className="absolute right-5 top-5 z-30 flex h-10 w-10 items-center justify-center bg-white/[0.07] text-xl text-white transition hover:bg-white hover:text-black"
                 aria-label="Close case study"
               >
                 ×
               </button>
 
-              {/* ============================= */}
-              {/* CATEGORY */}
-              {/* ============================= */}
+              {/* Top info */}
+              <div className="pr-12">
+                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#4D7CFF]">
+                  {selectedProject.client || 'Client Project'}
+                </span>
 
-              <div className="pointer-events-none absolute bottom-5 left-5 z-30 rounded-full bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md">
-                {selectedProject.category}
+                <h2 className="mt-3 font-heading text-3xl leading-[1.05] tracking-[-0.04em] text-white lg:text-4xl">
+                  {selectedProject.title}
+                </h2>
+
+                <p className="mt-3 text-xs leading-5 text-white/40">
+                  {selectedProject.subCategory}
+                </p>
               </div>
-            </div>
 
-            {/* ============================= */}
-            {/* PROJECT INFORMATION */}
-            {/* ============================= */}
-
-            <div className="space-y-5 overflow-y-auto p-6 sm:p-8 lg:px-10 lg:py-8">
-
-              <div className="flex items-start justify-between gap-6">
-
-                <div>
-                  {/* Client */}
-                  <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#4D7CFF]">
-                    {selectedProject.client || 'Client Project'}
-                  </span>
-
-                  {/* Title */}
-                  <h2 className="mt-2 font-heading text-3xl text-white sm:text-4xl lg:text-5xl">
-                    {selectedProject.title}
-                  </h2>
-
-                  {/* Sub Category */}
-                  <p className="mt-2 text-sm text-white/45">
-                    {selectedProject.subCategory}
-                  </p>
-                </div>
-
-                {/* Year */}
-                <span className="shrink-0 rounded-full bg-white/[0.08] px-3.5 py-1.5 font-mono text-sm text-white/70">
+              {/* Year */}
+              <div className="mt-6">
+                <span className="inline-flex bg-white/[0.07] px-3 py-1.5 font-mono text-[10px] text-white/60">
                   {selectedProject.year}
                 </span>
               </div>
 
               {/* Description */}
-              <p className="max-w-4xl text-sm leading-7 text-white/65 sm:text-base">
+              <p className="mt-6 text-[13px] leading-6 text-white/55">
                 {selectedProject.description}
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-1.5">
                 {selectedProject.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-white/[0.07] px-3 py-1.5 font-mono text-xs text-white/65"
+                    className=" bg-white/[0.06] px-2.5 py-1 font-mono text-[10px] text-white/50"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* Live Project */}
-              {selectedProject.liveUrl && (
-                <a
-                  href={selectedProject.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 font-mono text-xs uppercase tracking-[0.08em] text-black transition hover:bg-[#4D7CFF] hover:text-white"
-                >
-                  View live project
-                  <span aria-hidden="true">↗</span>
-                </a>
-              )}
+              {/* Push button to bottom */}
+              <div className="mt-auto pt-8">
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex w-full items-center justify-between  bg-white px-5 py-3.5 font-mono text-[10px] uppercase tracking-[0.1em] text-black transition hover:bg-[#4D7CFF] hover:text-white"
+                  >
+                    <span>View live project</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
