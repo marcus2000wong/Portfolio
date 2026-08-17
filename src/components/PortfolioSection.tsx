@@ -69,21 +69,21 @@ export const PortfolioSection: React.FC = () => {
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         className="pointer-events-none absolute bottom-7 left-5 z-30 hidden max-w-sm sm:left-8 md:block lg:bottom-8 lg:left-10"
       >
-        <div className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.22em] text-white/35">
+        <div className="flex items-center gap-3 font-mono text-[9px] uppercase  text-white/35">
           <span className="text-[#4D7CFF]">{String(activeIndex + 1).padStart(2, '0')}</span>
           <span className="h-px w-10 bg-white/15" />
           <span>{currentProject?.category}</span>
         </div>
-        <h2 className="mt-3 font-heading text-[clamp(3.3rem,8vw,8.5rem)] font-medium leading-[0.86] tracking-[-0.065em] text-white mb-7">
+        <h2 className="mt-3 font-heading  text-[clamp(1.65rem,7.2vw,41.8rem)] font-medium leading-[0.86]  text-white mb-7">
           {currentProject?.title}
         </h2>
-        <p className="mt-3 font-mono text-[15px] uppercase tracking-[0.18em] text-white/35">
+        <p className="mt-3 font-mono text-[15px] uppercase  text-white/35">
           {currentProject?.client} · {currentProject?.year}
         </p>
       </motion.aside>
 
       <div className="absolute bottom-5 right-5 z-40 w-[calc(100%-2.5rem)] sm:bottom-7 sm:right-8 sm:w-auto lg:bottom-8 lg:right-10">
-        <p className="mb-2 text-right font-mono text-[8px] uppercase tracking-[0.2em] text-white/25">
+        <p className="mb-2 text-right font-mono text-[8px] uppercase  text-white/25">
           Scroll or drag to rotate · click to open
         </p>
         <nav aria-label="Filter projects" className="flex max-w-full items-center overflow-x-auto border border-white/12 bg-black/72 shadow-2xl backdrop-blur-xl">
@@ -253,7 +253,7 @@ export const PortfolioSection: React.FC = () => {
 
                     {/* Scroll Hint */}
                     <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 sm:bottom-5">
-                      <div className="flex items-center gap-2 bg-black/80 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md sm:px-4 sm:text-[10px]">
+                      <div className="flex items-center gap-2 bg-black/80 px-3 py-2 font-mono text-[9px] uppercase text-white shadow-lg backdrop-blur-md sm:px-4 sm:text-[10px]">
                         <span>Scroll to preview</span>
 
                         <span
@@ -289,7 +289,7 @@ export const PortfolioSection: React.FC = () => {
 
                     {/* Scroll Hint */}
                     <div className="pointer-events-none sticky bottom-4 z-20 flex justify-center sm:bottom-5">
-                      <div className="flex items-center gap-2 bg-black/80 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.15em] text-white shadow-lg backdrop-blur-md sm:px-4 sm:text-[10px]">
+                      <div className="flex items-center gap-2 bg-black/80 px-3 py-2 font-mono text-[9px] uppercase text-white shadow-lg backdrop-blur-md sm:px-4 sm:text-[10px]">
                         <span>Scroll to preview</span>
 
                         <span
@@ -304,7 +304,7 @@ export const PortfolioSection: React.FC = () => {
                 )}
 
                 {/* Category */}
-                <div className="pointer-events-none absolute bottom-5 left-5 z-30 hidden bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md sm:block">
+                <div className="pointer-events-none absolute bottom-5 left-5 z-30 hidden bg-black/80 px-4 py-2 font-mono text-[10px] uppercase text-white shadow-lg backdrop-blur-md sm:block">
                   {selectedProject.category}
                 </div>
               </div>
@@ -341,11 +341,11 @@ export const PortfolioSection: React.FC = () => {
 
                 {/* Top info */}
                 <div className="pr-12">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-[#4D7CFF] lg:text-[10px]">
+                  <span className="font-mono text-[9px] uppercase  text-[#4D7CFF] lg:text-[10px]">
                     {selectedProject.client || 'Client Project'}
                   </span>
 
-                  <h2 className="mt-1.5 font-heading text-2xl leading-[1] tracking-[-0.04em] text-white sm:text-3xl lg:mt-3 lg:text-4xl">
+                  <h2 className="mt-1.5 font-heading text-2xl leading-[1]  text-white sm:text-3xl lg:mt-3 lg:text-4xl">
                     {selectedProject.title}
                   </h2>
 
@@ -400,7 +400,7 @@ export const PortfolioSection: React.FC = () => {
                         font-mono
                         text-[9px]
                         uppercase
-                        tracking-[0.1em]
+                        
                         text-black
                         transition
                         hover:bg-[#4D7CFF]
