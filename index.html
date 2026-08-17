@@ -5,9 +5,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Main SEO -->
+    <!-- =========================================
+         MAIN SEO
+    ========================================== -->
+
     <title>Marcus Wong | Multimedia Designer & Creative Developer</title>
-    <meta name="google-site-verification" content="e2lietOSWF-c8lZ7hYwUUmvPG3xqmNAvPR99b5FdGcc" />
+
     <meta
       name="description"
       content="Portfolio of Marcus Wong, a multimedia designer and creative developer specializing in web design, UI/UX, motion design, video production, social media and AI-powered creative workflows."
@@ -15,32 +18,83 @@
 
     <meta
       name="keywords"
-      content="Marcus Wong, Marcus Wong Designer, Multimedia Designer, Creative Developer, Web Designer, UI UX Designer, Graphic Designer, Motion Designer, Hong Kong Designer, Portfolio"
+      content="Marcus Wong, Marcus Wong Designer, Marcus Wong Portfolio, Marcus Wong Multimedia Designer, Multimedia Designer, Creative Developer, Web Designer, UI UX Designer, Graphic Designer, Motion Designer, Hong Kong Designer, Hong Kong Multimedia Designer, Design Portfolio"
     />
 
     <meta name="author" content="Marcus Wong" />
-    <meta name="robots" content="index, follow" />
 
-    <!-- Google -->
+    <!-- Allow search engines to index -->
+    <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
 
-    <!-- Social sharing -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Marcus Wong | Multimedia Designer & Creative Developer" />
+    <!-- =========================================
+         GOOGLE SEARCH CONSOLE
+    ========================================== -->
+
     <meta
-      property="og:description"
-      content="Explore the design portfolio of Marcus Wong, featuring web design, UI/UX, motion, video and creative digital experiences."
+      name="google-site-verification"
+      content="e2lietOSWF-c8lZ7hYwUUmvPG3xqmNAvPR99b5FdGcc"
     />
 
-    <!-- Fonts -->
+    <!-- =========================================
+         CANONICAL URL
+    ========================================== -->
+
+    <link
+      rel="canonical"
+      href="https://dev.marcus2000wong.workers.dev/"
+    />
+
+    <!-- =========================================
+         OPEN GRAPH / SOCIAL SHARING
+    ========================================== -->
+
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:url"
+      content="https://dev.marcus2000wong.workers.dev/"
+    />
+
+    <meta
+      property="og:title"
+      content="Marcus Wong | Multimedia Designer & Creative Developer"
+    />
+
+    <meta
+      property="og:description"
+      content="Explore the portfolio of Marcus Wong, a multimedia designer and creative developer specializing in web design, UI/UX, motion, video and digital experiences."
+    />
+
+    <meta property="og:site_name" content="Marcus Wong Portfolio" />
+
+    <!-- =========================================
+         PERSON STRUCTURED DATA
+    ========================================== -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://dev.marcus2000wong.workers.dev/#marcus-wong",
+        "name": "Marcus Wong",
+        "url": "https://dev.marcus2000wong.workers.dev/",
+        "jobTitle": "Multimedia Designer & Creative Developer",
+        "description": "Marcus Wong is a multimedia designer and creative developer specializing in web design, UI/UX, motion design, video production and digital experiences.",
+        "sameAs": [
+          "https://www.behance.net/marcuswong14"
+        ]
+      }
+    </script>
+
+    <!-- =========================================
+         FONTS
+    ========================================== -->
+
     <link
       href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium"
       rel="stylesheet"
       type="text/css"
-    />
-    <link
-    rel="canonical"
-    href="https://dev.marcus2000wong.workers.dev/"
     />
 
     <link
@@ -50,7 +104,9 @@
     />
   </head>
 
-  <body class="bg-black text-white antialiased overflow-x-hidden selection:bg-white selection:text-black">
+  <body
+    class="bg-black text-white antialiased overflow-x-hidden selection:bg-white selection:text-black"
+  >
     <div id="root"></div>
 
     <script type="module" src="/src/main.tsx"></script>
