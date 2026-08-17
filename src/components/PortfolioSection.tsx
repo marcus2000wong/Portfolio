@@ -304,7 +304,7 @@ export const PortfolioSection: React.FC = () => {
                 )}
 
                 {/* Category */}
-                <div className="pointer-events-none absolute bottom-4 left-4 z-30 bg-black/80 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md sm:bottom-5 sm:left-5 sm:px-4 sm:text-[10px]">
+                <div className="pointer-events-none absolute bottom-5 left-5 z-30 hidden bg-black/80 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md sm:block">
                   {selectedProject.category}
                 </div>
               </div>
