@@ -47,7 +47,7 @@ export default function App() {
             <a href="/#what-i-do" className="text-white/55 transition hover:text-white">What I do</a>
             <a href="/projects" className="text-white">Projects</a>
           </div>
-          <a href="/Marcus-Wong-CV.pdf" download className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#4D7CFF] hover:text-[#4D7CFF]">Download CV</a>
+          <a href="/designer_Resume_wong_marcus.pdf" download className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#4D7CFF] hover:text-[#4D7CFF]">Download CV</a>
         </nav>
         <PortfolioSection />
         <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
