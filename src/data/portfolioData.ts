@@ -606,7 +606,7 @@ export const PROJECTS: Project[] = [
     },
     {
       id: '28',
-      title: 'Sim card Manual',
+      title: 'Sim Card Manual',
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:

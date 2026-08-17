@@ -67,17 +67,21 @@ export const PortfolioSection: React.FC = () => {
         initial={{ opacity: 0, x: -18, filter: 'blur(10px)' }}
         animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-none absolute bottom-7 left-5 z-30 hidden max-w-sm sm:left-8 md:block lg:bottom-8 lg:left-10"
+        className="pointer-events-none absolute bottom-7 left-5 z-30 hidden max-w-[700px] sm:left-8 md:block lg:bottom-8 lg:left-10"
       >
-        <div className="flex items-center gap-3 font-mono text-[9px] uppercase  text-white/35">
-          <span className="text-[#4D7CFF]">{String(activeIndex + 1).padStart(2, '0')}</span>
+        <div className="flex items-center gap-3 font-mono text-[9px] uppercase text-white/35">
+          <span className="text-[#4D7CFF]">
+            {String(activeIndex + 1).padStart(2, '0')}
+          </span>
           <span className="h-px w-10 bg-white/15" />
           <span>{currentProject?.category}</span>
         </div>
-        <h2 className="mt-3 font-heading  text-[clamp(1.65rem,7.2vw,41.8rem)] font-medium leading-[0.86]  text-white mb-7">
+
+        <h2 className="mt-3 font-heading text-[clamp(1.65rem,4.2vw,41.8rem)] font-medium leading-[0.86] text-white mb-7">
           {currentProject?.title}
         </h2>
-        <p className="mt-3 font-mono text-[15px] uppercase  text-white/35">
+
+        <p className="mt-3 font-mono text-[15px] uppercase text-white/35">
           {currentProject?.client} · {currentProject?.year}
         </p>
       </motion.aside>
@@ -345,7 +349,7 @@ export const PortfolioSection: React.FC = () => {
                     {selectedProject.client || 'Client Project'}
                   </span>
 
-                  <h2 className="mt-1.5 font-heading text-2xl leading-[1]  text-white sm:text-3xl lg:mt-3 lg:text-4xl">
+                  <h2 className="mt-1.5 font-heading text-2xl leading-[1]  text-white sm:text-3xl lg:mt-3 lg:text-4xl ">
                     {selectedProject.title}
                   </h2>
 
