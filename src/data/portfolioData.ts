@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
     // The image area BECOMES this iframe after clicking
     media: {
       type: 'image',
-      src: '/portfolio/za.jpg',
+      src: '/portfolio/za.png',
     },
 
     year: '2026',
@@ -410,7 +410,7 @@ export const PROJECTS: Project[] = [
     {
       id: '15',
       title: 'B3000 Launch Teaser',
-      category: 'Videos',
+      category: 'Video',
       subCategory: 'Design & Development',
       description:
         'A bold, contemporary social-first direction combining dynamic motion, clean compositions, and fast-paced transitions. Strong visual hierarchy and energetic pacing create an engaging, polished look optimized for short-form content.',
@@ -418,7 +418,7 @@ export const PROJECTS: Project[] = [
       tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-7.jpg',
+      image: '/cover/video-07.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -588,8 +588,8 @@ export const PROJECTS: Project[] = [
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:
-        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
-      tags: ['Printing', 'Graphic Design'],
+        'A vibrant promotional campaign for Tao Kae Noi, combining bold typography, playful character illustrations, product-focused visuals, and a strong red-and-yellow color palette. The design creates a fun, energetic brand experience while clearly communicating the free tasting event, promotional mechanics, and product benefits.',      
+        tags: ['Printing', 'Graphic Design'],
 
       // Image shown BEFORE clicking the project
       image: '/cover/printing-01.jpg',
@@ -610,7 +610,7 @@ export const PROJECTS: Project[] = [
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:
-        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+        'A clean and functional print layout designed for SIM card activation packaging. The design uses structured information hierarchy, step-by-step instructions, QR code integration, and technical illustrations to make the activation process clear and easy to follow while meeting production and label-printing requirements.',
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project
@@ -633,7 +633,7 @@ export const PROJECTS: Project[] = [
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:
-        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+        'A clean and functional print layout designed for SIM card activation packaging. The design uses structured information hierarchy, step-by-step instructions, QR code integration, and technical illustrations to make the activation process clear and easy to follow while meeting production and label-printing requirements.',
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project
@@ -642,7 +642,7 @@ export const PROJECTS: Project[] = [
       // The image area BECOMES this iframe after clicking
       media: {
         type: 'image',
-        src: '/portfolio/printing-03.jpg',
+        src: '/portfolio/printing-05.jpg',
       },
 
       year: '2024',
@@ -657,7 +657,7 @@ export const PROJECTS: Project[] = [
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:
-        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+        'A series of technology-focused product visuals showcasing key features through clean layouts, lifestyle scenarios, and detailed product imagery. The designs combine strong visual hierarchy with clear technical information to communicate connectivity, touchscreen control, remote access, audio, and 4K capabilities in an engaging and accessible way.',
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project
@@ -679,7 +679,7 @@ export const PROJECTS: Project[] = [
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:
-        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+        'A series of product-focused e-commerce visuals created for GL.iNet, combining lifestyle imagery with bold promotional graphics. The layouts highlight key product features, pricing, and campaign offers while maintaining strong visual hierarchy and consistent branding across multiple products.',
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project
@@ -688,7 +688,7 @@ export const PROJECTS: Project[] = [
       // The image area BECOMES this iframe after clicking
       media: {
         type: 'image',
-        src: '/portfolio/printing-05.jpg',
+        src: '/portfolio/printing-03.jpg',
       },
 
       year: '2024',
@@ -701,7 +701,7 @@ export const PROJECTS: Project[] = [
       category: 'Printing & E-commerical',
       subCategory: 'Design & Development',
       description:
-        'A dynamic financial campaign combining **AI-assisted workflows, 3D character rendering, and graphic design** to create playful branded visuals, engaging promotions, and consistent social media content.',
+       'A series of lifestyle-focused product visuals showcasing Wi-Fi performance, flexible home installation, VPN privacy, and family online safety. The designs combine clean typography, realistic environments, and clear feature communication to present technical benefits in a simple and approachable way.',
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project

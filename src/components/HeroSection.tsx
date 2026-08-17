@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
         }}
       >
-        <h1 className="hero-reference-title font-black uppercase leading-[0.79] tracking-[-0.065em] ml-[-0.8vh]">
+        <h1 className="hero-reference-title font-black uppercase leading-[0.83]  ml-[-0.8vh]">
           {[
             ['Design', 'text-white'],
             ['for digital', 'text-white'],
