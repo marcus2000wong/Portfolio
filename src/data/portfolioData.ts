@@ -658,7 +658,7 @@ export const PROJECTS: Project[] = [
       subCategory: 'Design & Development',
       description:
         'A series of technology-focused product visuals showcasing key features through clean layouts, lifestyle scenarios, and detailed product imagery. The designs combine strong visual hierarchy with clear technical information to communicate connectivity, touchscreen control, remote access, audio, and 4K capabilities in an engaging and accessible way.',
-      tags: ['Printing', 'Layout Design'],
+      tags: ['3D Design', 'Graphic Design', 'AI Workflows'],
 
       // Image shown BEFORE clicking the project
       image: '/cover/printing-04.jpg',
@@ -680,7 +680,7 @@ export const PROJECTS: Project[] = [
       subCategory: 'Design & Development',
       description:
         'A series of product-focused e-commerce visuals created for GL.iNet, combining lifestyle imagery with bold promotional graphics. The layouts highlight key product features, pricing, and campaign offers while maintaining strong visual hierarchy and consistent branding across multiple products.',
-      tags: ['Printing', 'Layout Design'],
+      tags: ['Graphic Design', 'Layout Design', 'E-commerical'],
 
       // Image shown BEFORE clicking the project
       image: '/cover/printing-05.jpg',
@@ -702,7 +702,7 @@ export const PROJECTS: Project[] = [
       subCategory: 'Design & Development',
       description:
        'A series of lifestyle-focused product visuals showcasing Wi-Fi performance, flexible home installation, VPN privacy, and family online safety. The designs combine clean typography, realistic environments, and clear feature communication to present technical benefits in a simple and approachable way.',
-      tags: ['Printing', 'Layout Design'],
+      tags: ['3D Design', 'Graphic Design', 'AI Workflows'],
 
       // Image shown BEFORE clicking the project
       image: '/cover/printing-07.jpg',
