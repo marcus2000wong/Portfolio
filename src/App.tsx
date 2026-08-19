@@ -36,7 +36,7 @@ export default function App() {
         
         <WhiteNoiseCanvas />
         <VideoBackground
-          src="https://stream.mux.com/kimF2ha9zLrX64H00UgLGPflCzNtl1T0215MlAmeOztv8.m3u8"
+          src="/background/bg.mp4"
           overlayOpacity={0.32}
         />
         <div className="fixed inset-x-0 top-0 z-[70] h-28 bg-gradient-to-b from-black/95 via-black/70 to-transparent" />
@@ -63,7 +63,7 @@ export default function App() {
 
       {/* Global Mux live video background */}
       <VideoBackground
-        src="https://stream.mux.com/kimF2ha9zLrX64H00UgLGPflCzNtl1T0215MlAmeOztv8.m3u8"
+        src="/background/bg.mp4"
         overlayOpacity={0.25}
       />
 
