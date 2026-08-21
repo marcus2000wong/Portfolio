@@ -41,11 +41,20 @@ export default {
 
       const result = await env.AI.run('@cf/zai-org/glm-4.7-flash', {
         messages: [{ role: 'system', content: systemPrompt }, ...messages],
-        max_tokens: 180,
+        max_completion_tokens: 180,
         temperature: 0.45,
-      }) as { response?: string };
+      }) as {
+        response?: string;
+        choices?: Array<{
+          message?: {
+            content?: string;
+          };
+        }>;
+      };
 
-      const reply = result.response?.trim();
+      const reply =
+        result.response?.trim() ||
+        result.choices?.[0]?.message?.content?.trim();
       if (!reply) throw new Error('Empty model response');
       return json({ reply });
     } catch (error) {
