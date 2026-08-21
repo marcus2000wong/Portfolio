@@ -39,7 +39,7 @@ export default {
 
       if (!messages.length) return json({ error: 'A message is required' }, 400);
 
-      const result = await env.AI.run('@cf/zai-org/glm-4.7-flash', {
+      const result = await env.AI.run('@cf/meta/llama-3.1-8b-instruct-fp8', {
         messages: [{ role: 'system', content: systemPrompt }, ...messages],
         max_completion_tokens: 180,
         temperature: 0.45,
