@@ -261,7 +261,7 @@ export const PROJECTS: Project[] = [
 
   // Video Projects
   {
-      id: '9',
+      id: 'video-1',
       title: 'Prudential Hong Kong IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -285,7 +285,7 @@ export const PROJECTS: Project[] = [
       liveUrl: 'https://www.instagram.com/p/DbcCNIfj22H/',
     },
    {
-      id: '10',
+      id: 'video-2',
       title: 'Standard Charter IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -311,7 +311,7 @@ export const PROJECTS: Project[] = [
 
 
     {
-      id: '11',
+      id: 'video-3',
       title: 'Galderma AI IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -334,7 +334,7 @@ export const PROJECTS: Project[] = [
       liveUrl: 'https://www.instagram.com/reel/DZcq6RxK7iK/',
     },
     {
-      id: '12',
+      id: 'video-4',
       title: 'Galderma IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -356,7 +356,7 @@ export const PROJECTS: Project[] = [
       liveUrl: 'https://www.instagram.com/reel/DTPSYqulOwA/',
     },
     {
-      id: '13',
+      id: 'video-5',
       title: 'Prudential HK IG Reels',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -384,7 +384,7 @@ export const PROJECTS: Project[] = [
 
     
     {
-      id: '14',
+      id: 'video-6',
       title: 'X2000 Launch Teaser',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -408,7 +408,7 @@ export const PROJECTS: Project[] = [
       liveUrl: 'https://www.instagram.com/reel/DEW7l87xdIG/',
     },
     {
-      id: '15',
+      id: 'video-7',
       title: 'B3000 Launch Teaser',
       category: 'Video',
       subCategory: 'Design & Development',
@@ -581,11 +581,11 @@ export const PROJECTS: Project[] = [
 
 
 
-    // Printing & E-commerical Projects
+    // Print & E-commerce Projects
     {
       id: '27',
       title: 'TKG Printing Design',
-      category: 'Printing & E-commerical',
+      category: 'Print & E-commerce',
       subCategory: 'Design & Development',
       description:
         'A vibrant promotional campaign for Tao Kae Noi, combining bold typography, playful character illustrations, product-focused visuals, and a strong red-and-yellow color palette. The design creates a fun, energetic brand experience while clearly communicating the free tasting event, promotional mechanics, and product benefits.',      
@@ -607,7 +607,7 @@ export const PROJECTS: Project[] = [
     {
       id: '28',
       title: 'Sim Card Manual',
-      category: 'Printing & E-commerical',
+      category: 'Print & E-commerce',
       subCategory: 'Design & Development',
       description:
         'A clean and functional print layout designed for SIM card activation packaging. The design uses structured information hierarchy, step-by-step instructions, QR code integration, and technical illustrations to make the activation process clear and easy to follow while meeting production and label-printing requirements.',
@@ -630,7 +630,7 @@ export const PROJECTS: Project[] = [
     {
       id: '29',
       title: 'Be-3600 Manual',
-      category: 'Printing & E-commerical',
+      category: 'Print & E-commerce',
       subCategory: 'Design & Development',
       description:
         'A clean and functional print layout designed for SIM card activation packaging. The design uses structured information hierarchy, step-by-step instructions, QR code integration, and technical illustrations to make the activation process clear and easy to follow while meeting production and label-printing requirements.',
@@ -654,7 +654,7 @@ export const PROJECTS: Project[] = [
     {
       id: '30',
       title: 'KVM Amazon Listing Design',
-      category: 'Printing & E-commerical',
+      category: 'Print & E-commerce',
       subCategory: 'Design & Development',
       description:
         'A series of technology-focused product visuals showcasing key features through clean layouts, lifestyle scenarios, and detailed product imagery. The designs combine strong visual hierarchy with clear technical information to communicate connectivity, touchscreen control, remote access, audio, and 4K capabilities in an engaging and accessible way.',
@@ -676,11 +676,11 @@ export const PROJECTS: Project[] = [
     {
       id: '31',
       title: 'Chinese E-commerce Listing Design',
-      category: 'Printing & E-commerical',
+      category: 'Print & E-commerce',
       subCategory: 'Design & Development',
       description:
         'A series of product-focused e-commerce visuals created for GL.iNet, combining lifestyle imagery with bold promotional graphics. The layouts highlight key product features, pricing, and campaign offers while maintaining strong visual hierarchy and consistent branding across multiple products.',
-      tags: ['Graphic Design', 'Layout Design', 'E-commerical'],
+      tags: ['Graphic Design', 'Layout Design', 'E-commerce'],
 
       // Image shown BEFORE clicking the project
       image: '/cover/printing-05.jpg',
@@ -698,7 +698,7 @@ export const PROJECTS: Project[] = [
     {
       id: '32',
       title: 'B3000 Amazon Listing Design',
-      category: 'Printing & E-commerical',
+      category: 'Print & E-commerce',
       subCategory: 'Design & Development',
       description:
        'A series of lifestyle-focused product visuals showcasing Wi-Fi performance, flexible home installation, VPN privacy, and family online safety. The designs combine clean typography, realistic environments, and clear feature communication to present technical benefits in a simple and approachable way.',
