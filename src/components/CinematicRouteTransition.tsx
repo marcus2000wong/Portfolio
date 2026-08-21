@@ -132,7 +132,7 @@ export function CinematicRouteTransition({ onNavigate }: CinematicRouteTransitio
         {Array.from({ length: 5 }, (_, index) => (
           <motion.div
             key={index}
-            className="relative h-full w-[calc(20%+2px)] shrink-0 -mr-[2px] transform-gpu bg-[#050506] shadow-[2px_0_0_#050506] will-change-transform last:mr-0"
+            className="relative h-full w-[calc(20%+2px)] shrink-0 -mr-[2px] transform-gpu bg-[#050506] will-change-transform after:pointer-events-none after:absolute after:inset-y-0 after:left-0 after:z-10 after:w-px after:bg-white/5 first:after:hidden last:mr-0"
             initial={{ y: entering ? '0%' : '105%' }}
             animate={{ y: visible ? '0%' : '-105%' }}
             transition={{
