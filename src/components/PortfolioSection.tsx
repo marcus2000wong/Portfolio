@@ -1,10 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react';
 import { PROJECTS } from '../data/portfolioData';
 import { CategoryFilter, Project } from '../types';
 import { ProjectHelixGallery } from './ProjectHelixGallery';
 
-const CATEGORIES: CategoryFilter[] = ['All', 'UI/UX', 'Printing & E-commerical', 'Social Media', 'Video'];
+const CATEGORIES: CategoryFilter[] = ['All', 'UI/UX', 'Print & E-commerce', 'Social Media', 'Video'];
 const FALLBACK_IMAGES = [
   new URL('../assets/images/blue_nile_center_model_1786542360474.jpg', import.meta.url).href,
   new URL('../assets/images/editorial-hero-portrait-v1.png', import.meta.url).href,
@@ -12,17 +12,42 @@ const FALLBACK_IMAGES = [
   new URL('../assets/images/monochrome-hero-valley-v1.png', import.meta.url).href,
 ];
 
-const fallbackFor = (project: Project) =>
-  FALLBACK_IMAGES[(Number.parseInt(project.id, 10) - 1) % FALLBACK_IMAGES.length];
+const fallbackFor = (project: Project) => {
+  const numericId = Number.parseInt(project.id, 10);
+  const stableIndex = Number.isNaN(numericId)
+    ? [...project.id].reduce((total, character) => total + character.charCodeAt(0), 0)
+    : numericId - 1;
+  return FALLBACK_IMAGES[stableIndex % FALLBACK_IMAGES.length];
+};
 
-export const PortfolioSection: React.FC = () => {
+interface PortfolioSectionProps {
+  onModalChange?: (open: boolean) => void;
+}
+
+export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChange }) => {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('All');
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [galleryCursorVisible, setGalleryCursorVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const cursorX = useMotionValue(-120);
+  const cursorY = useMotionValue(-120);
+  const smoothCursorX = useSpring(cursorX, { stiffness: 520, damping: 38, mass: 0.35 });
+  const smoothCursorY = useSpring(cursorY, { stiffness: 520, damping: 38, mass: 0.35 });
+
+  useEffect(() => () => {
+    window.dispatchEvent(new CustomEvent('portfolio:gallery-card-hover', { detail: { hovered: false } }));
+  }, []);
 
   const filteredProjects = useMemo(
     () => PROJECTS.filter((project) => activeCategory === 'All' || project.category === activeCategory),
     [activeCategory],
+  );
+  const visibleProjectIds = useMemo(
+    () => filteredProjects.map((project) => project.id),
+    [filteredProjects],
   );
 
   useEffect(() => {
@@ -30,14 +55,69 @@ export const PortfolioSection: React.FC = () => {
     setSelectedProject(null);
   }, [activeCategory]);
 
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    document.body.style.overflow = 'hidden';
+    const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.body.style.overflow = previousOverflow;
+      previouslyFocused?.focus();
+    };
+  }, [selectedProject]);
+
+  const handleDialogKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setSelectedProject(null);
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+    const focusable: HTMLElement[] = dialogRef.current
+      ? Array.from(dialogRef.current.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]'))
+      : [];
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
+  useEffect(() => {
+    onModalChange?.(Boolean(selectedProject));
+    return () => onModalChange?.(false);
+  }, [onModalChange, selectedProject]);
+
   const currentProject = filteredProjects[activeIndex] || filteredProjects[0] || PROJECTS[0];
+
+  const handleProjectSelect = useCallback((project: Project) => {
+    setGalleryCursorVisible(false);
+    setSelectedProject(project);
+  }, []);
+
+  const handleCardHoverChange = useCallback((hovered: boolean) => {
+    setGalleryCursorVisible(hovered);
+    window.dispatchEvent(new CustomEvent('portfolio:gallery-card-hover', { detail: { hovered } }));
+  }, []);
 
   return (
     <section id="portfolio" className="relative z-20 h-screen min-h-[720px] w-full overflow-hidden bg-black/68 text-white backdrop-blur-[12px]">
+      <div inert={selectedProject ? true : undefined}>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_61%_46%,rgba(62,68,146,0.24),transparent_35%),radial-gradient(circle_at_38%_70%,rgba(39,31,88,0.18),transparent_42%)]" />
 
       <motion.div
-        key={`${activeCategory}-${currentProject?.id}`}
+        key={activeCategory}
         initial={{ opacity: 0, filter: 'blur(16px)', y: 18 }}
         animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -50,14 +130,62 @@ export const PortfolioSection: React.FC = () => {
         </p>
       </motion.div>
 
-      <div className="absolute inset-0 z-10">
+      <div
+        className="project-gallery-cursor-zone absolute inset-0 z-10"
+        onPointerEnter={(event) => {
+          if (event.pointerType === 'touch') return;
+          cursorX.set(event.clientX);
+          cursorY.set(event.clientY);
+        }}
+        onPointerMove={(event) => {
+          if (event.pointerType === 'touch') return;
+          cursorX.set(event.clientX);
+          cursorY.set(event.clientY);
+        }}
+        onPointerLeave={() => setGalleryCursorVisible(false)}
+      >
         <ProjectHelixGallery
-          key={activeCategory}
-          projects={filteredProjects}
-          onSelect={setSelectedProject}
+          projects={PROJECTS}
+          visibleProjectIds={visibleProjectIds}
+          onSelect={handleProjectSelect}
           onActiveChange={setActiveIndex}
+          onCardHoverChange={handleCardHoverChange}
         />
       </div>
+
+      <motion.div
+        className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-24 w-24 items-center justify-center rounded-full border border-white/75 bg-black/90 px-3 text-center font-mono text-[9px] uppercase leading-[1.25] tracking-[0.12em] text-white shadow-[0_16px_48px_rgba(0,0,0,0.6),0_0_28px_rgba(255,255,255,0.1)] backdrop-blur-md md:flex"
+        style={{ x: smoothCursorX, y: smoothCursorY, translateX: '-50%', translateY: '-50%' }}
+        animate={{
+          opacity: galleryCursorVisible && !selectedProject ? [0, 1, 1] : 0,
+          scale: galleryCursorVisible && !selectedProject ? [0.25, 1.22, 1] : 0.48,
+          rotate: galleryCursorVisible && !selectedProject ? [-6, 2, 0] : 0,
+        }}
+        transition={{ duration: galleryCursorVisible && !selectedProject ? 0.52 : 0.18, times: [0, 0.68, 1], ease: [0.16, 1, 0.3, 1] }}
+        aria-hidden="true"
+      >
+        <AnimatePresence>
+          {galleryCursorVisible && !selectedProject && (
+            <motion.span
+              key="gallery-cursor-ripple"
+              className="absolute inset-0 rounded-full border border-white/70"
+              initial={{ opacity: 0, scale: 0.78 }}
+              animate={{ opacity: [0.65, 0], scale: [0.82, 1.82] }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.55, repeat: Infinity, ease: [0.16, 1, 0.3, 1] }}
+            />
+          )}
+        </AnimatePresence>
+        {galleryCursorVisible && !selectedProject && (
+          <motion.span
+            className="absolute inset-0 rounded-full border border-white/35"
+            initial={{ opacity: 0, scale: 0.78 }}
+            animate={{ opacity: [0.5, 0], scale: [0.82, 1.82] }}
+            transition={{ duration: 1.55, delay: 0.76, repeat: Infinity, ease: [0.16, 1, 0.3, 1] }}
+          />
+        )}
+        <span className="relative z-10">View my work</span>
+      </motion.div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-44 bg-gradient-to-t from-black via-black/80 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-32 bg-gradient-to-b from-black/75 to-transparent" />
@@ -86,11 +214,11 @@ export const PortfolioSection: React.FC = () => {
         </p>
       </motion.aside>
 
-      <div className="absolute bottom-5 right-5 z-40 w-[calc(100%-2.5rem)] sm:bottom-7 sm:right-8 sm:w-auto lg:bottom-8 lg:right-10">
-        <p className="mb-2 text-right font-mono text-[8px] uppercase  text-white/25">
-          Scroll or drag to rotate · click to open
+      <div className="absolute bottom-4 right-4 z-40 w-[calc(100%-2rem)] sm:bottom-7 sm:right-8 sm:w-auto lg:bottom-8 lg:right-10">
+        <p className="mb-2 text-right font-mono text-[8px] uppercase tracking-[0.12em] text-white/40">
+          Scroll or drag · select a card to open
         </p>
-        <nav aria-label="Filter projects" className="flex max-w-full items-center overflow-x-auto border border-white/12 bg-black/72 shadow-2xl backdrop-blur-xl">
+        <nav data-cursor-passive aria-label="Filter projects" className="flex max-w-full items-center overflow-x-auto border border-white/20 bg-black/82 shadow-2xl backdrop-blur-xl">
           {CATEGORIES.map((category) => {
             const count = category === 'All' ? PROJECTS.length : PROJECTS.filter((project) => project.category === category).length;
             const active = category === activeCategory;
@@ -100,7 +228,7 @@ export const PortfolioSection: React.FC = () => {
                 type="button"
                 onClick={() => setActiveCategory(category)}
                 aria-pressed={active}
-                className={`site-nav-text flex shrink-0 items-center gap-2 border-r border-white/10 px-3 py-2.5 transition last:border-r-0 sm:px-4 ${
+                className={`site-nav-text flex min-h-11 shrink-0 items-center gap-2 border-r border-white/10 px-3 py-3 transition last:border-r-0 sm:px-4 ${
                   active ? 'bg-white text-black' : 'text-white/55 hover:bg-white/10 hover:text-white'
                 }`}
               >
@@ -111,40 +239,44 @@ export const PortfolioSection: React.FC = () => {
           })}
         </nav>
       </div>
+      </div>
 
       <AnimatePresence>
         {selectedProject && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-0 backdrop-blur-xl sm:p-6">
-
-            {/* Background click to close */}
-            <button
-              type="button"
-              className="absolute inset-0 cursor-default"
-              onClick={() => setSelectedProject(null)}
-              aria-label="Close project"
+          <>
+            <motion.div
+              className="fixed inset-x-0 bottom-[76px] top-[68px] z-[140] bg-black/70 backdrop-blur-md sm:inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              aria-hidden="true"
             />
 
+            <div className="fixed inset-x-0 bottom-[92px] top-[82px] z-[160] flex items-center justify-center px-3 sm:bottom-6 sm:top-24 sm:px-6 lg:bottom-8">
+
             <motion.div
-              initial={{ opacity: 0, scale: 0.94, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.94, y: 20 }}
+              ref={dialogRef}
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.975, y: 42, clipPath: 'inset(100% 0 0 0)' }}
+              animate={{ opacity: 1, scale: 1, y: 0, clipPath: 'inset(0 0% 0 0)' }}
+              exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.985, y: -18, clipPath: 'inset(0 0 100% 0)' }}
               transition={{
-                duration: 0.35,
-                ease: [0.22, 1, 0.36, 1],
+                duration: reduceMotion ? 0.18 : 0.68,
+                ease: [0.16, 1, 0.3, 1],
               }}
               className="
                 relative z-10
                 flex
-                h-[100svh]
+                h-full
                 w-full
                 flex-col
                 overflow-hidden
+                border
                 border-white/10
                 bg-[#101111]
                 text-white
                 shadow-2xl
 
-                sm:h-[90vh]
+                sm:h-full
                 sm:max-h-[900px]
                 sm:w-[calc(100%-48px)]
                 sm:border
@@ -154,13 +286,29 @@ export const PortfolioSection: React.FC = () => {
                 lg:max-w-[1500px]
                 lg:flex-row
               "
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-dialog-title"
+              onKeyDown={handleDialogKeyDown}
+              onPointerDown={(event) => event.stopPropagation()}
+              onPointerUp={(event) => event.stopPropagation()}
+              onClick={(event) => event.stopPropagation()}
             >
-
+              {!reduceMotion && (
+                <motion.div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 z-[70] h-[28%] bg-[linear-gradient(0deg,transparent,rgba(77,124,255,0.48),rgba(255,255,255,0.22),transparent)] mix-blend-screen"
+                  initial={{ y: '120%', opacity: 0 }}
+                  animate={{ y: '-460%', opacity: [0, 0.9, 0] }}
+                  transition={{ duration: 0.9, delay: 0.08, times: [0, 0.42, 1], ease: [0.16, 1, 0.3, 1] }}
+                  aria-hidden="true"
+                />
+              )}
               {/* ================================= */}
               {/* GLOBAL CLOSE BUTTON */}
               {/* ================================= */}
 
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={() => setSelectedProject(null)}
                 className="
@@ -181,6 +329,11 @@ export const PortfolioSection: React.FC = () => {
                   transition
                   hover:bg-white
                   hover:text-black
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-[#4D7CFF]
+                  focus-visible:ring-offset-2
+                  focus-visible:ring-offset-black
 
                   sm:right-5
                   sm:top-5
@@ -196,10 +349,14 @@ export const PortfolioSection: React.FC = () => {
               {/* SHOWCASE */}
               {/* ================================= */}
 
-              <div
+              <motion.div
+                initial={reduceMotion ? undefined : { opacity: 0, scale: 1.035, filter: 'blur(12px)' }}
+                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                transition={{ duration: reduceMotion ? 0.01 : 0.85, delay: reduceMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="
                   relative
-                  h-[72svh]
+                  h-[55%]
+                  min-h-[190px]
                   w-full
                   shrink-0
                   overflow-hidden
@@ -311,13 +468,16 @@ export const PortfolioSection: React.FC = () => {
                 <div className="pointer-events-none absolute bottom-5 left-5 z-30 hidden bg-black/80 px-4 py-2 font-mono text-[10px] uppercase text-white shadow-lg backdrop-blur-md sm:block">
                   {selectedProject.category}
                 </div>
-              </div>
+              </motion.div>
 
               {/* ================================= */}
               {/* PROJECT INFO */}
               {/* ================================= */}
 
-              <div
+              <motion.div
+                initial={reduceMotion ? undefined : { opacity: 0, y: 38, filter: 'blur(8px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: reduceMotion ? 0.01 : 0.7, delay: reduceMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
                 className="
                   relative
                   flex
@@ -342,14 +502,13 @@ export const PortfolioSection: React.FC = () => {
                   xl:w-[380px]
                 "
               >
-
                 {/* Top info */}
                 <div className="pr-12">
                   <span className="font-mono text-[9px] uppercase  text-[#4D7CFF] lg:text-[10px]">
                     {selectedProject.client || 'Client Project'}
                   </span>
 
-                  <h2 className="mt-1.5 font-heading text-2xl leading-[1]  text-white sm:text-3xl lg:mt-3 lg:text-4xl ">
+                  <h2 id="project-dialog-title" className="mt-1.5 font-heading text-2xl leading-[1]  text-white sm:text-3xl lg:mt-3 lg:text-4xl ">
                     {selectedProject.title}
                   </h2>
 
@@ -409,6 +568,11 @@ export const PortfolioSection: React.FC = () => {
                         transition
                         hover:bg-[#4D7CFF]
                         hover:text-white
+                        focus-visible:outline-none
+                        focus-visible:ring-2
+                        focus-visible:ring-[#4D7CFF]
+                        focus-visible:ring-offset-2
+                        focus-visible:ring-offset-[#101111]
 
                         lg:px-5
                         lg:py-3.5
@@ -420,9 +584,10 @@ export const PortfolioSection: React.FC = () => {
                     </a>
                   </div>
                 )}
-              </div>
-            </motion.div>
-          </div>
+              </motion.div>
+              </motion.div>
+            </div>
+          </>
         )}
       </AnimatePresence>
     </section>

@@ -29,10 +29,10 @@ const SERVICES: ServiceItem[] = [
   {
     id: '03',
     code: 'MO-03',
-    title: 'Printing & E-commerical and Packaging',
+    title: 'Print, E-commerce & Packaging',
     description:
-      'Designing print materials with a strong focus on typography, layout, and visual identity.Creating consistent and impactful designs across both editorial and promotional work.',
-    capabilities: ['Printing & E-commerical ', 'Typography', 'Layout', 'Alignment'],
+      'Designing print and commerce materials with a strong focus on typography, layout, and visual identity. Creating consistent, impactful systems across editorial, promotional, and packaging work.',
+    capabilities: ['Print & E-commerce', 'Typography', 'Layout', 'Packaging'],
   },
   {
     id: '04',
@@ -138,6 +138,9 @@ export const WhatIDoSection: React.FC = () => {
             return (
               <article
                 key={service.id}
+                data-cursor-label="View"
+                onPointerEnter={() => window.dispatchEvent(new CustomEvent('portfolio:cursor-zone', { detail: { active: true, label: 'View' } }))}
+                onPointerLeave={() => window.dispatchEvent(new CustomEvent('portfolio:cursor-zone', { detail: { active: false } }))}
                 onMouseEnter={() => setActiveId(service.id)}
                 onMouseLeave={() => setActiveId('')}
                 className="relative border-b border-white/15 before:pointer-events-none before:absolute before:inset-y-0 before:left-1/2 before:w-screen before:-translate-x-1/2 before:bg-white before:opacity-0 before:transition-opacity before:duration-500 before:ease-out hover:before:opacity-10"

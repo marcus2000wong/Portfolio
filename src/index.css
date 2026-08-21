@@ -29,6 +29,11 @@ select {
   font: inherit;
 }
 
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid #4D7CFF;
+  outline-offset: 4px;
+}
+
 .site-nav-text {
   font-family: var(--font-body);
   font-size: var(--text-nav);
@@ -71,6 +76,16 @@ select {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 .project-webgl-helix {
   cursor: grab;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 19%, #000 81%, transparent 100%);
@@ -81,6 +96,21 @@ select {
 
 .project-webgl-helix.is-dragging {
   cursor: grabbing;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .award-cursor-enabled,
+  .award-cursor-enabled body,
+  .award-cursor-enabled a,
+  .award-cursor-enabled button,
+  .award-cursor-enabled [role='button'] {
+    cursor: none !important;
+  }
+
+  .project-gallery-cursor-zone .project-webgl-helix,
+  .project-gallery-cursor-zone .project-webgl-helix.is-dragging {
+    cursor: none;
+  }
 }
 
 .project-webgl-helix canvas {

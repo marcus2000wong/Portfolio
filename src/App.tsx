@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { CircularTimeline } from './components/CircularTimeline';
+import { AwardCursor } from './components/AwardCursor';
 import { CinematicRouteTransition } from './components/CinematicRouteTransition';
 import { ContactSection } from './components/ContactSection';
 import { HeroSection } from './components/HeroSection';
 import { PortfolioModal } from './components/PortfolioModal';
-import { PortfolioSection } from './components/PortfolioSection';
 import { Toast } from './components/Toast';
 import { VideoBackground } from './components/VideoBackground';
 import { WhatIDoSection } from './components/WhatIDoSection';
 import { WhiteNoiseCanvas } from './components/WhiteNoiseCanvas';
-import { ModalType } from './types';
+import type { ModalType } from './types';
+
+const PortfolioSection = lazy(() => import('./components/PortfolioSection').then((module) => ({
+  default: module.PortfolioSection,
+})));
 
 export default function App() {
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [activeModal, setActiveModal] = useState<ModalType>(null);
+  const [, setProjectModalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -28,36 +34,53 @@ export default function App() {
     });
   };
 
-  const isProjectsPage = window.location.pathname === '/projects';
+  useEffect(() => {
+    const handlePopState = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
-  if (isProjectsPage) {
-    return (
-      <div className="relative min-h-screen w-full bg-black text-white selection:bg-white selection:text-black">
-        
+  const handleRouteNavigate = useCallback((url: URL) => {
+    setCurrentPath(url.pathname);
+    window.requestAnimationFrame(() => {
+      document.querySelectorAll('video').forEach((video) => {
+        void video.play().catch(() => undefined);
+      });
+      if (url.hash) document.querySelector(url.hash)?.scrollIntoView();
+      else window.scrollTo({ top: 0, behavior: 'auto' });
+    });
+  }, []);
+
+  const isProjectsPage = currentPath === '/projects';
+
+  return (
+    <div className="relative min-h-screen w-full bg-black text-white selection:bg-white selection:text-black">
+      <CinematicRouteTransition onNavigate={handleRouteNavigate} />
+      <AwardCursor />
+      {isProjectsPage ? (
+        <>
         <WhiteNoiseCanvas />
         <VideoBackground
           src='/background/bg.mp4'
           overlayOpacity={0.32}
         />
         <div className="fixed inset-x-0 top-0 z-[70] h-28 bg-gradient-to-b from-black/95 via-black/70 to-transparent" />
-        <div className="site-nav-text fixed left-5 top-7 z-[80] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block">Good morning!</div>
-        <nav aria-label="Projects navigation" className="site-nav-text fixed inset-x-5 top-7 z-[80] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
+        <div className="site-nav-text fixed left-5 top-7 z-[180] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block">Good morning!</div>
+        <nav aria-label="Projects navigation" className="site-nav-text fixed inset-x-5 top-7 z-[180] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
           <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
             <a href="/" className="text-white/55 transition hover:text-white">Home</a>
             <a href="/#what-i-do" className="text-white/55 transition hover:text-white">What I do</a>
-            <a href="/projects" className="text-white">Projects</a>
+            <a href="/projects" aria-current="page" className="text-white">Projects</a>
           </div>
           <a href="/designer_Resume_wong_marcus.pdf" download className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#4D7CFF] hover:text-[#4D7CFF]">Download CV</a>
         </nav>
-        <PortfolioSection />
+        <Suspense fallback={<div className="h-screen min-h-[720px] bg-black" aria-label="Loading project gallery" />}>
+          <PortfolioSection onModalChange={setProjectModalOpen} />
+        </Suspense>
         <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative w-full min-h-screen bg-black text-white selection:bg-white selection:text-black">
-      
+        </>
+      ) : (
+        <>
       {/* Global White Animated Noise Canvas Layer */}
       <WhiteNoiseCanvas />
 
@@ -118,6 +141,8 @@ export default function App() {
 
       {/* Notification Toast */}
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
+        </>
+      )}
     </div>
   );
 }

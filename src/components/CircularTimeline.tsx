@@ -64,6 +64,9 @@ export const CircularTimeline: React.FC = () => {
     <section
       ref={sectionRef}
       id="timeline"
+      data-cursor-label="Scroll down"
+      onPointerEnter={() => window.dispatchEvent(new CustomEvent('portfolio:cursor-zone', { detail: { active: true, label: 'Scroll down' } }))}
+      onPointerLeave={() => window.dispatchEvent(new CustomEvent('portfolio:cursor-zone', { detail: { active: false } }))}
       className="relative z-10 -mt-px h-[calc(100svh_+_1200px)] w-screen bg-black/30 text-white"
     >
       <div className="sticky top-0 h-screen w-screen overflow-hidden bg-black/70 backdrop-blur-[12px]">
