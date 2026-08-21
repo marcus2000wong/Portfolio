@@ -138,7 +138,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       <p className="absolute bottom-5 left-5 z-20 text-xs text-white/45 sm:left-8 sm:text-sm lg:left-10">(Scroll down)</p>
 
       <motion.div
-        className="absolute inset-x-0 bottom-0 z-30 overflow-hidden border-[1px] border-white/15 bg-black/45 py-3 backdrop-blur-sm"
+        className="absolute inset-x-0 bottom-0 z-30 overflow-hidden border-y border-white/15 bg-black/45 py-3 backdrop-blur-sm"
         initial={{ y: '100%', opacity: 0 }}
         animate={{ y: '0%', opacity: 1 }}
         transition={{
@@ -160,7 +160,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
               />
 
               <span
-                className="h-1 w-1 shrink-0 rounded-full bg-[#4D7CFF]"
+                className="h-1 w-1 shrink-0 rounded-full bg-white"
                 aria-hidden="true"
               />
             </div>

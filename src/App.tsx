@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { CircularTimeline } from './components/CircularTimeline';
 import { AwardCursor } from './components/AwardCursor';
 import { CinematicRouteTransition } from './components/CinematicRouteTransition';
+import { CloudflareEdgeChat } from './components/CloudflareEdgeChat';
 import { ContactSection } from './components/ContactSection';
 import { HeroSection } from './components/HeroSection';
 import { PortfolioModal } from './components/PortfolioModal';
@@ -18,7 +19,7 @@ const PortfolioSection = lazy(() => import('./components/PortfolioSection').then
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [activeModal, setActiveModal] = useState<ModalType>(null);
-  const [, setProjectModalOpen] = useState(false);
+  const [projectModalOpen, setProjectModalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -57,6 +58,7 @@ export default function App() {
     <div className="relative min-h-screen w-full bg-black text-white selection:bg-white selection:text-black">
       <CinematicRouteTransition onNavigate={handleRouteNavigate} />
       <AwardCursor />
+      <CloudflareEdgeChat disabled={projectModalOpen || activeModal !== null} />
       {isProjectsPage ? (
         <>
         <WhiteNoiseCanvas />
