@@ -65,10 +65,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
   <section id="home" className="relative min-h-[100svh] overflow-hidden bg-transparent text-white select-none">
     <div className="pointer-events-none absolute inset-0 bg-[#070808]/60 backdrop-blur-[3px]" />
 
-    <div className="relative min-h-[100svh] px-5 py-7 sm:px-8 sm:py-9 lg:px-10">
+    <div className="hero-shell relative min-h-[100svh] px-5 py-7 sm:px-8 sm:py-9 lg:px-10">
       <div className="fixed inset-x-0 top-0 z-50 h-28 bg-gradient-to-b from-black/95 via-black/65 to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 left-[73.5%] hidden border-l border-white/[0.09] lg:block" />
-      <div className="site-nav-text fixed left-5 top-7 z-[60] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block"><TimeGreeting /></div>
+      <div className="hero-left-edge site-nav-text fixed top-7 z-[60] hidden text-white/55 sm:top-9 lg:block"><TimeGreeting /></div>
       <nav aria-label="Primary navigation" className="site-nav-text fixed inset-x-5 top-7 z-[60] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
         <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
           <a href="#home" className="text-white transition hover:text-[#4D7CFF]">Home</a>
@@ -89,46 +89,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
         </a>
       </nav>
 
-      <motion.div
-        className="absolute left-5 top-[20%] z-20 -ml-[3px] sm:left-8 lg:left-10"
-        initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.85, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <p className="mb-2 text-sm text-white/55 sm:text-base">Hi there! this is</p>
-        <p className="text-2xl font-semibold sm:text-4xl ">Marcus <span className="text-white/35">Wong</span></p>
-      </motion.div>
+      <div className="hero-left-edge hero-title-block absolute bottom-[120px] top-[20%] z-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.85, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="mb-2 text-sm text-white/55 sm:text-base">Hi there! this is</p>
+          <p className="text-2xl font-semibold sm:text-4xl">Marcus <span className="text-white/35">Wong</span></p>
+        </motion.div>
 
-      <motion.div
-        className="pointer-events-none absolute bottom-[120px]  left-5 z-20 w-[calc(100%-2.5rem)] sm:left-8 sm:w-[73%] lg:left-10"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
-        }}
-      >
-        <h1 className="hero-reference-title font-black uppercase leading-[0.96] sm:leading-[0.92] lg:leading-[0.90] xl:leading-[0.90] left-[2px]">
-          {[
-            ['Design', 'text-white'],
-            ['for digital', 'text-white'],
-            ['impact', 'text-[#4D7CFF]'],
-          ].map(([line, color]) => (
-            <span key={line} className="block overflow-visible">
-              <motion.span
-                className={`block whitespace-nowrap ${color}`}
-                variants={{
-                  hidden: { y: '0.3em', opacity: 0, rotate: 1, filter: 'blur(8px)' },
-                  visible: { y: '0%', opacity: 1, rotate: 0, filter: 'blur(0px)' },
-                }}
-                transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-              >
-                {line}
-              </motion.span>
-            </span>
-          ))}
-        </h1>
-      </motion.div>
+        <motion.div
+          className="pointer-events-none absolute inset-x-0 bottom-0"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
+          }}
+        >
+          <h1 className="hero-reference-title font-black uppercase leading-[0.96] sm:leading-[0.92] lg:leading-[0.90] xl:leading-[0.90]">
+            {[
+              ['Design', 'text-white'],
+              ['for digital', 'text-white'],
+              ['impact', 'text-[#4D7CFF]'],
+            ].map(([line, color]) => (
+              <span key={line} className="block overflow-visible">
+                <motion.span
+                  className={`block whitespace-nowrap ${color}`}
+                  variants={{
+                    hidden: { y: '0.3em', opacity: 0, rotate: 1, filter: 'blur(8px)' },
+                    visible: { y: '0%', opacity: 1, rotate: 0, filter: 'blur(0px)' },
+                  }}
+                  transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {line}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
+        </motion.div>
+      </div>
 
       <motion.aside
         className="absolute bottom-[92px] left-[73.5%] right-0 top-[106px] z-20 hidden overflow-hidden lg:flex lg:flex-col"
@@ -180,7 +181,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
         </div>
       </motion.aside>
 
-      <p className="absolute bottom-5 left-5 z-20 text-xs text-white/45 sm:left-8 sm:text-sm lg:left-10">(Scroll down)</p>
+      <p className="hero-left-edge absolute bottom-5 z-20 text-xs text-white/45 sm:text-sm">(Scroll down)</p>
 
       <motion.div
         className="absolute inset-x-0 bottom-0 z-30 h-[92px] overflow-hidden border-y border-white/15 bg-black/45 py-3 backdrop-blur-sm"

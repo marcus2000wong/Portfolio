@@ -52,6 +52,27 @@ select {
   font-family: var(--font-body);
 }
 
+.hero-shell {
+  --hero-gutter: 1.25rem;
+}
+
+.hero-left-edge {
+  left: var(--hero-gutter);
+}
+
+.hero-title-block {
+  width: calc(100% - (var(--hero-gutter) * 2));
+}
+
+@media (min-width: 640px) {
+  .hero-shell { --hero-gutter: 2rem; }
+  .hero-title-block { width: 73%; }
+}
+
+@media (min-width: 1024px) {
+  .hero-shell { --hero-gutter: 2.5rem; }
+}
+
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -157,8 +178,8 @@ select {
 .hero-reference-title {
   font-family: var(--font-heading), sans-serif;
   font-size: clamp(4.7rem, 10.8vw, 12.5rem);
-  /* Compensate for the heading font's visible left side-bearing on capital D. */
-  transform: translateX(-0.075em) scaleX(1.08);
+  /* Optical correction for the capital D's built-in left side-bearing. */
+  transform: translateX(-0.06em) scaleX(1.08);
   transform-origin: left center;
 }
 
@@ -166,7 +187,7 @@ select {
   .hero-reference-title {
     font-size: clamp(2.5rem, 14.5vw, 6rem);
     line-height: 0.8;
-    transform: translateX(-0.075em);
+    transform: translateX(-0.06em);
   }
 }
 

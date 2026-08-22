@@ -1,65 +1,60 @@
-# Design QA — project controls, typography, and cinematic navigation
+# Design QA
 
-## Evidence
+- Source visual truth: `/var/folders/my/bpps6r9s3f77pjvvxybnctn00000gn/T/TemporaryItems/NSIRD_screencaptureui_wOWxk8/螢幕截圖 2026-08-22 14.08.14.png`
+- Alignment issue reference: `/var/folders/my/bpps6r9s3f77pjvvxybnctn00000gn/T/TemporaryItems/NSIRD_screencaptureui_lG6Pnm/螢幕截圖 2026-08-22 15.20.01.png`
+- Implementation screenshots:
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/implementation-desktop-1262x1021.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/implementation-chat-hover.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/implementation-mobile-390x844.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/implementation-reference-1494x602.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/alignment-fullscreen-2374x1196.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/alignment-laptop-1087x865.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/alignment-mobile-390x844.png`
+  - `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/alignment-shared-container-1087x450.png`
+- Combined comparison: `/Users/planetcow/Documents/Codex/2026-08-22/files-mentioned-by-the-user-portfolio/audit/qa-side-by-side.png`
+- Reference pixels: 1494 × 602; density unknown.
+- Matched implementation viewport and pixels: 1494 × 602 CSS px at browser density 1.
+- Additional responsive states: 2374 × 1196 fullscreen, 1536 × 900 desktop, 1087 × 865 laptop, 768 × 1024 tablet, and 390 × 844 mobile.
+- State: hero at rest, chatbot at rest and hover, chatbot opened and dismissed with Escape.
 
-- Source visual truth: the two annotated `/projects` browser screenshots in the current user request, plus the user's explicit placement requirements (metadata at bottom-left; controls at bottom-right; square filter; navigation-matched type).
-- Implementation screenshot: `qa/projects-unified-style.png`.
-- Contact cleanup screenshot: `qa/contact-without-particles.png`.
-- Viewport: 1135 × 998 CSS px at device scale factor 1.
-- Responsive check: 390 × 844 CSS px; document width remained 390 px.
-- State: `/projects`, All filter, gallery resting state; `/` contact anchor, Say Hello resting state.
-- Source pixel dimensions: 1135 × 998 for the annotated browser evidence displayed in-thread.
-- Implementation pixel dimensions: 1135 × 998.
-- Density normalization: none required; source and implementation use the same CSS viewport and pixel dimensions.
+## Full-view comparison evidence
 
-## Full-view comparison
+The reference is a tight crop of the display title rather than the complete hero, so global scale is not treated as a pixel-fidelity target. The implementation preserves the same three-line white/blue hierarchy and dark moving texture while adding the requested slightly more open line rhythm. The complete desktop and mobile captures confirm that the title remains inside the hero and above the logo rail.
 
-The implementation preserves the annotated spherical gallery composition and places the active project block at the lower-left edge. The filter/HUD is separated into the lower-right corner, uses square geometry, and shares the site's body typeface and 14 px navigation size. The gallery remains the dominant visual surface with no new decorative layers competing with it.
+## Focused region evidence
 
-## Focused region comparison
-
-- Bottom controls: the active project metadata and filter no longer compete for the same center-bottom area.
-- Typography: computed styles confirm main navigation and filter controls both use `HelveticaNowDisplayW01-Rg, Helvetica Neue, Arial, sans-serif` at 14 px; filter radius is 0 px.
-- Contact card: the particle canvas is absent (`#contact canvas` count: 0) while the card structure, glow, copy, email, and message link remain intact.
-
-## Findings and comparison history
-
-### Initial P2 findings
-
-- Filter used monospaced 8–9 px uppercase pill styling that did not match the site navigation.
-- Filter was centered while the annotation requested bottom-right alignment.
-- Project metadata sat higher than the requested bottom-left anchor.
-- Contact section still rendered moving geometric particles.
-- Home and Projects used separate entry treatments with no shared route transition.
-
-### Fixes made
-
-- Introduced shared `site-nav-text` typography tokens and inherited form/control fonts.
-- Rebuilt the filter as a square, segmented control at bottom-right and moved metadata to bottom-left.
-- Removed `ContactParticleField` from the rendered contact section.
-- Added one global cinematic route transition for internal page-to-page navigation.
-- Removed the duplicate hero-only intro overlay and aligned timeline display headings with the shared heading family.
-
-### Post-fix evidence
-
-- `qa/projects-unified-style.png`: placement, square controls, and consistent navigation typography.
-- `qa/contact-without-particles.png`: particle-free Say Hello card.
-- Filter interaction: UI/UX becomes pressed and exposes exactly four project case-study buttons.
-- Cinematic navigation: Projects → Home completed after the transition curtain and resolved to `/`.
-- Browser console: no errors or warnings.
-- `npm run lint`: passed.
-- `npm run build`: passed; only the existing Vite bundle-size advisory remains.
+The title and chatbot were inspected separately because they are the only requested changes. The chatbot measures 44 × 44 px at rest, expands to 280 px on hover, changes from 60% white to full white, increases its border from 20% to 40% white, and keeps a visible 2 px keyboard focus ring. Its continuous body bob/rotation was removed; the eye blink remains.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: passed. Navigation and filters share the same family, size, line height, and letter-spacing token; display headings retain the site heading family.
-- Spacing and layout rhythm: passed. Bottom-left and bottom-right control zones are distinct; mobile has no document overflow.
-- Colors and visual tokens: passed. Existing black, white, violet ambient light, and orange accent system is preserved.
-- Image quality and asset fidelity: passed. Existing project textures and 3D gallery materials are unchanged.
-- Copy and content: passed. Project labels, category counts, contact copy, and navigation labels are unchanged.
+- Fonts and typography: existing heading family and weight preserved; line heights increased to 0.96 / 0.92 / 0.90 responsively; wrapping and copy remain unchanged.
+- Spacing and layout rhythm: one shared responsive gutter now controls the greeting, intro, title container, and scroll label: 20 px mobile, 32 px tablet, and 40 px laptop/desktop/fullscreen. The title keeps a single `-0.06em` optical font correction. No tested viewport has horizontal overflow; chatbot resting footprint remains 44 px.
+- Colors and visual tokens: white and `#4D7CFF` hierarchy preserved; chatbot contrast is intentionally quieter at rest and returns on hover/focus/open.
+- Image quality and assets: existing video/background and logo assets are unchanged; no visible asset was substituted.
+- Copy and content: all portfolio and chatbot copy is unchanged.
+
+## Interaction and technical checks
+
+- Chatbot hover expansion: passed.
+- Chatbot open state: passed.
+- Escape dismissal: passed.
+- Mobile horizontal overflow: none at 390 × 844.
+- Left-edge equality: intro and title container matched exactly at 2374, 1536, 1087, 768, and 390 px widths.
+- Console errors: none.
+- TypeScript check: passed.
+
+## Findings
+
+No actionable P0, P1, or P2 differences remain for the two requested refinements.
+
+## Comparison history
+
+- Pass 1: title rhythm, resting chatbot size/contrast, hover emphasis, responsive overflow, and open/close interaction all met the brief. No corrective iteration was required.
+- Pass 2: replaced separate Tailwind left offsets, `-3px` intro margin, and the title-only class offset with a shared gutter system. The first ultrawide optical nudge over-corrected the title; it was removed and replaced with one `-0.06em` font correction. Post-fix screenshots show the visible `D` aligned with the intro at fullscreen, laptop, and mobile sizes.
+- Pass 3: moved the intro and title into the same positioned parent. At 1087 px width, the shared parent, intro, and title wrapper all measured exactly 40 px from the left at viewport heights 865, 700, 600, and 450 px. At 390 × 844 they all measured exactly 20 px. The shortest-state screenshot confirms the visible left edge remains aligned with no overlap or horizontal overflow.
 
 ## Follow-up polish
 
-- P3: code-split the Three.js gallery in a later performance pass to reduce the existing bundle-size warning.
+- P3: The expanded chatbot label remains intentionally wide for readability; it could be shortened later if a more minimal hover state is desired.
 
 final result: passed
