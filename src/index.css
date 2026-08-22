@@ -171,7 +171,7 @@ select {
 }
 
 /* Keep the three-line hero title between the intro and logo rail on short screens. */
-@media (max-height: 600px) {
+@media (max-height: 700px) {
   .hero-reference-title {
     font-size: min(clamp(2.5rem, 10.8vw, 12.5rem), 12.75vh);
   }

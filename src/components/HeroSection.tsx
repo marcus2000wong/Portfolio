@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { BRANDS } from '../data/portfolioData';
 import { ModalType } from '../types';
@@ -39,6 +39,27 @@ const BrandLogo: React.FC<{ brand: Brand }> = ({ brand }) => {
   );
 };
 
+const getTimeGreeting = () => {
+  const hour = new Date().getHours();
+
+  if (hour >= 18) return 'Good Evening!';
+  if (hour >= 12) return 'Good Afternoon!';
+  return 'Good morning!';
+};
+
+const TimeGreeting: React.FC = () => {
+  const [greeting, setGreeting] = useState(getTimeGreeting);
+
+  useEffect(() => {
+    const updateGreeting = () => setGreeting(getTimeGreeting());
+    const timer = window.setInterval(updateGreeting, 60_000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return <>{greeting}</>;
+};
+
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
   <section id="home" className="relative min-h-[100svh] overflow-hidden bg-transparent text-white select-none">
@@ -47,7 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
     <div className="relative min-h-[100svh] px-5 py-7 sm:px-8 sm:py-9 lg:px-10">
       <div className="fixed inset-x-0 top-0 z-50 h-28 bg-gradient-to-b from-black/95 via-black/65 to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 left-[73.5%] hidden border-l border-white/[0.09] lg:block" />
-      <div className="site-nav-text fixed left-5 top-7 z-[60] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block">Good morning!</div>
+      <div className="site-nav-text fixed left-5 top-7 z-[60] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block"><TimeGreeting /></div>
       <nav aria-label="Primary navigation" className="site-nav-text fixed inset-x-5 top-7 z-[60] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
         <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
           <a href="#home" className="text-white transition hover:text-[#4D7CFF]">Home</a>
@@ -87,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
         }}
       >
-        <h1 className="hero-reference-title font-black uppercase leading-[0.95] sm:leading-[0.86] lg:leading-[0.82] xl:leading-[0.8] left-[2px]">
+        <h1 className="hero-reference-title font-black uppercase leading-[0.95] sm:leading-[0.90] lg:leading-[0.88] xl:leading-[0.88] left-[2px]">
           {[
             ['Design', 'text-white'],
             ['for digital', 'text-white'],
