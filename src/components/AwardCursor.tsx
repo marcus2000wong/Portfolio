@@ -94,7 +94,7 @@ export function AwardCursor() {
 
   return (
     <motion.div
-      className={`pointer-events-none fixed left-0 top-0 z-[290] hidden items-center justify-center uppercase text-white md:flex ${scrollMode ? 'font-heading text-sm font-bold tracking-[-0.02em]' : 'rounded-full border font-mono text-[8px] tracking-[0.14em] backdrop-blur-md'}`}
+      className={`pointer-events-none fixed left-0 top-0 z-[290] hidden items-center justify-center uppercase text-white md:flex ${scrollMode ? 'font-heading text-sm font-bold' : 'rounded-full border font-mono text-[8px] backdrop-blur-md'}`}
       style={{ x: smoothX, y: smoothY, translateX: '-50%', translateY: '-50%' }}
       animate={{
         width: scrollMode ? 176 : interactive ? 64 : 18,
@@ -133,7 +133,7 @@ export function AwardCursor() {
             </motion.span>
           </span>
 
-          <span className="relative overflow-hidden text-[15px] normal-case tracking-[-0.025em]">
+          <span className="relative overflow-hidden text-[15px] normal-case">
             <motion.span
               className="block"
               initial={false}

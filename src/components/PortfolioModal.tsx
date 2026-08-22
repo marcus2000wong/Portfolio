@@ -135,7 +135,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
           {(activeTab === 'studio' || activeTab === 'contact') && (
             <div className="space-y-6">
               <div className="border-b border-zinc-800/80 pb-6">
-                <div className="inline-block px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-xs uppercase tracking-wider mb-3">
+                <div className="inline-block px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-xs uppercase mb-3">
                   Lead Designer & Developer
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-heading text-white">
@@ -149,7 +149,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
               {/* Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
-                  <div className="text-zinc-400 text-xs uppercase tracking-wider">
+                  <div className="text-zinc-400 text-xs uppercase">
                     Direct Email
                   </div>
                   <button
@@ -161,7 +161,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
                 </div>
 
                 <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
-                  <div className="text-zinc-400 text-xs uppercase tracking-wider">
+                  <div className="text-zinc-400 text-xs uppercase">
                     Phone / WhatsApp
                   </div>
                   <a
@@ -173,7 +173,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
                 </div>
 
                 <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
-                  <div className="text-zinc-400 text-xs uppercase tracking-wider">
+                  <div className="text-zinc-400 text-xs uppercase">
                     Behance Portfolio
                   </div>
                   <a
@@ -444,7 +444,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
                 <form onSubmit={handlePitchSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-zinc-400 mb-1">
+                      <label className="block text-xs uppercase text-zinc-400 mb-1">
                         Your Name
                       </label>
                       <input
@@ -460,7 +460,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-zinc-400 mb-1">
+                      <label className="block text-xs uppercase text-zinc-400 mb-1">
                         Your Email
                       </label>
                       <input
@@ -478,7 +478,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-zinc-400 mb-1">
+                      <label className="block text-xs uppercase text-zinc-400 mb-1">
                         Primary Service
                       </label>
                       <select
@@ -496,7 +496,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs uppercase tracking-wider text-zinc-400 mb-1">
+                      <label className="block text-xs uppercase text-zinc-400 mb-1">
                         Target Budget
                       </label>
                       <select
@@ -515,7 +515,7 @@ export const PortfolioModal: React.FC<PortfolioModalProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-zinc-400 mb-1">
+                    <label className="block text-xs uppercase text-zinc-400 mb-1">
                       Project Details
                     </label>
                     <textarea

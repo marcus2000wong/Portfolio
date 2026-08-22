@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             </span>
 
             <span
-              className="font-heading text-[18px] sm:text-[22px] tracking-tight text-white select-none transition-all duration-300 group-hover/logo:text-emerald-300 group-hover/logo:drop-shadow-[0_0_12px_rgba(52,211,153,0.8)]"
+              className="font-heading text-[18px] sm:text-[22px] text-white select-none transition-all duration-300 group-hover/logo:text-emerald-300 group-hover/logo:drop-shadow-[0_0_12px_rgba(52,211,153,0.8)]"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Mainframe®
@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
               <button
                 key={idx}
                 onClick={item.action}
-                className="relative px-3.5 py-1.5 rounded-full text-zinc-300 hover:text-white transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border hover:border-white/20 border border-transparent cursor-pointer focus:outline-none text-xs lg:text-sm uppercase font-mono tracking-wider"
+                className="relative px-3.5 py-1.5 rounded-full text-zinc-300 hover:text-white transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border hover:border-white/20 border border-transparent cursor-pointer focus:outline-none text-xs lg:text-sm uppercase font-mono"
               >
                 {item.label}
               </button>
@@ -155,5 +155,4 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
     </>
   );
 };
-
 

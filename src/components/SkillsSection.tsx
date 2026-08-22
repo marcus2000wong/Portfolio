@@ -143,7 +143,7 @@ export const SkillsSection: React.FC = () => {
         {/* 1. TOP HEADER SECTION */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start mb-10 sm:mb-14">
           <div className="md:col-span-7 lg:col-span-8">
-            <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-normal tracking-tight text-white/95 leading-[1.18]">
+            <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-normal text-white/95 leading-[1.18]">
               Unmatched propulsion data across every flight-critical layer.
             </h2>
           </div>
@@ -187,7 +187,7 @@ export const SkillsSection: React.FC = () => {
         <div className="w-full rounded-2xl bg-[#0c0d12] border border-white/10 p-5 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.95)] relative overflow-hidden">
           
           {/* Card Top Title Row */}
-          <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4 mb-8 font-mono text-[10px] sm:text-xs tracking-widest text-zinc-400 uppercase">
+          <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4 mb-8 font-mono text-[10px] sm:text-xs text-zinc-400 uppercase">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
               {currentData.headerTitle}
@@ -225,7 +225,7 @@ export const SkillsSection: React.FC = () => {
                   >
                     {/* Left Column: Skill Label */}
                     <div className="md:col-span-4 lg:col-span-3">
-                      <h3 className="text-white text-xs sm:text-sm font-semibold tracking-tight group-hover/row:text-blue-200 transition-colors">
+                      <h3 className="text-white text-xs sm:text-sm font-semibold group-hover/row:text-blue-200 transition-colors">
                         {item.title}
                       </h3>
                       <p className="text-zinc-500 text-[11px] font-mono mt-0.5">

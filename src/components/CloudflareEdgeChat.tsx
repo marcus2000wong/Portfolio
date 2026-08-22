@@ -98,13 +98,13 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
                     href="https://wa.me/85264296249?text=Hi%20Marcus%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
                     target="_blank"
                     rel="noreferrer"
-                    className="flex min-h-11 items-center justify-center gap-2 bg-white px-3 font-mono text-[9px] uppercase tracking-[0.1em] text-black transition hover:bg-[#4D7CFF] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D7CFF]"
+                    className="flex min-h-11 items-center justify-center gap-2 bg-white px-3 font-mono text-[9px] uppercase text-black transition hover:bg-[#4D7CFF] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D7CFF]"
                   >
                     <MessageCircle size={14} strokeWidth={1.6} /> WhatsApp
                   </a>
                   <a
                     href="mailto:marcus2000wong@yahoo.com?subject=Portfolio%20project%20enquiry"
-                    className="flex min-h-11 items-center justify-center gap-2 bg-white/[0.08] px-3 font-mono text-[9px] uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D7CFF]"
+                    className="flex min-h-11 items-center justify-center gap-2 bg-white/[0.08] px-3 font-mono text-[9px] uppercase text-white transition hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D7CFF]"
                   >
                     <Mail size={14} strokeWidth={1.6} /> Email
                   </a>
@@ -149,7 +149,7 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
           </span>
           <span className={`ml-2.5 min-w-0 whitespace-nowrap transition-opacity duration-150 group-hover/chat:opacity-100 ${open ? 'opacity-100' : 'opacity-0'}`}>
             <span className="block truncate font-heading text-[13px] font-medium">Portfolio assistant</span>
-            <span className="mt-0.5 flex items-center gap-1.5 font-mono text-[8px] uppercase tracking-[0.13em] text-white/35">
+            <span className="mt-0.5 flex items-center gap-1.5 font-mono text-[8px] uppercase text-white/35">
               <Cloud size={10} /> Powered at the edge
             </span>
           </span>

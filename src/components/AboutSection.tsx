@@ -15,7 +15,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onCopyEmail }) => {
         {/* SECTION HEADER & BIO */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-xs uppercase tracking-widest text-zinc-400 font-mono">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-xs uppercase text-zinc-400 font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
               About Me
             </div>
@@ -80,7 +80,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onCopyEmail }) => {
                   viewport={{ once: true }}
                   className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 space-y-3"
                 >
-                  <div className="text-xs font-mono uppercase tracking-wider text-zinc-400 border-b border-zinc-800 pb-2">
+                  <div className="text-xs font-mono uppercase text-zinc-400 border-b border-zinc-800 pb-2">
                     {group.category}
                   </div>
                   <div className="space-y-3 pt-1">

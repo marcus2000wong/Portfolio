@@ -78,7 +78,7 @@ const ScrollTriggeredServiceTitle: React.FC<{ children: string }> = ({ children 
   return (
     <span
       ref={titleRef}
-      className="block overflow-hidden py-[0.18em] -my-[0.18em] font-heading text-[clamp(1.65rem,4.2vw,4.8rem)] leading-[1.05] tracking-[-0.055em] text-white"
+      className="block overflow-hidden py-[0.18em] -my-[0.18em] font-heading text-[clamp(1.65rem,4.2vw,4.8rem)] leading-[1.05] text-white"
     >
       <motion.span style={{ y, opacity, filter }} className="block will-change-transform">
         {children}
@@ -104,8 +104,8 @@ export const WhatIDoSection: React.FC = () => {
       <div className="mx-auto ">
         <div ref={introRef} className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <p className="mb-5 text-[15px] uppercase tracking-[0.22em] text-[#4D7CFF]">■ What I do</p>
-            <h2 className="font-heading text-[clamp(3.3rem,8vw,8.5rem)] font-medium leading-[0.86] tracking-[-0.065em] text-white">
+            <p className="mb-5 text-[15px] uppercase text-[#4D7CFF]">■ What I do</p>
+            <h2 className="font-heading text-[clamp(3.3rem,8vw,8.5rem)] font-medium leading-[0.86] text-white">
               <span className="block">
                 {['Design', 'Idea','Move' ].map((word, index) => (
                   <HighlightWord key={word} index={index} total={5} progress={introProgress}>
@@ -154,7 +154,7 @@ export const WhatIDoSection: React.FC = () => {
                 >
                   <span className="font-mono text-[15px] text-[#4D7CFF] ">{service.id}</span>
                   <ScrollTriggeredServiceTitle>{service.title}</ScrollTriggeredServiceTitle>
-                  <span className="hidden font-mono text-[15px] tracking-[0.16em] text-white/25 sm:block">{service.code}</span>
+                  <span className="hidden font-mono text-[15px] text-white/25 sm:block">{service.code}</span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -182,7 +182,7 @@ export const WhatIDoSection: React.FC = () => {
                           {service.capabilities.map((capability) => (
                             <span
                               key={capability}
-                              className="bg-white/[0.06] px-3 py-2 text-[10px] uppercase tracking-[0.12em] text-white/50 sm:text-xs"
+                              className="bg-white/[0.06] px-3 py-2 text-[10px] uppercase text-white/50 sm:text-xs"
                             >
                               {capability}
                             </span>

@@ -120,7 +120,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
 
   return (
     <section id="portfolio" className="relative z-20 h-[100svh] min-h-0 w-full overflow-hidden bg-black/68 text-white backdrop-blur-[12px]">
-      <div inert={selectedProject ? true : undefined}>
+      <div
+        inert={selectedProject ? true : undefined}
+        className={`transition-[filter] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${selectedProject ? 'blur-[8px]' : 'blur-0'}`}
+      >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_61%_46%,rgba(62,68,146,0.24),transparent_35%),radial-gradient(circle_at_38%_70%,rgba(39,31,88,0.18),transparent_42%)]" />
 
       <motion.div
@@ -131,7 +134,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
         className="pointer-events-none absolute inset-x-0 top-[10%] z-[1] overflow-hidden px-5 sm:px-8 lg:px-10"
         aria-hidden="true"
       >
-        <p className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]">■ Selected work</p>
+        <p className="font-mono text-[15px] uppercase text-[#4D7CFF]">■ Selected work</p>
         <p className="mt-4 whitespace-nowrap font-heading text-[clamp(5rem,15vw,15rem)] font-medium leading-[0.72] py-2 text-white/[0.055]">
           {currentProject?.title}
         </p>
@@ -161,7 +164,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
       </div>
 
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-24 w-24 items-center justify-center rounded-full border border-white/75 bg-black/90 px-3 text-center font-mono text-[9px] uppercase leading-[1.25] tracking-[0.12em] text-white shadow-[0_16px_48px_rgba(0,0,0,0.6),0_0_28px_rgba(255,255,255,0.1)] backdrop-blur-md md:flex"
+        className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-24 w-24 items-center justify-center rounded-full border border-white/75 bg-black/90 px-3 text-center font-mono text-[9px] uppercase leading-[1.25] text-white shadow-[0_16px_48px_rgba(0,0,0,0.6),0_0_28px_rgba(255,255,255,0.1)] backdrop-blur-md md:flex"
         style={{ x: smoothCursorX, y: smoothCursorY, translateX: '-50%', translateY: '-50%' }}
         animate={{
           opacity: galleryCursorVisible && !selectedProject ? [0, 1, 1] : 0,
@@ -222,7 +225,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
       </motion.aside>
 
       <div className="absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] right-4 z-40 w-[calc(100%-2rem)] sm:bottom-7 sm:right-8 sm:w-auto lg:bottom-8 lg:right-10">
-        <p className="mb-2 text-right font-mono text-[8px] uppercase tracking-[0.12em] text-white/40">
+        <p className="mb-2 text-right font-mono text-[8px] uppercase text-white/40">
           Scroll or drag · select a card to open
         </p>
         <nav data-cursor-passive aria-label="Filter projects" className="grid w-full grid-cols-5 overflow-hidden border border-white/20 bg-black/82 shadow-2xl backdrop-blur-xl sm:flex sm:w-auto sm:max-w-full sm:items-center">
@@ -319,6 +322,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
                 ref={closeButtonRef}
                 type="button"
                 onClick={() => setSelectedProject(null)}
+                style={{ outline: 'none' }}
                 className="
                   absolute
                   right-4

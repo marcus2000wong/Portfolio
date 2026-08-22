@@ -81,10 +81,10 @@ export function CinematicRouteTransition({ onNavigate }: CinematicRouteTransitio
 
   const transitionCopy = () => (
     <div className="relative flex h-full w-full flex-col justify-between px-6 py-7 sm:px-10 sm:py-9 lg:px-14 lg:py-11">
-      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-heading text-[clamp(9rem,24vw,24rem)] font-medium leading-none tracking-[-0.08em] text-white/[0.025] sm:right-8">
+      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-heading text-[clamp(9rem,24vw,24rem)] font-medium leading-none text-white/[0.025] sm:right-8">
         {String(progress).padStart(3, '0')}
       </span>
-      <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.24em] text-white/45 sm:text-[10px]">
+      <div className="flex items-center justify-between font-mono text-[9px] uppercase text-white/45 sm:text-[10px]">
         <span>Mainframe® / Marcus Wong</span>
         <span>{entering ? 'Loading' : 'Entering'} / {details.index} / {String(progress).padStart(3, '0')}%</span>
       </div>
@@ -100,10 +100,10 @@ export function CinematicRouteTransition({ onNavigate }: CinematicRouteTransitio
             ease: [0.16, 1, 0.3, 1],
           }}
         >
-          <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.32em] text-[#7094ff] sm:text-[10px]">
+          <p className="mb-3 font-mono text-[9px] uppercase text-[#7094ff] sm:text-[10px]">
             {details.index} — {details.short}
           </p>
-          <p className="max-w-[12ch] font-heading text-[clamp(3.25rem,10vw,9.5rem)] font-medium leading-[0.78] tracking-[-0.075em] text-white">
+          <p className="max-w-[12ch] font-heading text-[clamp(3.25rem,10vw,9.5rem)] font-medium leading-[0.78] text-white">
             {details.name}
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ export function CinematicRouteTransition({ onNavigate }: CinematicRouteTransitio
             transition={{ duration: reduceMotion ? 0.1 : 0.16, ease: 'linear' }}
           />
         </div>
-        <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-white/35">HK · 2026</span>
+        <span className="font-mono text-[9px] uppercase text-white/35">HK · 2026</span>
       </div>
     </div>
   );

@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
           transition={{ duration: 3.4, repeat: Infinity, repeatDelay: 3.8, ease: [0.76, 0, 0.24, 1] }}
         />
 
-        <div className="pointer-events-none absolute bottom-8 right-8 z-[6] hidden items-center gap-3 font-mono text-[8px] uppercase tracking-[0.22em] text-white/25 sm:flex">
+        <div className="pointer-events-none absolute bottom-8 right-8 z-[6] hidden items-center gap-3 font-mono text-[8px] uppercase text-white/25 sm:flex">
           Hong Kong · Worldwide
           <motion.span
             className="h-1.5 w-1.5 rounded-full bg-[#4D7CFF] shadow-[0_0_10px_rgba(77,124,255,0.9)]"
@@ -74,7 +74,7 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="font-mono text-[15px] uppercase tracking-[0.24em] text-[#4D7CFF]"
+            className="font-mono text-[15px] uppercase text-[#4D7CFF]"
           >
             ■ Let’s work together
           </motion.p>
@@ -84,7 +84,7 @@ export const ContactSection: React.FC = () => {
               animate={{ y: '0%', rotateX: 0 }}
               transition={{ duration: 0.9, delay: reduceMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformPerspective: 900 }}
-              className="font-heading text-[clamp(4.5rem,12vw,11rem)] font-medium leading-[0.82] tracking-[-0.075em]"
+              className="font-heading text-[clamp(4.5rem,12vw,11rem)] font-medium leading-[0.82]"
             >
               Say Hello.
             </motion.h2>
@@ -110,11 +110,11 @@ export const ContactSection: React.FC = () => {
               className="group relative flex min-h-32 flex-col justify-between overflow-hidden border-b border-white/10 p-5 sm:min-h-40 sm:border-b-0 sm:border-r sm:p-7"
             >
               <span className="absolute inset-0 origin-bottom scale-y-0 bg-[#4D7CFF] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
-              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-white/35 transition-colors group-hover:text-white/75">
+              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase text-white/35 transition-colors group-hover:text-white/75">
                 Direct email
                 <span>01</span>
               </span>
-              <span className="relative z-10 mt-8 break-all font-heading text-lg tracking-[-0.03em] text-white sm:text-[1.35rem]">
+              <span className="relative z-10 mt-8 break-all font-heading text-lg text-white sm:text-[1.35rem]">
                 {MARCUS_PROFILE.email}
               </span>
             </a>
@@ -123,11 +123,11 @@ export const ContactSection: React.FC = () => {
               className="group relative flex min-h-32 flex-col justify-between overflow-hidden p-5 sm:min-h-40 sm:p-7"
             >
               <span className="absolute inset-0 origin-bottom scale-y-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
-              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-white/35 transition-colors group-hover:text-black/55">
+              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase text-white/35 transition-colors group-hover:text-black/55">
                 Start a conversation
                 <span>02</span>
               </span>
-              <span className="relative z-10 mt-8 flex items-end justify-between font-heading text-2xl tracking-[-0.04em] text-white transition-colors group-hover:text-black sm:text-3xl">
+              <span className="relative z-10 mt-8 flex items-end justify-between font-heading text-2xl text-white transition-colors group-hover:text-black sm:text-3xl">
                 Leave a message
                 <motion.span
                   aria-hidden="true"

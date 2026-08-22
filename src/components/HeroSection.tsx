@@ -49,7 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
         transition={{ duration: 0.85, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
       >
         <p className="mb-2 text-sm text-white/55 sm:text-base">Hi there! this is</p>
-        <p className="text-2xl font-semibold tracking-tight sm:text-4xl ">Marcus <span className="text-white/35">Wong</span></p>
+        <p className="text-2xl font-semibold sm:text-4xl ">Marcus <span className="text-white/35">Wong</span></p>
       </motion.div>
 
       <motion.div
@@ -106,7 +106,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
         <div className="border-y border-white/10 py-5 text-sm leading-7 text-white/55">
           <p>Website Design</p><p>Branding &amp; Strategy</p><p>Product Design</p>
         </div>
-        <h2 className="mt-8 font-heading text-base leading-tight tracking-[-0.025em] text-white">
+        <h2 className="mt-8 font-heading text-base leading-tight text-white">
           Creative Technologist &amp; Multimedia Designer
         </h2>
         <p className="mt-3 pb-5 text-sm leading-6 text-white/55">As a multimedia designer, I specialize in crafting visually engaging digital experiences—spanning web design, social media content, video production, and AI-driven creative workflows. With a keen eye for aesthetics and user-centric principles, I develop responsive websites, intuitive interfaces, dynamic videos, and social media campaigns that align with brand identities and drive audience engagement.</p>
@@ -127,8 +127,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
                 key={label}
                 className={`${index === 0 ? 'justify-self-start' : index === 2 ? 'justify-self-end' : 'justify-self-center'} text-center`}
               >
-                <p className="font-heading text-3xl leading-none tracking-[-0.05em] text-[#4D7CFF] drop-shadow-[0_0_12px_rgb(black)]">{value}</p>
-                <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-white">{label}</p>
+                <p className="font-heading text-3xl leading-none text-[#4D7CFF] drop-shadow-[0_0_12px_rgb(black)]">{value}</p>
+                <p className="mt-2 text-[10px] uppercase text-white">{label}</p>
               </div>
             ))}
           </div>

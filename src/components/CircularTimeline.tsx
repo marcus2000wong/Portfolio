@@ -71,7 +71,7 @@ export const CircularTimeline: React.FC = () => {
     >
       <div className="sticky top-0 h-screen w-screen overflow-hidden bg-black/70 backdrop-blur-[12px]">
         <div className="absolute inset-x-0 top-[4svh] h-[92svh] overflow-hidden border-y border-white/10">
-        <p className="absolute left-5 top-6 z-10 text-[15px] uppercase tracking-[0.22em] text-[#4D7CFF] sm:left-10 sm:top-9">■ Career &amp; education</p>
+        <p className="absolute left-5 top-6 z-10 text-[15px] uppercase text-[#4D7CFF] sm:left-10 sm:top-9">■ Career &amp; education</p>
         <motion.div
           style={{ x }}
           className="flex h-[calc(100%_-_72px)] min-w-max pt-20 sm:pt-24"
@@ -87,7 +87,7 @@ export const CircularTimeline: React.FC = () => {
             >
               <div>
                 <h3
-                  className={`max-w-[13rem] font-heading text-2xl font-medium leading-[1.12] tracking-[-0.045em] transition-colors duration-500 sm:text-3xl ${
+                  className={`max-w-[13rem] font-heading text-2xl font-medium leading-[1.12] transition-colors duration-500 sm:text-3xl ${
                     index === activeIndex
                       ? 'text-[#4D7CFF]'
                       : 'text-white/75'
@@ -103,7 +103,7 @@ export const CircularTimeline: React.FC = () => {
 
               <div className="mt-auto pb-20">
                 <p
-                  className={`font-heading text-lg font-medium tracking-[-0.03em] transition-colors duration-300 ${
+                  className={`font-heading text-lg font-medium transition-colors duration-300 ${
                     index === activeIndex
                       ? 'text-white/65'
                       : 'text-white/65'
@@ -122,7 +122,7 @@ export const CircularTimeline: React.FC = () => {
                   <p>From</p>
 
                   <p
-                    className={`mt-1 text-xl font-medium tracking-[-0.035em] transition-colors duration-500 ${
+                    className={`mt-1 text-xl font-medium transition-colors duration-500 ${
                       index === activeIndex
                         ? 'text-white/65'
                         : 'text-white/65'
@@ -136,7 +136,7 @@ export const CircularTimeline: React.FC = () => {
                   <p>To</p>
 
                   <p
-                    className={`mt-1 text-xl font-medium tracking-[-0.035em] transition-colors duration-500 ${
+                    className={`mt-1 text-xl font-medium transition-colors duration-500 ${
                       index === activeIndex
                         ? 'text-white/65'
                         : 'text-white/65'

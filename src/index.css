@@ -38,7 +38,6 @@ select {
   font-family: var(--font-body);
   font-size: var(--text-nav);
   line-height: 1.25;
-  letter-spacing: -0.015em;
 }
 
 @media (max-width: 640px) {
