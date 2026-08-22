@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { BRANDS } from '../data/portfolioData';
 import { ModalType } from '../types';
@@ -12,6 +12,32 @@ interface HeroSectionProps {
   onOpenModal: (type: ModalType) => void;
   onCopyEmail: () => void;
 }
+
+const BrandLogo: React.FC<{ brand: Brand }> = ({ brand }) => {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className="grid h-9 w-[132px] shrink-0 place-items-center sm:h-11 sm:w-[176px]">
+      {failed ? (
+        <span className="px-2 text-center font-mono text-[9px] uppercase leading-tight text-white/60">
+          {brand.name}
+        </span>
+      ) : (
+        <img
+          src={brand.logo}
+          alt={`${brand.name} logo`}
+          width="300"
+          height="100"
+          loading="eager"
+          decoding="async"
+          draggable={false}
+          className="h-full w-full object-contain"
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  );
+};
 
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
@@ -61,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
         }}
       >
-        <h1 className="hero-reference-title -ml-[0.01em] font-black uppercase leading-[0.9] sm:leading-[0.86] lg:leading-[0.82] xl:leading-[0.8]">
+        <h1 className="hero-reference-title -ml-[0.01em] font-black uppercase leading-[0.95] sm:leading-[0.86] lg:leading-[0.82] xl:leading-[0.8]">
           {[
             ['Design', 'text-white'],
             ['for digital', 'text-white'],
@@ -151,11 +177,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
               key={`${brand.id}-${index}`}
               className="flex items-center gap-3 px-3 sm:gap-5 sm:px-5"
             >
-              <img
-                src={brand.logo}
-                alt={`${brand.name} logo`}
-                className="h-9 w-auto max-w-[180px] object-contain sm:h-11 sm:max-w-[220px]"
-              />
+              <BrandLogo brand={brand} />
 
               <span
                 className="h-1 w-1 shrink-0 rounded-full bg-white"
