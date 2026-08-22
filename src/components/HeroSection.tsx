@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </nav>
 
       <motion.div
-        className="absolute left-5 top-[20%] z-20 sm:left-8 lg:left-10"
+        className="absolute left-5 top-[20%] z-20 sm:left-8 lg:left-10 "
         initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 0.85, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -87,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
         }}
       >
-        <h1 className="hero-reference-title -ml-[0.01em] font-black uppercase leading-[0.95] sm:leading-[0.86] lg:leading-[0.82] xl:leading-[0.8]">
+        <h1 className="hero-reference-title -ml-[0.05em] font-black uppercase leading-[0.95] sm:leading-[0.86] lg:leading-[0.82] xl:leading-[0.8]">
           {[
             ['Design', 'text-white'],
             ['for digital', 'text-white'],
