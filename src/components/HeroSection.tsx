@@ -84,11 +84,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </motion.div>
 
       <motion.aside
-        className="absolute bottom-[8.5%] left-[75%] right-10 top-[106px] z-20 hidden overflow-y-auto pr-1 lg:flex lg:flex-col [@media(min-height:850px)]:justify-end [@media(min-height:850px)]:overflow-visible"
+        className="absolute bottom-[92px] left-[73.5%] right-0 top-[106px] z-20 hidden overflow-hidden lg:flex lg:flex-col"
         initial={{ opacity: 0, x: 42, filter: 'blur(12px)' }}
         animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
         transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
       >
+        <div className="min-h-0 flex-1 overflow-y-auto">
+        <div className="ml-[1.5vw] mr-10 flex min-h-full flex-col justify-end">
         <div className="mb-7 flex flex-col items-start gap-3 text-sm">
           <a
             href="/projects"
@@ -110,14 +112,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           Creative Technologist &amp; Multimedia Designer
         </h2>
         <p className="mt-3 pb-5 text-sm leading-6 text-white/55">As a multimedia designer, I specialize in crafting visually engaging digital experiences—spanning web design, social media content, video production, and AI-driven creative workflows. With a keen eye for aesthetics and user-centric principles, I develop responsive websites, intuitive interfaces, dynamic videos, and social media campaigns that align with brand identities and drive audience engagement.</p>
-        <div
-          className="min-h-[88px] shrink-0 bg-white/5 py-3"
-          style={{
-            marginLeft: 'calc(-1.5vw - 1px)',
-            width: 'calc(100% + 1.5vw + 2.75rem + 1px)',
-          }}
-        >
-          <div className="grid min-h-[64px] grid-cols-3 items-center pl-[1.5vw] pr-11 pb-5 pt-2">
+        </div>
+        </div>
+        <div className="min-h-[88px] w-full shrink-0 bg-white/5 py-4">
+          <div className="grid min-h-[64px] w-full grid-cols-3 items-center pl-[1.5vw] pr-10">
             {[
               ['3+ ', 'Years Exp.'],
               ['20+', 'Projects'],
@@ -138,7 +136,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       <p className="absolute bottom-5 left-5 z-20 text-xs text-white/45 sm:left-8 sm:text-sm lg:left-10">(Scroll down)</p>
 
       <motion.div
-        className="absolute inset-x-0 bottom-0 z-30 overflow-hidden border-y border-white/15 bg-black/45 py-3 backdrop-blur-sm"
+        className="absolute inset-x-0 bottom-0 z-30 h-[92px] overflow-hidden border-y border-white/15 bg-black/45 py-3 backdrop-blur-sm"
         initial={{ y: '100%', opacity: 0 }}
         animate={{ y: '0%', opacity: 1 }}
         transition={{
