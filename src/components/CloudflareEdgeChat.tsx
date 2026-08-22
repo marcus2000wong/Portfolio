@@ -140,13 +140,17 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
             }
             setOpen(!open);
           }}
-          className="group flex h-full min-w-[52px] flex-1 items-center text-left transition-colors hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4D7CFF]"
+          className="group flex h-full min-w-[52px] flex-1 items-center bg-transparent text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4D7CFF]"
           aria-expanded={open}
         >
-          <span className="relative ml-[9px] grid h-8 w-8 shrink-0 place-items-center bg-white text-black transition-transform duration-200 group-hover:scale-105">
-            <Bot size={15} strokeWidth={1.6} />
+          <motion.span
+            className="relative ml-[5px] grid h-10 w-10 shrink-0 place-items-center bg-transparent text-white transition-transform duration-200 group-hover:scale-110"
+            animate={{ y: [0, -2, 0], rotate: [0, -4, 4, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <Bot size={24} strokeWidth={1.5} />
             <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full border-2 border-[#080809] bg-[#4D7CFF]" />
-          </span>
+          </motion.span>
           <span className={`ml-2.5 min-w-0 whitespace-nowrap transition-opacity duration-150 group-hover/chat:opacity-100 ${open ? 'opacity-100' : 'opacity-0'}`}>
             <span className="block truncate font-heading text-[13px] font-medium">Portfolio assistant</span>
             <span className="mt-0.5 flex items-center gap-1.5 font-mono text-[8px] uppercase text-white/35">
