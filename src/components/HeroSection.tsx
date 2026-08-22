@@ -123,7 +123,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
                   }}
                   transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  {line}
+                  {line === 'for digital' ? (
+                    <>
+                      <span>for</span>{' '}
+                      <span className="hero-digital-break">digital</span>
+                    </>
+                  ) : line}
                 </motion.span>
               </span>
             ))}
