@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </motion.div>
 
       <motion.div
-        className="pointer-events-none absolute bottom-[116px] left-5 z-20 w-[calc(100%-2.5rem)] sm:left-8 sm:w-[73%] lg:left-10"
+        className="pointer-events-none absolute bottom-[120px] left-5 z-20 w-[calc(100%-2.5rem)] sm:left-8 sm:w-[73%] lg:left-10"
         initial="hidden"
         animate="visible"
         variants={{
