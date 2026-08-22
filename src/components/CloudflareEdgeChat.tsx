@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
-import { ArrowUp, Bot, Cloud, Mail, MessageCircle, X } from 'lucide-react';
+import { ArrowUp, Cloud, Mail, MessageCircle, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
 type Message = { role: 'user' | 'assistant'; content: string };
@@ -144,11 +144,33 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
           aria-expanded={open}
         >
           <motion.span
-            className="relative ml-[5px] grid h-10 w-10 shrink-0 place-items-center bg-transparent text-white transition-transform duration-200 group-hover:scale-110"
+            className="relative ml-1 grid h-11 w-11 shrink-0 place-items-center bg-transparent text-white transition-transform duration-200 group-hover:scale-110"
             animate={{ y: [0, -2, 0], rotate: [0, -4, 4, 0] }}
             transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <Bot size={24} strokeWidth={1.5} />
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 8V4H8" />
+              <rect width="16" height="12" x="4" y="8" rx="2" />
+              <path d="M2 14h2M20 14h2" />
+              <motion.circle
+                cx="9"
+                cy="14"
+                r="1.15"
+                fill="#4D7CFF"
+                stroke="none"
+                animate={{ opacity: [1, 0.12, 1, 1] }}
+                transition={{ duration: 1.8, times: [0, 0.12, 0.24, 1], repeat: Infinity, repeatDelay: 0.7 }}
+              />
+              <motion.circle
+                cx="15"
+                cy="14"
+                r="1.15"
+                fill="#4D7CFF"
+                stroke="none"
+                animate={{ opacity: [1, 1, 0.12, 1] }}
+                transition={{ duration: 1.8, times: [0, 0.12, 0.24, 1], repeat: Infinity, repeatDelay: 0.7 }}
+              />
+            </svg>
             <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full border-2 border-[#080809] bg-[#4D7CFF]" />
           </motion.span>
           <span className={`ml-2.5 min-w-0 whitespace-nowrap transition-opacity duration-150 group-hover/chat:opacity-100 ${open ? 'opacity-100' : 'opacity-0'}`}>
