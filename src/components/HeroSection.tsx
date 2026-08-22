@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </motion.div>
 
       <motion.div
-        className="absolute bottom-[13%]  z-20 w-[73%] pointer-events-none sm:left-8 lg:left-10"
+        className="pointer-events-none absolute bottom-[13%] left-5 z-20 w-[calc(100%-2.5rem)] sm:left-8 sm:w-[73%] lg:left-10"
         initial="hidden"
         animate="visible"
         variants={{
@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           visible: { transition: { staggerChildren: 0.13, delayChildren: 0.58 } },
         }}
       >
-        <h1 className="hero-reference-title font-black uppercase leading-[0.83]  ml-[-0.8vh]">
+        <h1 className="hero-reference-title -ml-[0.01em] font-black uppercase leading-[0.9] sm:leading-[0.86] lg:leading-[0.82] xl:leading-[0.8]">
           {[
             ['Design', 'text-white'],
             ['for digital', 'text-white'],
@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
           ].map(([line, color]) => (
             <span key={line} className="block overflow-hidden">
               <motion.span
-                className={`block ${color}`}
+                className={`block whitespace-nowrap ${color}`}
                 variants={{
                   hidden: { y: '115%', opacity: 0, rotate: 2 },
                   visible: { y: '0%', opacity: 1, rotate: 0 },
