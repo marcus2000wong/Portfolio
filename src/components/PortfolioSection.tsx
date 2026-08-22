@@ -112,7 +112,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
   }, []);
 
   return (
-    <section id="portfolio" className="relative z-20 h-screen min-h-[720px] w-full overflow-hidden bg-black/68 text-white backdrop-blur-[12px]">
+    <section id="portfolio" className="relative z-20 h-[100svh] min-h-0 w-full overflow-hidden bg-black/68 text-white backdrop-blur-[12px] sm:min-h-[720px]">
       <div inert={selectedProject ? true : undefined}>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_61%_46%,rgba(62,68,146,0.24),transparent_35%),radial-gradient(circle_at_38%_70%,rgba(39,31,88,0.18),transparent_42%)]" />
 
@@ -214,11 +214,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
         </p>
       </motion.aside>
 
-      <div className="absolute bottom-4 right-4 z-40 w-[calc(100%-2rem)] sm:bottom-7 sm:right-8 sm:w-auto lg:bottom-8 lg:right-10">
+      <div className="absolute bottom-[calc(env(safe-area-inset-bottom)+1rem)] right-4 z-40 w-[calc(100%-2rem)] sm:bottom-7 sm:right-8 sm:w-auto lg:bottom-8 lg:right-10">
         <p className="mb-2 text-right font-mono text-[8px] uppercase tracking-[0.12em] text-white/40">
           Scroll or drag · select a card to open
         </p>
-        <nav data-cursor-passive aria-label="Filter projects" className="flex max-w-full items-center overflow-x-auto border border-white/20 bg-black/82 shadow-2xl backdrop-blur-xl">
+        <nav data-cursor-passive aria-label="Filter projects" className="grid w-full grid-cols-3 overflow-hidden border border-white/20 bg-black/82 shadow-2xl backdrop-blur-xl sm:flex sm:w-auto sm:max-w-full sm:items-center">
           {CATEGORIES.map((category) => {
             const count = category === 'All' ? PROJECTS.length : PROJECTS.filter((project) => project.category === category).length;
             const active = category === activeCategory;
@@ -228,7 +228,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
                 type="button"
                 onClick={() => setActiveCategory(category)}
                 aria-pressed={active}
-                className={`site-nav-text flex min-h-11 shrink-0 items-center gap-2 border-r border-white/10 px-3 py-3 transition last:border-r-0 sm:px-4 ${
+                className={`site-nav-text flex min-h-11 min-w-0 flex-col items-center justify-center gap-0.5 border-b border-r border-white/10 px-1.5 py-2 text-center leading-tight transition [&:nth-last-child(-n+2)]:border-b-0 sm:shrink-0 sm:flex-row sm:gap-2 sm:border-b-0 sm:px-4 sm:py-3 sm:text-left sm:leading-[1.25] sm:last:border-r-0 ${
                   active ? 'bg-white text-black' : 'text-white/55 hover:bg-white/10 hover:text-white'
                 }`}
               >

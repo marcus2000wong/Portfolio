@@ -75,7 +75,7 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
   if (disabled) return null;
 
   return (
-    <div className="fixed right-3 top-20 z-[220] sm:right-0 sm:top-[18vh]">
+    <div className="fixed right-0 top-20 z-[220] sm:top-[18vh]">
       <AnimatePresence>
         {open && (
           <motion.section
