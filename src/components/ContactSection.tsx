@@ -114,7 +114,7 @@ export const ContactSection: React.FC = () => {
                 Direct email
                 <span>01</span>
               </span>
-              <span className="relative z-10 mt-8 break-all font-heading text-lg text-white sm:text-[1.35rem]">
+              <span className="relative z-10 mt-8 break-all font-heading text-lg text-white sm:text-[1.35rem] group-hover:text-black">
                 {MARCUS_PROFILE.email}
               </span>
             </a>

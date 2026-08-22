@@ -83,7 +83,7 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
             animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
             exit={{ opacity: 0, y: 12, scale: 0.97, filter: 'blur(8px)' }}
             transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute right-0 top-[52px] flex h-[min(460px,calc(100svh-9rem))] w-[min(280px,calc(100vw-1.5rem))] origin-top flex-col overflow-hidden border border-white/15 bg-black/70 text-white shadow-[0_28px_100px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-[24px] sm:right-0"
+            className="absolute right-0 top-[44px] flex h-[min(460px,calc(100svh-9rem))] w-[min(280px,calc(100vw-1.5rem))] origin-top flex-col overflow-hidden border border-white/15 bg-black/70 text-white shadow-[0_28px_100px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-[24px] sm:right-0"
             aria-label="Marcus portfolio assistant"
           >
             <div ref={scrollRef} className="min-h-0 flex-1 space-y-4 overflow-y-auto px-4 py-5" aria-live="polite">
@@ -129,7 +129,7 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
 
       <motion.div
         onPointerLeave={() => setSuppressHover(false)}
-        className={`group/chat flex h-[52px] max-w-[calc(100vw-1.5rem)] items-center overflow-hidden border border-r-0 text-white backdrop-blur-[24px] transition-[width,background-color,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] focus-within:w-[min(280px,calc(100vw-1.5rem))] focus-within:border-white/15 focus-within:border-r-0 focus-within:bg-black/70 ${open ? 'w-[min(280px,calc(100vw-1.5rem))] border-white/15 border-r-0 bg-black/70 shadow-[0_18px_55px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.055)]' : suppressHover ? 'w-[52px] border-white/45 border-r-0 bg-transparent' : 'w-[52px] border-white/45 border-r-0 bg-transparent hover:w-[min(280px,calc(100vw-1.5rem))] hover:border-white/15 hover:border-r-0 hover:bg-black/70 hover:shadow-[0_18px_55px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.055)]'}`}
+        className={`group/chat flex h-[44px] max-w-[calc(100vw-1.5rem)] items-center overflow-hidden border border-r-0 text-white/60 backdrop-blur-[18px] transition-[width,background-color,box-shadow,border-color,color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-white focus-within:w-[min(280px,calc(100vw-1.5rem))] focus-within:border-white/25 focus-within:border-r-0 focus-within:bg-black/70 focus-within:text-white ${open ? 'w-[min(280px,calc(100vw-1.5rem))] border-white/20 border-r-0 bg-black/70 text-white shadow-[0_18px_55px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.055)]' : suppressHover ? 'w-[44px] border-white/20 border-r-0 bg-black/10' : 'w-[44px] border-white/20 border-r-0 bg-black/10 hover:w-[min(280px,calc(100vw-1.5rem))] hover:border-white/40 hover:border-r-0 hover:bg-black/65 hover:shadow-[0_18px_55px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.055)]'}`}
       >
         <button
           type="button"
@@ -140,23 +140,14 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
             }
             setOpen(!open);
           }}
-          className="group flex h-full min-w-[52px] flex-1 items-center bg-transparent text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4D7CFF]"
+          className="group flex h-full min-w-[44px] flex-1 items-center bg-transparent text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4D7CFF]"
           aria-expanded={open}
         >
-          <span className="relative ml-0.5 grid h-12 w-12 shrink-0 place-items-center bg-transparent text-white">
+          <span className="relative grid h-11 w-11 shrink-0 place-items-center bg-transparent">
             <motion.span
-              className="grid place-items-center drop-shadow-[0_0_10px_rgba(77,124,255,0.16)] transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_16px_rgba(77,124,255,0.42)]"
-              animate={{
-                y: [0, -2, 0],
-                rotate: [0, -1.5, 0, 1.5, 0],
-              }}
-              transition={{
-                duration: 4.8,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
+              className="grid place-items-center opacity-80 drop-shadow-[0_0_8px_rgba(77,124,255,0.08)] transition-[transform,opacity,filter] duration-300 group-hover:scale-105 group-hover:opacity-100 group-hover:drop-shadow-[0_0_14px_rgba(77,124,255,0.38)]"
             >
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.35" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M12 8V4H8" />
                 <motion.circle
                   cx="8"
