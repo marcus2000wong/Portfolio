@@ -257,10 +257,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
             <motion.div
               ref={dialogRef}
               initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.975, y: 42, clipPath: 'inset(100% 0 0 0)' }}
-              animate={{ opacity: 1, scale: 1, y: 0, clipPath: 'inset(0 0% 0 0)' }}
-              exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.985, y: -18, clipPath: 'inset(0 0 100% 0)' }}
+              animate={{ opacity: 1, scale: 1, y: 0, clipPath: 'inset(0% 0 0 0)' }}
+              exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.985, y: -28, clipPath: 'inset(0 0 100% 0)' }}
               transition={{
-                duration: reduceMotion ? 0.18 : 0.68,
+                duration: reduceMotion ? 0.18 : 0.82,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="
@@ -296,10 +296,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
             >
               {!reduceMotion && (
                 <motion.div
-                  className="pointer-events-none absolute inset-x-0 bottom-0 z-[70] h-[28%] bg-[linear-gradient(0deg,transparent,rgba(77,124,255,0.48),rgba(255,255,255,0.22),transparent)] mix-blend-screen"
-                  initial={{ y: '120%', opacity: 0 }}
-                  animate={{ y: '-460%', opacity: [0, 0.9, 0] }}
-                  transition={{ duration: 0.9, delay: 0.08, times: [0, 0.42, 1], ease: [0.16, 1, 0.3, 1] }}
+                  className="pointer-events-none absolute inset-x-0 bottom-0 z-[70] h-[22%] bg-[linear-gradient(0deg,transparent,rgba(255,255,255,0.44),rgba(255,255,255,0.16),transparent)] mix-blend-screen"
+                  initial={{ y: '130%', opacity: 0 }}
+                  animate={{ y: '-590%', opacity: [0, 0.95, 0] }}
+                  transition={{ duration: 1.05, delay: 0.12, times: [0, 0.38, 1], ease: [0.16, 1, 0.3, 1] }}
                   aria-hidden="true"
                 />
               )}
@@ -330,9 +330,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
                   hover:bg-white
                   hover:text-black
                   focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-[#4D7CFF]
-                  focus-visible:ring-offset-2
+                  focus-visible:ring-1
+                  focus-visible:ring-white/80
+                  focus-visible:ring-offset-1
                   focus-visible:ring-offset-black
 
                   sm:right-5
@@ -350,9 +350,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
               {/* ================================= */}
 
               <motion.div
-                initial={reduceMotion ? undefined : { opacity: 0, scale: 1.035, filter: 'blur(12px)' }}
-                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                transition={{ duration: reduceMotion ? 0.01 : 0.85, delay: reduceMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
+                initial={reduceMotion ? undefined : { opacity: 0, scale: 1.1, y: 28, filter: 'blur(14px)' }}
+                animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: reduceMotion ? 0.01 : 1.05, delay: reduceMotion ? 0 : 0.12, ease: [0.16, 1, 0.3, 1] }}
                 className="
                   relative
                   h-[55%]
@@ -475,9 +475,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
               {/* ================================= */}
 
               <motion.div
-                initial={reduceMotion ? undefined : { opacity: 0, y: 38, filter: 'blur(8px)' }}
+                initial={reduceMotion ? undefined : { opacity: 0, y: 52, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: reduceMotion ? 0.01 : 0.7, delay: reduceMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: reduceMotion ? 0.01 : 0.82, delay: reduceMotion ? 0 : 0.34, ease: [0.16, 1, 0.3, 1] }}
                 className="
                   relative
                   flex
