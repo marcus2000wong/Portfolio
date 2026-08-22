@@ -30,7 +30,7 @@ export const ContactSection: React.FC = () => {
           pointerX.set(event.clientX - bounds.left);
           pointerY.set(event.clientY - bounds.top);
         }}
-        className="relative isolate mx-auto flex min-h-[650px] max-w-[1500px] overflow-hidden rounded-[38px] border border-white/10 bg-[linear-gradient(180deg,rgba(20,20,20,0.8)_0%,rgba(4,4,7,0.88)_58%,rgba(16,18,35,0.82)_100%)] px-5 py-20 shadow-[inset_0_2px_16px_rgba(255,255,255,0.12),inset_0_-38px_70px_rgba(101,111,255,0.18),0_24px_70px_rgba(0,0,0,0.36)] backdrop-blur-[12px] sm:min-h-[720px] sm:rounded-[54px] sm:px-8 sm:py-24 lg:px-10"
+        className="relative isolate mx-auto flex min-h-[650px] max-w-[1500px] overflow-hidden rounded-[17px] border border-white/10 bg-[linear-gradient(180deg,rgba(20,20,20,0.8)_0%,rgba(4,4,7,0.88)_58%,rgba(16,18,35,0.82)_100%)] px-5 py-20 shadow-[inset_0_2px_16px_rgba(255,255,255,0.12),inset_0_-38px_70px_rgba(101,111,255,0.18),0_24px_70px_rgba(0,0,0,0.36)] backdrop-blur-[12px] sm:min-h-[720px] sm:rounded-[54px] sm:px-8 sm:py-24 lg:px-10"
       >
         <motion.div className="pointer-events-none absolute inset-0 z-[3]" style={{ background: spotlight }} />
         <motion.div
