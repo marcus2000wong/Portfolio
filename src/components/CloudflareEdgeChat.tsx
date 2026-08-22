@@ -143,37 +143,67 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
           className="group flex h-full min-w-[52px] flex-1 items-center bg-transparent text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#4D7CFF]"
           aria-expanded={open}
         >
-          <span className="relative ml-1 grid h-11 w-11 shrink-0 place-items-center bg-transparent text-white">
+          <span className="relative ml-0.5 grid h-12 w-12 shrink-0 place-items-center bg-transparent text-white">
             <motion.span
-              className="grid place-items-center transition-transform duration-200 group-hover:scale-110"
-              animate={{ y: [0, -2, 0], rotate: [0, -4, 4, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+              className="grid place-items-center drop-shadow-[0_0_10px_rgba(77,124,255,0.16)] transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_16px_rgba(77,124,255,0.42)]"
+              animate={{
+                y: [0, 0, -4, -4, -1, 0, 0],
+                x: [0, 0, 0, -2, 2, 0, 0],
+                rotate: [0, 0, -3, 3, -1, 0, 0],
+                scale: [1, 1, 1.07, 0.96, 1.025, 1, 1],
+              }}
+              transition={{
+                duration: 6.4,
+                times: [0, 0.56, 0.64, 0.68, 0.73, 0.8, 1],
+                repeat: Infinity,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 8V4H8" />
-              <rect width="16" height="12" x="4" y="8" rx="2" />
-              <path d="M2 14h2M20 14h2" />
-              <motion.circle
-                cx="9"
-                cy="14"
-                r="1.15"
-                fill="#4D7CFF"
-                stroke="none"
-                animate={{ opacity: [1, 0.12, 1, 1] }}
-                transition={{ duration: 1.8, times: [0, 0.12, 0.24, 1], repeat: Infinity, repeatDelay: 0.7 }}
-              />
-              <motion.circle
-                cx="15"
-                cy="14"
-                r="1.15"
-                fill="#4D7CFF"
-                stroke="none"
-                animate={{ opacity: [1, 1, 0.12, 1] }}
-                transition={{ duration: 1.8, times: [0, 0.12, 0.24, 1], repeat: Infinity, repeatDelay: 0.7 }}
-              />
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <motion.rect
+                  width="16"
+                  height="12"
+                  x="4"
+                  y="8"
+                  rx="2"
+                  stroke="#4D7CFF"
+                  strokeWidth="0.8"
+                  animate={{ x: [4, 4, 3.4, 4.6, 4], opacity: [0, 0, 0.75, 0.2, 0] }}
+                  transition={{ duration: 6.4, times: [0, 0.6, 0.67, 0.73, 0.82], repeat: Infinity }}
+                />
+                <path d="M12 8V4H8" />
+                <motion.circle
+                  cx="8"
+                  cy="4"
+                  r="0.9"
+                  fill="#4D7CFF"
+                  stroke="none"
+                  animate={{ opacity: [0.35, 0.35, 1, 0.35], scale: [1, 1, 1.55, 1] }}
+                  transition={{ duration: 6.4, times: [0, 0.58, 0.66, 0.8], repeat: Infinity }}
+                />
+                <rect width="16" height="12" x="4" y="8" rx="2" />
+                <path d="M2 14h2M20 14h2" />
+                {[9, 15].map((cx, index) => (
+                  <motion.circle
+                    key={cx}
+                    cx={cx}
+                    cy="14"
+                    r="1.15"
+                    fill="#4D7CFF"
+                    stroke="none"
+                    animate={{ scaleY: [1, 1, 0.08, 1, 1], opacity: [1, 1, 0.4, 1, 1] }}
+                    transition={{ duration: 4.8, times: [0, 0.7 + index * 0.03, 0.74 + index * 0.03, 0.78 + index * 0.03, 1], repeat: Infinity }}
+                  />
+                ))}
+                <motion.path
+                  d="M6.5 10.5h11"
+                  stroke="#4D7CFF"
+                  strokeWidth="0.65"
+                  animate={{ y: [0, 6, 0], opacity: [0, 0.9, 0] }}
+                  transition={{ duration: 1.45, times: [0, 0.5, 1], repeat: Infinity, repeatDelay: 3.8, ease: 'easeInOut' }}
+                />
               </svg>
             </motion.span>
-            <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full border-2 border-[#080809] bg-[#4D7CFF]" />
           </span>
           <span className={`ml-2.5 min-w-0 whitespace-nowrap transition-opacity duration-150 group-hover/chat:opacity-100 ${open ? 'opacity-100' : 'opacity-0'}`}>
             <span className="block truncate font-heading text-[13px] font-medium">Portfolio assistant</span>

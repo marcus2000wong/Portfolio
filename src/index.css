@@ -161,7 +161,7 @@ select {
 
 @media (max-width: 640px) {
   .hero-reference-title {
-    font-size: clamp(3.8rem, 18vw, 6rem);
+    font-size: clamp(2.5rem, 14.5vw, 6rem);
     line-height: 0.8;
     transform: none;
   }
