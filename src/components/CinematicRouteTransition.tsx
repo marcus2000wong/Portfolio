@@ -85,7 +85,7 @@ export function CinematicRouteTransition({ onNavigate }: CinematicRouteTransitio
         {String(progress).padStart(3, '0')}
       </span>
       <div className="flex items-center justify-between font-mono text-[9px] uppercase text-white/45 sm:text-[10px]">
-        <span>Mainframe® / Marcus Wong</span>
+        <span>Marcus Wong</span>
         <span>{entering ? 'Loading' : 'Entering'} / {details.index} / {String(progress).padStart(3, '0')}%</span>
       </div>
 
@@ -103,7 +103,7 @@ export function CinematicRouteTransition({ onNavigate }: CinematicRouteTransitio
           <p className="mb-3 font-mono text-[9px] uppercase text-[#7094ff] sm:text-[10px]">
             {details.index} — {details.short}
           </p>
-          <p className="max-w-[12ch] font-heading text-[clamp(3.25rem,10vw,9.5rem)] font-medium leading-[0.78] text-white">
+          <p className="max-w-[12ch] py-[0.08em] font-heading text-[clamp(4.5rem,14vw,13rem)] font-medium leading-[0.90] text-white">
             {details.name}
           </p>
         </motion.div>
