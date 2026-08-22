@@ -147,30 +147,16 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
             <motion.span
               className="grid place-items-center drop-shadow-[0_0_10px_rgba(77,124,255,0.16)] transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_16px_rgba(77,124,255,0.42)]"
               animate={{
-                y: [0, 0, -4, -4, -1, 0, 0],
-                x: [0, 0, 0, -2, 2, 0, 0],
-                rotate: [0, 0, -3, 3, -1, 0, 0],
-                scale: [1, 1, 1.07, 0.96, 1.025, 1, 1],
+                y: [0, -2, 0],
+                rotate: [0, -1.5, 0, 1.5, 0],
               }}
               transition={{
-                duration: 6.4,
-                times: [0, 0.56, 0.64, 0.68, 0.73, 0.8, 1],
+                duration: 4.8,
                 repeat: Infinity,
-                ease: [0.16, 1, 0.3, 1],
+                ease: 'easeInOut',
               }}
             >
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <motion.rect
-                  width="16"
-                  height="12"
-                  x="4"
-                  y="8"
-                  rx="2"
-                  stroke="#4D7CFF"
-                  strokeWidth="0.8"
-                  animate={{ x: [4, 4, 3.4, 4.6, 4], opacity: [0, 0, 0.75, 0.2, 0] }}
-                  transition={{ duration: 6.4, times: [0, 0.6, 0.67, 0.73, 0.82], repeat: Infinity }}
-                />
                 <path d="M12 8V4H8" />
                 <motion.circle
                   cx="8"
@@ -178,12 +164,12 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
                   r="0.9"
                   fill="#4D7CFF"
                   stroke="none"
-                  animate={{ opacity: [0.35, 0.35, 1, 0.35], scale: [1, 1, 1.55, 1] }}
-                  transition={{ duration: 6.4, times: [0, 0.58, 0.66, 0.8], repeat: Infinity }}
+                  animate={{ opacity: [0.35, 0.9, 0.35], scale: [1, 1.25, 1] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
                 />
                 <rect width="16" height="12" x="4" y="8" rx="2" />
                 <path d="M2 14h2M20 14h2" />
-                {[9, 15].map((cx, index) => (
+                {[9, 15].map((cx) => (
                   <motion.circle
                     key={cx}
                     cx={cx}
@@ -191,17 +177,10 @@ export function CloudflareEdgeChat({ disabled = false }: { disabled?: boolean })
                     r="1.15"
                     fill="#4D7CFF"
                     stroke="none"
-                    animate={{ scaleY: [1, 1, 0.08, 1, 1], opacity: [1, 1, 0.4, 1, 1] }}
-                    transition={{ duration: 4.8, times: [0, 0.7 + index * 0.03, 0.74 + index * 0.03, 0.78 + index * 0.03, 1], repeat: Infinity }}
+                    animate={{ scaleY: [1, 1, 0.08, 1, 1], opacity: [1, 1, 0.45, 1, 1] }}
+                    transition={{ duration: 4.2, times: [0, 0.72, 0.75, 0.78, 1], repeat: Infinity }}
                   />
                 ))}
-                <motion.path
-                  d="M6.5 10.5h11"
-                  stroke="#4D7CFF"
-                  strokeWidth="0.65"
-                  animate={{ y: [0, 6, 0], opacity: [0, 0.9, 0] }}
-                  transition={{ duration: 1.45, times: [0, 0.5, 1], repeat: Infinity, repeatDelay: 3.8, ease: 'easeInOut' }}
-                />
               </svg>
             </motion.span>
           </span>
