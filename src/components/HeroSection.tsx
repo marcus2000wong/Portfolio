@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </motion.div>
 
       <motion.div
-        className="pointer-events-none absolute bottom-[13%] left-5 z-20 w-[calc(100%-2.5rem)] sm:left-8 sm:w-[73%] lg:left-10"
+        className="pointer-events-none absolute bottom-[116px] left-5 z-20 w-[calc(100%-2.5rem)] sm:left-8 sm:w-[73%] lg:left-10"
         initial="hidden"
         animate="visible"
         variants={{
@@ -67,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
             ['for digital', 'text-white'],
             ['impact', 'text-[#4D7CFF]'],
           ].map(([line, color]) => (
-            <span key={line} className="block overflow-hidden">
+            <span key={line} className="block overflow-clip [overflow-clip-margin:0.12em]">
               <motion.span
                 className={`block whitespace-nowrap ${color}`}
                 variants={{
