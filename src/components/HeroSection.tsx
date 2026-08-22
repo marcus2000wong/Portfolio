@@ -67,12 +67,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
             ['for digital', 'text-white'],
             ['impact', 'text-[#4D7CFF]'],
           ].map(([line, color]) => (
-            <span key={line} className="block overflow-clip [overflow-clip-margin:0.12em]">
+            <span key={line} className="block overflow-visible">
               <motion.span
                 className={`block whitespace-nowrap ${color}`}
                 variants={{
-                  hidden: { y: '115%', opacity: 0, rotate: 2 },
-                  visible: { y: '0%', opacity: 1, rotate: 0 },
+                  hidden: { y: '0.3em', opacity: 0, rotate: 1, filter: 'blur(8px)' },
+                  visible: { y: '0%', opacity: 1, rotate: 0, filter: 'blur(0px)' },
                 }}
                 transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
               >
