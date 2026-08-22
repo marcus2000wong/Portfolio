@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Hls from 'hls.js';
 
 interface VideoBackgroundProps {
   src: string;
@@ -16,53 +15,14 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
     const video = videoRef.current;
     if (!video || !src) return;
 
-    let hls: Hls | null = null;
-
-    const isHls = src.includes('.m3u8');
-
-    // MP4 / normal video
-    if (!isHls) {
-      video.src = src;
-      video.load();
-
-      video.play().catch((err) => {
-        console.log('Autoplay handled:', err);
-      });
-
-      return;
-    }
-
-    // HLS video
-    if (Hls.isSupported()) {
-      hls = new Hls({
-        enableWorker: true,
-        lowLatencyMode: false,
-      });
-
-      hls.loadSource(src);
-      hls.attachMedia(video);
-
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch((err) => {
-          console.log('Autoplay handled:', err);
-        });
-      });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = src;
-
-      video.addEventListener(
-        'loadedmetadata',
-        () => {
-          video.play().catch((err) => {
-            console.log('Autoplay handled:', err);
-          });
-        },
-        { once: true }
-      );
-    }
+    video.src = src;
+    video.load();
+    void video.play().catch(() => undefined);
 
     return () => {
-      hls?.destroy();
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
     };
   }, [src]);
 
