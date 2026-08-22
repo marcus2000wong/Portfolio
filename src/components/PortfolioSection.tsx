@@ -5,6 +5,13 @@ import { CategoryFilter, Project } from '../types';
 import { ProjectHelixGallery } from './ProjectHelixGallery';
 
 const CATEGORIES: CategoryFilter[] = ['All', 'UI/UX', 'Print & E-commerce', 'Social Media', 'Video'];
+const MOBILE_CATEGORY_LABELS: Record<CategoryFilter, string> = {
+  All: 'All',
+  'UI/UX': 'UI/UX',
+  'Print & E-commerce': 'Print',
+  'Social Media': 'Social',
+  Video: 'Video',
+};
 const FALLBACK_IMAGES = [
   new URL('../assets/images/blue_nile_center_model_1786542360474.jpg', import.meta.url).href,
   new URL('../assets/images/editorial-hero-portrait-v1.png', import.meta.url).href,
@@ -112,7 +119,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
   }, []);
 
   return (
-    <section id="portfolio" className="relative z-20 h-[100svh] min-h-0 w-full overflow-hidden bg-black/68 text-white backdrop-blur-[12px] sm:min-h-[720px]">
+    <section id="portfolio" className="relative z-20 h-[100svh] min-h-0 w-full overflow-hidden bg-black/68 text-white backdrop-blur-[12px]">
       <div inert={selectedProject ? true : undefined}>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_61%_46%,rgba(62,68,146,0.24),transparent_35%),radial-gradient(circle_at_38%_70%,rgba(39,31,88,0.18),transparent_42%)]" />
 
@@ -218,7 +225,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
         <p className="mb-2 text-right font-mono text-[8px] uppercase tracking-[0.12em] text-white/40">
           Scroll or drag · select a card to open
         </p>
-        <nav data-cursor-passive aria-label="Filter projects" className="grid w-full grid-cols-3 overflow-hidden border border-white/20 bg-black/82 shadow-2xl backdrop-blur-xl sm:flex sm:w-auto sm:max-w-full sm:items-center">
+        <nav data-cursor-passive aria-label="Filter projects" className="grid w-full grid-cols-5 overflow-hidden border border-white/20 bg-black/82 shadow-2xl backdrop-blur-xl sm:flex sm:w-auto sm:max-w-full sm:items-center">
           {CATEGORIES.map((category) => {
             const count = category === 'All' ? PROJECTS.length : PROJECTS.filter((project) => project.category === category).length;
             const active = category === activeCategory;
@@ -228,12 +235,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
                 type="button"
                 onClick={() => setActiveCategory(category)}
                 aria-pressed={active}
-                className={`site-nav-text flex min-h-11 min-w-0 flex-col items-center justify-center gap-0.5 border-b border-r border-white/10 px-1.5 py-2 text-center leading-tight transition [&:nth-last-child(-n+2)]:border-b-0 sm:shrink-0 sm:flex-row sm:gap-2 sm:border-b-0 sm:px-4 sm:py-3 sm:text-left sm:leading-[1.25] sm:last:border-r-0 ${
+                className={`site-nav-text flex min-h-11 min-w-0 items-center justify-center border-r border-white/10 px-1 py-2 text-center leading-none transition last:border-r-0 sm:shrink-0 sm:gap-2 sm:px-4 sm:py-3 sm:text-left sm:leading-[1.25] ${
                   active ? 'bg-white text-black' : 'text-white/55 hover:bg-white/10 hover:text-white'
                 }`}
               >
-                <span>{category}</span>
-                <span className={`text-[10px] ${active ? 'text-black/45' : 'text-white/25'}`}>{String(count).padStart(2, '0')}</span>
+                <span className="sm:hidden">{MOBILE_CATEGORY_LABELS[category]}</span>
+                <span className="hidden sm:inline">{category}</span>
+                <span className={`hidden text-[10px] sm:inline ${active ? 'text-black/45' : 'text-white/25'}`}>{String(count).padStart(2, '0')}</span>
               </button>
             );
           })}

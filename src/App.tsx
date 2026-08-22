@@ -55,7 +55,7 @@ export default function App() {
   const isProjectsPage = currentPath === '/projects';
 
   return (
-    <div className="relative min-h-screen w-full bg-black text-white selection:bg-white selection:text-black">
+    <div className="relative min-h-[100svh] w-full bg-black text-white selection:bg-white selection:text-black">
       <CinematicRouteTransition onNavigate={handleRouteNavigate} />
       <AwardCursor />
       <CloudflareEdgeChat disabled={projectModalOpen || activeModal !== null} />
