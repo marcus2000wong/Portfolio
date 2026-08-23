@@ -152,6 +152,94 @@ select {
   }
 }
 
+/* Project filter: motion-only enhancement; resting geometry stays unchanged. */
+.project-filter-button {
+  position: relative;
+  isolation: isolate;
+  transition: color 420ms cubic-bezier(0.16, 1, 0.3, 1), background-color 420ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-filter-button::before {
+  content: '';
+  position: absolute;
+  inset-block: -35%;
+  left: -32%;
+  width: 22%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), rgba(77,124,255,0.32), transparent);
+  filter: blur(3px);
+  transform: skewX(-16deg);
+  opacity: 0;
+  transition: left 760ms cubic-bezier(0.16, 1, 0.3, 1), opacity 180ms ease;
+}
+
+.project-filter-button::after {
+  content: '';
+  position: absolute;
+  inset-inline: 10%;
+  bottom: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, #fff 30%, #4d7cff 78%, transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1), opacity 180ms ease;
+}
+
+.project-filter-label,
+.project-filter-count {
+  transition: transform 460ms cubic-bezier(0.16, 1, 0.3, 1), color 360ms ease, opacity 360ms ease;
+}
+
+.project-filter-button:not(.is-active):hover,
+.project-filter-button:not(.is-active):focus-visible {
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -18px 32px rgba(77,124,255,0.07);
+  outline: none;
+}
+
+.project-filter-button:not(.is-active):hover::before,
+.project-filter-button:not(.is-active):focus-visible::before {
+  left: 112%;
+  opacity: 1;
+}
+
+.project-filter-button:not(.is-active):hover::after,
+.project-filter-button:not(.is-active):focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.project-filter-button:not(.is-active):hover .project-filter-label,
+.project-filter-button:not(.is-active):focus-visible .project-filter-label {
+  transform: translateY(-1px);
+}
+
+.project-filter-button:not(.is-active):hover .project-filter-count,
+.project-filter-button:not(.is-active):focus-visible .project-filter-count {
+  color: #7094ff;
+  opacity: 1;
+  transform: translate(2px, -1px);
+}
+
+.project-filter-button.is-active::after {
+  inset-inline: 0;
+  opacity: 0.22;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, transparent, #4d7cff 50%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-filter-button,
+  .project-filter-button::before,
+  .project-filter-button::after,
+  .project-filter-label,
+  .project-filter-count {
+    transition-duration: 1ms;
+  }
+}
+
 @media (min-width: 640px) {
   .hero-shell { --hero-gutter: 2rem; }
   .hero-title-block { width: 73%; }

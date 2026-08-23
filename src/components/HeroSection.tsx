@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { BRANDS } from '../data/portfolioData';
 import { ModalType } from '../types';
+import { SiteNavigation } from './SiteNavigation';
 export interface Brand {
   id: string;
   name: string;
@@ -88,43 +89,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
       <div className="fixed inset-x-0 top-0 z-50 h-28 bg-gradient-to-b from-black/95 via-black/65 to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 left-[73.5%] hidden border-l border-white/[0.09] lg:block" />
       <div className="hero-left-edge site-nav-text fixed top-7 z-[60] hidden text-white/55 sm:top-9 lg:block"><TimeGreeting /></div>
-      <nav data-cursor-passive aria-label="Primary navigation" className="site-nav-text fixed inset-x-5 top-7 z-[60] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
-        <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
-          <a
-            href="#home"
-            aria-label="Home"
-            aria-current={activeSection === 'home' ? 'page' : undefined}
-            data-label="Home"
-            onClick={() => setActiveSection('home')}
-            className={`award-nav-link ${activeSection === 'home' ? 'is-active text-white' : 'text-white/55'}`}
-          ><span>Home</span></a>
-          <a
-            href="#what-i-do"
-            aria-label="What I do"
-            aria-current={activeSection === 'what-i-do' ? 'page' : undefined}
-            data-label="What I do"
-            onClick={() => setActiveSection('what-i-do')}
-            className={`award-nav-link ${activeSection === 'what-i-do' ? 'is-active text-white' : 'text-white/55'}`}
-          ><span>What I do</span></a>
-          <a
-            href="/projects"
-            aria-label="Projects"
-            data-label="Projects"
-            className="award-nav-link text-white/55"
-          >
-            <span>Projects</span>
-          </a>
-        </div>
-        <a
-          href="/designer_Resume_wong_marcus.pdf"
-          aria-label="Download CV"
-          download
-          data-label="Download CV"
-          className="award-nav-link award-nav-link--download ml-auto text-white"
-        >
-          <span>Download CV</span>
-        </a>
-      </nav>
+      <SiteNavigation
+        activeSection={activeSection}
+        context="home"
+        ariaLabel="Primary navigation"
+        className="z-[60]"
+        onSectionSelect={setActiveSection}
+      />
 
       <div className="hero-left-edge hero-title-block absolute bottom-[120px] top-[20%] z-20">
         <motion.div

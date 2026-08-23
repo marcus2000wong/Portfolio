@@ -251,13 +251,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
                 type="button"
                 onClick={() => setActiveCategory(category)}
                 aria-pressed={active}
-                className={`site-nav-text flex min-h-11 min-w-0 items-center justify-center border-r border-white/10 px-1 py-2 text-center leading-none transition last:border-r-0 sm:shrink-0 sm:gap-2 sm:px-4 sm:py-3 sm:text-left sm:leading-[1.25] ${
-                  active ? 'bg-white text-black' : 'text-white/55 hover:bg-white/10 hover:text-white'
+                className={`project-filter-button site-nav-text flex min-h-11 min-w-0 items-center justify-center overflow-hidden border-r border-white/10 px-1 py-2 text-center leading-none last:border-r-0 sm:shrink-0 sm:gap-2 sm:px-4 sm:py-3 sm:text-left sm:leading-[1.25] ${
+                  active ? 'is-active bg-white text-black' : 'text-white/55 hover:text-white'
                 }`}
               >
-                <span className="sm:hidden">{MOBILE_CATEGORY_LABELS[category]}</span>
-                <span className="hidden sm:inline">{category}</span>
-                <span className={`hidden text-[10px] sm:inline ${active ? 'text-black/45' : 'text-white/25'}`}>{String(count).padStart(2, '0')}</span>
+                <span className="project-filter-label relative z-10 sm:hidden">{MOBILE_CATEGORY_LABELS[category]}</span>
+                <span className="project-filter-label relative z-10 hidden sm:inline">{category}</span>
+                <span className={`project-filter-count relative z-10 hidden text-[10px] sm:inline ${active ? 'text-black/45' : 'text-white/25'}`}>{String(count).padStart(2, '0')}</span>
               </button>
             );
           })}
