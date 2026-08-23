@@ -3,11 +3,13 @@ import React, { useEffect, useRef } from 'react';
 interface VideoBackgroundProps {
   src: string;
   overlayOpacity?: number;
+  deferMs?: number;
 }
 
 export const VideoBackground: React.FC<VideoBackgroundProps> = ({
   src,
   overlayOpacity = 0.2,
+  deferMs = 0,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -15,16 +17,21 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
     const video = videoRef.current;
     if (!video || !src) return;
 
-    video.src = src;
-    video.load();
-    void video.play().catch(() => undefined);
+    const loadVideo = () => {
+      video.src = src;
+      video.load();
+      void video.play().catch(() => undefined);
+    };
+    const timer = deferMs > 0 ? window.setTimeout(loadVideo, deferMs) : 0;
+    if (!timer) loadVideo();
 
     return () => {
+      if (timer) window.clearTimeout(timer);
       video.pause();
       video.removeAttribute('src');
       video.load();
     };
-  }, [src]);
+  }, [deferMs, src]);
 
   return (
     <div className="fixed inset-0 z-0 h-full w-full overflow-hidden bg-black pointer-events-none">
@@ -34,7 +41,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
         loop
         muted
         playsInline
-        preload="auto"
+        preload={deferMs > 0 ? 'metadata' : 'auto'}
         className="h-full w-full object-cover scale-105 opacity-90"
       />
 

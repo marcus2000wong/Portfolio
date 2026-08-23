@@ -1,8 +1,11 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react';
 import { PROJECTS } from '../data/portfolioData';
 import { CategoryFilter, Project } from '../types';
-import { ProjectHelixGallery } from './ProjectHelixGallery';
+
+const ProjectHelixGallery = lazy(() => import('./ProjectHelixGallery').then((module) => ({
+  default: module.ProjectHelixGallery,
+})));
 
 const CATEGORIES: CategoryFilter[] = ['All', 'UI/UX', 'Print & E-commerce', 'Social Media', 'Video'];
 const MOBILE_CATEGORY_LABELS: Record<CategoryFilter, string> = {
@@ -154,13 +157,23 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onModalChang
         }}
         onPointerLeave={() => setGalleryCursorVisible(false)}
       >
-        <ProjectHelixGallery
-          projects={PROJECTS}
-          visibleProjectIds={visibleProjectIds}
-          onSelect={handleProjectSelect}
-          onActiveChange={setActiveIndex}
-          onCardHoverChange={handleCardHoverChange}
-        />
+        <Suspense fallback={(
+          <div className="grid h-full w-full place-items-center" aria-label="Loading interactive project gallery">
+            <div className="flex items-center gap-3 font-mono text-[9px] uppercase text-white/35">
+              <span className="h-px w-12 origin-left animate-pulse bg-[#4D7CFF]" />
+              Preparing selected work
+            </div>
+          </div>
+        )}>
+          <ProjectHelixGallery
+            projects={PROJECTS}
+            visibleProjectIds={visibleProjectIds}
+            paused={Boolean(selectedProject)}
+            onSelect={handleProjectSelect}
+            onActiveChange={setActiveIndex}
+            onCardHoverChange={handleCardHoverChange}
+          />
+        </Suspense>
       </div>
 
       <motion.div

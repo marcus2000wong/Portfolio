@@ -65,6 +65,7 @@ export default function App() {
         <VideoBackground
           src='/background/bg.mp4'
           overlayOpacity={0.32}
+          deferMs={700}
         />
         <div className="fixed inset-x-0 top-0 z-[70] h-28 bg-gradient-to-b from-black/95 via-black/70 to-transparent" />
         <div className="site-nav-text fixed left-5 top-7 z-[180] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block">Good morning!</div>

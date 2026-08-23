@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-01.jpg',
+    image: '/cover-optimized/cover-01.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-02.jpg',
+    image: '/cover-optimized/cover-02.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-03.jpg',
+    image: '/cover-optimized/cover-03.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -113,7 +113,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-04.jpg',
+    image: '/cover-optimized/cover-04.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Illustration', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-05.jpg',
+    image: '/cover-optimized/cover-05.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -165,7 +165,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-06.jpg',
+    image: '/cover-optimized/cover-06.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -189,7 +189,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-07.jpg',
+    image: '/cover-optimized/cover-07.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -213,7 +213,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-08.jpg',
+    image: '/cover-optimized/cover-08.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -237,7 +237,7 @@ export const PROJECTS: Project[] = [
     tags: ['Figma', 'Photoshop', 'HTML', 'CSS', 'JS'],
 
     // Image shown BEFORE clicking the project
-    image: '/cover/cover-09.jpg',
+    image: '/cover-optimized/cover-09.jpg',
 
     // The image area BECOMES this iframe after clicking
     media: {
@@ -271,7 +271,7 @@ export const PROJECTS: Project[] = [
       tags: ['After Effect', 'Photoshop',],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-01.jpg',
+    image: '/cover-optimized/video-01.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -295,7 +295,7 @@ export const PROJECTS: Project[] = [
       tags: ['UI','Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-02.jpg',
+    image: '/cover-optimized/video-02.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -320,7 +320,7 @@ export const PROJECTS: Project[] = [
       tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-03.jpg',
+    image: '/cover-optimized/video-03.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -342,7 +342,7 @@ export const PROJECTS: Project[] = [
         'Bold, playful and beauty-led, combining vibrant brand colours, rounded modular layouts, 3D product visuals and dynamic motion for an energetic social-first aesthetic.',
       tags: ['Motion Graphics','Video Editing'],
       // Image shown BEFORE clicking the project
-      image: '/cover/video-04.jpg',
+    image: '/cover-optimized/video-04.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -365,7 +365,7 @@ export const PROJECTS: Project[] = [
       tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-05.jpg',
+    image: '/cover-optimized/video-05.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -394,7 +394,7 @@ export const PROJECTS: Project[] = [
       tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-06.jpg',
+    image: '/cover-optimized/video-06.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -418,7 +418,7 @@ export const PROJECTS: Project[] = [
       tags: ['Motion Graphics','Video Editing'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/video-07.jpg',
+    image: '/cover-optimized/video-07.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -452,7 +452,7 @@ export const PROJECTS: Project[] = [
       tags: ['AI','Social Media Design', 'Graphic Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/za.jpg',
+    image: '/cover-optimized/za.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -475,7 +475,7 @@ export const PROJECTS: Project[] = [
       tags: ['AI','Social Media Design', 'Graphic Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/delmon.jpg',
+    image: '/cover-optimized/delmon.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -498,7 +498,7 @@ export const PROJECTS: Project[] = [
       tags: ['Social Media Design', 'Graphic Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/galderma.jpg',
+    image: '/cover-optimized/galderma.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -521,7 +521,7 @@ export const PROJECTS: Project[] = [
       tags: ['AI','Social Media Design', '3D Rendering'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/glinet.jpg',
+    image: '/cover-optimized/glinet.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -543,7 +543,7 @@ export const PROJECTS: Project[] = [
       tags: ['AI','Social Media Design', '3D Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/nippon.jpg',
+    image: '/cover-optimized/nippon.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -566,7 +566,7 @@ export const PROJECTS: Project[] = [
       tags: ['AI','Social Media Design', 'Graphic Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/wingstop.jpg',
+    image: '/cover-optimized/wingstop.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -592,7 +592,7 @@ export const PROJECTS: Project[] = [
         tags: ['Printing', 'Graphic Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/printing-01.jpg',
+    image: '/cover-optimized/printing-01.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -614,7 +614,7 @@ export const PROJECTS: Project[] = [
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/printing-02.jpg',
+    image: '/cover-optimized/printing-02.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -637,7 +637,7 @@ export const PROJECTS: Project[] = [
       tags: ['Printing', 'Layout Design'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/printing-03.jpg',
+    image: '/cover-optimized/printing-03.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -661,7 +661,7 @@ export const PROJECTS: Project[] = [
       tags: ['3D Design', 'Graphic Design', 'AI Workflows'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/printing-04.jpg',
+    image: '/cover-optimized/printing-04.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -683,7 +683,7 @@ export const PROJECTS: Project[] = [
       tags: ['Graphic Design', 'Layout Design', 'E-commerce'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/printing-05.jpg',
+    image: '/cover-optimized/printing-05.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {
@@ -705,7 +705,7 @@ export const PROJECTS: Project[] = [
       tags: ['3D Design', 'Graphic Design', 'AI Workflows'],
 
       // Image shown BEFORE clicking the project
-      image: '/cover/printing-07.jpg',
+    image: '/cover-optimized/printing-07.jpg',
 
       // The image area BECOMES this iframe after clicking
       media: {

@@ -5,6 +5,7 @@ import { Project } from '../types';
 interface ProjectHelixGalleryProps {
   projects: Project[];
   visibleProjectIds?: string[];
+  paused?: boolean;
   onSelect: (project: Project) => void;
   onActiveChange?: (index: number) => void;
   onCardHoverChange?: (hovered: boolean) => void;
@@ -55,14 +56,19 @@ const createRoundedAlphaMap = () => {
   return texture;
 };
 
-export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projects, visibleProjectIds, onSelect, onActiveChange, onCardHoverChange }) => {
+export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projects, visibleProjectIds, paused = false, onSelect, onActiveChange, onCardHoverChange }) => {
   const mountRef = useRef<HTMLDivElement | null>(null);
+  const pausedRef = useRef(paused);
   const initialVisibleIds = visibleProjectIds ?? projects.map((project) => project.id);
   const visibleIdsRef = useRef(initialVisibleIds);
   const visibleSetRef = useRef(new Set(initialVisibleIds));
   const requestedVisibleIdsRef = useRef(initialVisibleIds);
   const visibleKeyRef = useRef(initialVisibleIds.join('|'));
   const filterRevisionRef = useRef(0);
+
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
 
   useEffect(() => {
     const nextIds = visibleProjectIds ?? projects.map((project) => project.id);
@@ -195,6 +201,7 @@ export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projec
     };
 
     const onPointerDown = (event: PointerEvent) => {
+      if (pausedRef.current) return;
       if (cardHovering) {
         cardHovering = false;
         onCardHoverChange?.(false);
@@ -208,6 +215,7 @@ export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projec
     };
 
     const onPointerMove = (event: PointerEvent) => {
+      if (pausedRef.current) return;
       updatePointer(event);
       if (!state.dragging) {
         pointerNeedsHitTest = true;
@@ -258,6 +266,25 @@ export const ProjectHelixGallery: React.FC<ProjectHelixGalleryProps> = ({ projec
       const delta = clamp((now - state.lastTime) / 16.67, 0.5, 1.5);
       state.lastTime = now;
       if (state.routeLeaving) {
+        frame = requestAnimationFrame(animate);
+        return;
+      }
+      if (pausedRef.current) {
+        state.dragging = false;
+        state.dragDistance = 0;
+        state.pointerX = 0;
+        state.pointerY = 0;
+        state.targetVelocity = 0;
+        state.velocity = 0;
+        pointerNeedsHitTest = false;
+        mount.classList.remove('is-dragging');
+        if (cardHovering) {
+          cardHovering = false;
+          onCardHoverChange?.(false);
+        }
+        gallery.rotation.x = 0;
+        gallery.rotation.y = 0;
+        renderer.render(scene, camera);
         frame = requestAnimationFrame(animate);
         return;
       }
