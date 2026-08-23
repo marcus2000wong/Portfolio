@@ -940,10 +940,4 @@ export const BRANDS: Brand[] = [
     category: 'UK Academy',
     logo: '/logo/logo-12.png',
   },
-  {
-    id: 'b13',
-    name: 'Shebbear College',
-    category: 'UK Academy',
-    logo: '/logo/logo-13.png',
-  },
 ];
