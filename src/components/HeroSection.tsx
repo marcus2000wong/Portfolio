@@ -18,7 +18,17 @@ const BrandLogo: React.FC<{ brand: Brand }> = ({ brand }) => {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="grid h-9 w-[132px] shrink-0 place-items-center sm:h-11 sm:w-[176px]">
+    <div
+      className="
+        flex
+        h-9 w-[132px]
+        shrink-0
+        items-center
+        justify-center
+        overflow-hidden
+        sm:h-11 sm:w-[176px]
+      "
+    >
       {failed ? (
         <span className="px-2 text-center font-mono text-[9px] uppercase leading-tight text-white/60">
           {brand.name}
@@ -27,13 +37,19 @@ const BrandLogo: React.FC<{ brand: Brand }> = ({ brand }) => {
         <img
           src={brand.logo}
           alt={`${brand.name} logo`}
-          width="300"
-          height="100"
+          width={300}
+          height={100}
           loading="eager"
           decoding="async"
           draggable={false}
-          className="h-full w-full object-contain"
           onError={() => setFailed(true)}
+          className="
+            block
+            max-h-full
+            max-w-full
+            object-contain
+            object-center
+          "
         />
       )}
     </div>
@@ -197,7 +213,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
       <p className="hero-left-edge absolute bottom-5 z-20 text-xs text-white/45 sm:text-sm">(Scroll down)</p>
 
       <motion.div
-        className="absolute inset-x-0 bottom-0 z-30 h-[92px] overflow-hidden border-y border-white/15 bg-black/45 py-3 backdrop-blur-sm"
+        className="
+          absolute inset-x-0 bottom-0 z-30
+          h-[92px]
+          overflow-hidden
+          border-y border-white/15
+          bg-black/45
+          backdrop-blur-sm
+        "
         initial={{ y: '100%', opacity: 0 }}
         animate={{ y: '0%', opacity: 1 }}
         transition={{
@@ -206,13 +229,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
           ease: [0.16, 1, 0.3, 1],
         }}
       >
-        <div className="animate-marquee flex w-max items-center whitespace-nowrap py-3">
+        <div className="animate-marquee flex h-full w-max items-center whitespace-nowrap">
           {[...BRANDS, ...BRANDS].map((brand, index) => (
             <div
               key={`${brand.id}-${index}`}
-              className="flex items-center gap-3 px-3 sm:gap-5 sm:px-5"
+              className="
+                flex h-full items-center
+                gap-3 px-3
+                sm:gap-5 sm:px-5
+              "
             >
-              <BrandLogo brand={brand} />
+              <div className="flex h-full items-center justify-center">
+                <BrandLogo brand={brand} />
+              </div>
 
               <span
                 className="h-1 w-1 shrink-0 rounded-full bg-white"
