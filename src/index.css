@@ -64,6 +64,94 @@ select {
   width: calc(100% - (var(--hero-gutter) * 2));
 }
 
+/* Editorial navbar hover: the resting navbar remains visually unchanged. */
+.award-nav-link {
+  position: relative;
+  display: inline-grid;
+  overflow: hidden;
+  isolation: isolate;
+  padding-block: 0.12rem 0.3rem;
+  line-height: 1;
+  transition: color 420ms cubic-bezier(0.16, 1, 0.3, 1), filter 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.award-nav-link > span,
+.award-nav-link::before {
+  grid-area: 1 / 1;
+  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1), opacity 360ms ease, filter 420ms ease;
+}
+
+.award-nav-link::before {
+  content: attr(data-label);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(125%) skewY(7deg);
+  filter: blur(4px);
+}
+
+.award-nav-link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #fff 28%, #4d7cff 72%, transparent 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1), opacity 220ms ease;
+}
+
+.award-nav-link:hover,
+.award-nav-link:focus-visible,
+.award-nav-link.is-active {
+  color: #4d7cff;
+  filter: drop-shadow(0 0 12px rgba(77, 124, 255, 0.2));
+  outline: none;
+}
+
+.award-nav-link:hover > span,
+.award-nav-link:focus-visible > span,
+.award-nav-link.is-active > span {
+  opacity: 0;
+  transform: translateY(-125%) skewY(-7deg);
+  filter: blur(4px);
+}
+
+.award-nav-link:hover::before,
+.award-nav-link:focus-visible::before,
+.award-nav-link.is-active::before {
+  opacity: 1;
+  transform: translateY(0) skewY(0);
+  filter: blur(0);
+}
+
+.award-nav-link:hover::after,
+.award-nav-link:focus-visible::after,
+.award-nav-link.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.award-nav-link--download::after {
+  opacity: 0.7;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.75));
+}
+
+.award-nav-link--download:hover::after,
+.award-nav-link--download:focus-visible::after {
+  background: linear-gradient(90deg, #fff 0%, #4d7cff 72%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-nav-link > span,
+  .award-nav-link::before,
+  .award-nav-link::after {
+    transition-duration: 1ms;
+  }
+}
+
 @media (min-width: 640px) {
   .hero-shell { --hero-gutter: 2rem; }
   .hero-title-block { width: 73%; }

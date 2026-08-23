@@ -68,13 +68,13 @@ export default function App() {
         />
         <div className="fixed inset-x-0 top-0 z-[70] h-28 bg-gradient-to-b from-black/95 via-black/70 to-transparent" />
         <div className="site-nav-text fixed left-5 top-7 z-[180] hidden text-white/55 sm:left-8 sm:top-9 lg:left-10 lg:block">Good morning!</div>
-        <nav aria-label="Projects navigation" className="site-nav-text fixed inset-x-5 top-7 z-[180] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
+        <nav data-cursor-passive aria-label="Projects navigation" className="site-nav-text fixed inset-x-5 top-7 z-[180] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
           <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
-            <a href="/" className="text-white/55 transition hover:text-white">Home</a>
-            <a href="/#what-i-do" className="text-white/55 transition hover:text-white">What I do</a>
-            <a href="/projects" aria-current="page" className="text-white">Projects</a>
+            <a href="/" aria-label="Home" data-label="Home" className="award-nav-link text-white/55"><span>Home</span></a>
+            <a href="/#what-i-do" aria-label="What I do" data-label="What I do" className="award-nav-link text-white/55"><span>What I do</span></a>
+            <a href="/projects" aria-label="Projects" data-label="Projects" aria-current="page" className="award-nav-link is-active text-white"><span>Projects</span></a>
           </div>
-          <a href="/designer_Resume_wong_marcus.pdf" download className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#4D7CFF] hover:text-[#4D7CFF]">Download CV</a>
+          <a href="/designer_Resume_wong_marcus.pdf" download aria-label="Download CV" data-label="Download CV" className="award-nav-link award-nav-link--download ml-auto text-white"><span>Download CV</span></a>
         </nav>
         <Suspense fallback={<div className="h-screen min-h-[720px] bg-black" aria-label="Loading project gallery" />}>
           <PortfolioSection onModalChange={setProjectModalOpen} />

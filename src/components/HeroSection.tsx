@@ -61,7 +61,26 @@ const TimeGreeting: React.FC = () => {
 };
 
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
+  const [activeSection, setActiveSection] = useState<'home' | 'what-i-do'>('home');
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      const whatIDo = document.getElementById('what-i-do');
+      if (!whatIDo) return;
+      setActiveSection(whatIDo.getBoundingClientRect().top <= window.innerHeight * 0.35 ? 'what-i-do' : 'home');
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, []);
+
+  return (
   <section id="home" className="relative min-h-[100svh] overflow-hidden bg-transparent text-white select-none">
     <div className="pointer-events-none absolute inset-0 bg-[#070808]/60 backdrop-blur-[3px]" />
 
@@ -69,23 +88,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       <div className="fixed inset-x-0 top-0 z-50 h-28 bg-gradient-to-b from-black/95 via-black/65 to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 left-[73.5%] hidden border-l border-white/[0.09] lg:block" />
       <div className="hero-left-edge site-nav-text fixed top-7 z-[60] hidden text-white/55 sm:top-9 lg:block"><TimeGreeting /></div>
-      <nav aria-label="Primary navigation" className="site-nav-text fixed inset-x-5 top-7 z-[60] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
+      <nav data-cursor-passive aria-label="Primary navigation" className="site-nav-text fixed inset-x-5 top-7 z-[60] flex items-center justify-between sm:inset-x-8 sm:top-9 lg:inset-x-10">
         <div className="flex items-center gap-5 sm:gap-8 lg:absolute lg:right-[29%]">
-          <a href="#home" className="text-white transition hover:text-[#4D7CFF]">Home</a>
-          <a href="#what-i-do" className="text-white/55 transition hover:text-[#4D7CFF]">What I do</a>
+          <a
+            href="#home"
+            aria-label="Home"
+            aria-current={activeSection === 'home' ? 'page' : undefined}
+            data-label="Home"
+            onClick={() => setActiveSection('home')}
+            className={`award-nav-link ${activeSection === 'home' ? 'is-active text-white' : 'text-white/55'}`}
+          ><span>Home</span></a>
+          <a
+            href="#what-i-do"
+            aria-label="What I do"
+            aria-current={activeSection === 'what-i-do' ? 'page' : undefined}
+            data-label="What I do"
+            onClick={() => setActiveSection('what-i-do')}
+            className={`award-nav-link ${activeSection === 'what-i-do' ? 'is-active text-white' : 'text-white/55'}`}
+          ><span>What I do</span></a>
           <a
             href="/projects"
-            className="text-white/55 transition hover:text-[#4D7CFF]"
+            aria-label="Projects"
+            data-label="Projects"
+            className="award-nav-link text-white/55"
           >
-            Projects
+            <span>Projects</span>
           </a>
         </div>
         <a
           href="/designer_Resume_wong_marcus.pdf"
+          aria-label="Download CV"
           download
-          className="ml-auto border-b border-white/70 pb-1 text-white transition hover:border-[#4D7CFF] hover:text-[#4D7CFF]"
+          data-label="Download CV"
+          className="award-nav-link award-nav-link--download ml-auto text-white"
         >
-          Download CV
+          <span>Download CV</span>
         </a>
       </nav>
 
@@ -216,4 +253,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => (
       </motion.div>
     </div>
   </section>
-);
+  );
+};

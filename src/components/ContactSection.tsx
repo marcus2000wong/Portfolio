@@ -119,7 +119,9 @@ export const ContactSection: React.FC = () => {
               </span>
             </a>
             <a
-              href={`mailto:${MARCUS_PROFILE.email}?subject=Portfolio%20enquiry`}
+              href={`https://wa.me/${MARCUS_PROFILE.phone.replace(/\D/g, '')}?text=Hi%20Marcus%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.`}
+              target="_blank"
+              rel="noreferrer"
               className="group relative flex min-h-32 flex-col justify-between overflow-hidden p-5 sm:min-h-40 sm:p-7"
             >
               <span className="absolute inset-0 origin-bottom scale-y-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
@@ -128,7 +130,7 @@ export const ContactSection: React.FC = () => {
                 <span>02</span>
               </span>
               <span className="relative z-10 mt-8 flex items-end justify-between font-heading text-2xl text-white transition-colors group-hover:text-black sm:text-3xl">
-                Leave a message
+                WhatsApp me
                 <motion.span
                   aria-hidden="true"
                   className="text-lg"
