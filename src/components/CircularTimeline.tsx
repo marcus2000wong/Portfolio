@@ -13,7 +13,7 @@ interface CareerItem extends TimelineItem {
 const formatCareerItem = (item: TimelineItem): CareerItem => {
   const [start = '', end = 'Present'] = item.period.split('–').map((value) => value.trim());
   const dateLabel = (value: string) => {
-    if (!value.includes('/')) return value === 'Present' ? 'Present' : `Sep, ${value}`;
+    if (!value.includes('/')) return value === 'Present' ? 'Present' : `Jan, ${value}`;
     const [year, month] = value.split('/');
     const months: Record<string, string> = { '01': 'Jan', '07': 'Jul', '08': 'Aug' };
     return `${months[month] ?? month}, ${year}`;
