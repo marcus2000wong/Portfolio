@@ -109,12 +109,12 @@ export const ContactSection: React.FC = () => {
               href={`mailto:${MARCUS_PROFILE.email}`}
               className="group relative flex min-h-32 flex-col justify-between overflow-hidden border-b border-white/10 p-5 sm:min-h-40 sm:border-b-0 sm:border-r sm:p-7"
             >
-              <span className="absolute inset-0 origin-bottom scale-y-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
-              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase text-white/35 transition-colors group-hover:text-black/55">
+              <span className="absolute inset-0 origin-bottom scale-y-0 bg-white/5 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
+              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase text-white/35 transition-colors group-hover:text-white">
                 Direct email
                 <span>01</span>
               </span>
-              <span className="relative z-10 mt-8 break-all font-heading text-lg text-white sm:text-[1.35rem] group-hover:text-black">
+              <span className="relative z-10 mt-8 break-all font-heading text-lg text-white sm:text-[1.35rem] group-hover:text-white">
                 {MARCUS_PROFILE.email}
               </span>
             </a>
@@ -124,12 +124,12 @@ export const ContactSection: React.FC = () => {
               rel="noreferrer"
               className="group relative flex min-h-32 flex-col justify-between overflow-hidden p-5 sm:min-h-40 sm:p-7"
             >
-              <span className="absolute inset-0 origin-bottom scale-y-0 bg-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
-              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase text-white/35 transition-colors group-hover:text-black/55">
+              <span className="absolute inset-0 origin-bottom scale-y-0 bg-white/5 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
+              <span className="relative z-10 flex items-center justify-between font-mono text-[9px] uppercase text-white/35 transition-colors group-hover:text-white">
                 Start a conversation
                 <span>02</span>
               </span>
-              <span className="relative z-10 mt-8 flex items-end justify-between font-heading text-2xl text-white transition-colors group-hover:text-black sm:text-3xl">
+              <span className="relative z-10 mt-8 flex items-end justify-between font-heading text-lg sm:text-[1.35rem] text-white transition-colors group-hover:text-white">
                 WhatsApp me
                 <motion.span
                   aria-hidden="true"
